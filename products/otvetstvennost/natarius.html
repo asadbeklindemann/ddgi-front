@@ -477,18 +477,18 @@
                                                         <input type="text" class="form-control" name="polis-modification-0">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-modification-0">
+                                                        <input type="text" data-field="value" class="form-control" name="polis-modification-0">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-gos-num-0">
+                                                        <input type="text" data-field="sum" class="form-control" name="polis-gos-num-0">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-teh-passport-0">
+                                                        <input type="text" data-field="premiya" class="form-control" name="polis-teh-passport-0">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="10" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                    <td><input readonly type="text" data-insurance-sum class="form-control overall-sum2" />
+                                                    <td><input readonly type="text" data-insurance-stoimost class="form-control overall-sum2" />
                                                     </td>
                                                     <td><input readonly type="text" data-insurance-sum class="form-control overall-sum4" />
                                                     </td>
@@ -509,6 +509,9 @@
                     </div>
 
                     <div class="card-body">
+                        <div class="form-group">
+                            <button type="button" data-btn-add-row-info2 class="btn btn-primary ">Добавить</button>
+                        </div>
                         <div class="card card-info" id="personal">
                             <div class="table-responsive p-0 " style="max-height: 300px;">
                                 <div id="product-fields" class="product-fields">
@@ -534,20 +537,6 @@
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control insurance_premium-0" data-field="other" name="other">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="number" name="number">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control forsum4 insurance_premium-0" data-field="director" name="director">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="qualified" name="qualified">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="other" name="other">
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -1150,7 +1139,7 @@
     //         console.log(data)
     //     });
 </script>
-<!-- 
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -1266,7 +1255,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');

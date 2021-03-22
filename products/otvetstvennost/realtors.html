@@ -479,18 +479,18 @@
                                                         <input type="text" class="form-control" name="polis-modification">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-modification">
+                                                        <input type="text" data-field="value" class="form-control" name="polis-modification">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-gos-num">
+                                                        <input type="text" data-field="sum" class="form-control" name="polis-gos-num">
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="polis-teh-passport">
+                                                        <input type="text" data-field="premiya" class="form-control" name="polis-teh-passport">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="10" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                    <td><input readonly type="text" data-insurance-sum class="form-control overall-sum2" />
+                                                    <td><input readonly type="text" data-insurance-stoimost class="form-control overall-sum2" />
                                                     </td>
                                                     <td><input readonly type="text" data-insurance-sum class="form-control overall-sum4" />
                                                     </td>
@@ -1097,7 +1097,7 @@
 <!-- TODO: скрипты на чистом JS для обработки формы audit -->
 <script src="../../assets/custom/js/form/form-actions.js"></script>
 
-<!-- 
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -1213,7 +1213,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');

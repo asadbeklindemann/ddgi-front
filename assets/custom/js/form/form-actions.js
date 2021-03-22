@@ -25,13 +25,11 @@ const formOtsenshiki = document.querySelector('#formOtsenshiki')
 const formRealtors = document.querySelector('#formRealtors')
 
 
-
-
 // Блок "Период деятельности оганизации"
 const periodActiveOrg = document.querySelector('#period-active-org')
-    // Блок с элементами "radio" и "select" форм
+// Блок с элементами "radio" и "select" форм
 const fieldsChanged = document.querySelector('#fields-changed')
-    // Форма "Условия оплаты страховой премии"
+// Форма "Условия оплаты страховой премии"
 const paymentsForm = document.querySelector('#payment-terms-form')
 
 const actedBoxDescription = document.querySelector('[data-acted]')
@@ -41,9 +39,12 @@ const otherPaymentSchedule = document.querySelector('#other-payment-schedule')
 const buttonAddRowSchedule = document.querySelector('[data-btn-add-row]')
 const tablePaymentSchedule = document.querySelector('#table-payment-schedule')
 const buttonAddRowInfo = document.querySelector('[data-btn-add-row-info]')
+const buttonAddRowInfo2 = document.querySelector('[data-btn-add-row-info2]')
 const infoTable = document.querySelector('[data-info-table]')
+const infoTable2 = document.querySelector('#personal-table')
 
 const insuranceSum = document.querySelector('[data-insurance-sum]')
+const insuranceValue = document.querySelector('[data-insurance-stoimost]')
 const insuranceAward = document.querySelector('[data-insurance-award]')
 const annualTurnoverInfo = document.querySelector('[data-annual-turnover-info]')
 
@@ -55,6 +56,7 @@ const dataSelectAndRadioFields = {}
 const paymentFormData = {}
 const infoTableTotal = {}
 
+let insuranceTotalValue = 0
 let insuranceTotalSum = 0
 let insuranceTotalAward = 0
 
@@ -74,7 +76,7 @@ function getField(selector) {
  * @param from - начальная дата
  * @param to - конечная дата
  // Записывает разницу между датами в поле всего
-*/
+ */
 function calcDifferenceBetweenDates(from, to) {
     const dateFrom = new Date(from);
     const dateTo = new Date(to);
@@ -83,6 +85,7 @@ function calcDifferenceBetweenDates(from, to) {
 
     totalField.value = `${days} дней`
 }
+
 /**
  * @param element - принимает целевой элемент (элемент формы) и записывает даты в объект activityPeriodDates
  */
@@ -367,11 +370,40 @@ if (fieldsChanged) {
     })
 }
 
+const calcPrice = () => {
+    insuranceTotalValue = 0;
+    insuranceTotalAward = 0;
+    insuranceTotalSum = 0;
+    infoTable.querySelectorAll('[data-field]').forEach((field) => {
+        console.log(field.dataset.field)
+        if (field.dataset.field === 'sum') {
+            insuranceTotalSum += +field.value.trim()
+            insuranceSum.value = insuranceTotalSum.toFixed(2);
+        }
+
+        if (field.dataset.field === 'value') {
+            insuranceTotalValue += +field.value.trim()
+            insuranceValue.value = insuranceTotalValue.toFixed(2);
+        }
+
+        if (field.dataset.field === 'premiya') {
+            insuranceTotalAward += +field.value.trim()
+            insuranceAward.value = insuranceTotalAward.toFixed(2)
+        }
+    })
+}
+
+const removeEl = (id) => {
+    document.getElementById(id).remove();
+    calcPrice()
+}
+
 
 if (buttonAddRowInfo) {
     buttonAddRowInfo.addEventListener('click', event => {
+        const id = Math.random();
         const rowInfo = `
-      <tr>
+      <tr id="${id}">
         <td>
             <input type="text" class="form-control" name="period-polis[]">
         </td>
@@ -407,7 +439,7 @@ if (buttonAddRowInfo) {
             <input type="text" class="form-control" name="polis-modification[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-modification[]">
+            <input type="text" class="form-control" data-field="value" name="polis-modification[]">
         </td>
         <td>
             <input type="text" class="form-control" data-field="sum" name="polis-gos-num[]">
@@ -416,29 +448,43 @@ if (buttonAddRowInfo) {
             <input type="text" class="form-control" data-field="premiya" name="polis-teh-passport[]">
         </td>
         <td>
-            <input type="button" value="Удалить" data-action="delete" class="btn btn-warning">
+            <input onclick="removeEl(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
         </td>
       </tr>`
-
         infoTable.querySelector('tbody').insertAdjacentHTML('afterbegin', rowInfo)
     })
 }
 
 
+if (buttonAddRowInfo2) {
+    buttonAddRowInfo2.addEventListener('click', event => {
+        const id = Math.random();
+        const rowInfo = `
+      <tr id="${id}">
+        <td>
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="number" name="number">
+        </td>
+        <td>
+            <input type="text" class="form-control forsum4 insurance_premium-0" data-field="director" name="director">
+        </td>
+        <td>
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="qualified" name="qualified">
+        </td>
+        <td>
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="other" name="other">
+        </td>
+        <td>
+            <input onclick="removeEl(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
+        </td>
+      </tr>`
+        infoTable2.querySelector('tbody').insertAdjacentHTML('afterbegin', rowInfo)
+    })
+}
+
 
 if (infoTable) {
     infoTable.addEventListener('change', event => {
-        const target = event.target
-
-        if (target.dataset.field === 'sum') {
-            insuranceTotalSum += +target.value.trim()
-            insuranceSum.value = insuranceTotalSum.toFixed(2)
-        }
-
-        if (target.dataset.field === 'premiya') {
-            insuranceTotalAward += +target.value.trim()
-            insuranceAward.value = insuranceTotalAward.toFixed(2)
-        }
+        calcPrice();
     })
 }
 
