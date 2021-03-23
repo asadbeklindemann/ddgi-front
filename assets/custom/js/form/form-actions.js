@@ -63,7 +63,6 @@ let insuranceTotalAward = 0
 let totalTurnover = 0
 let earnings = 0
 
-console.log(annualTurnoverInfo)
 
 /**
  * @param selector - селектор элемента
@@ -1046,9 +1045,7 @@ function addProductFields(fieldNumber) {
 
 const productFieldsTable = document.getElementById('empTable');
 
-
 const addProductFieldRow = (fieldNumber) => {
-    const id = Math.random();
     const fields = `
     <tr id="${fieldNumber}">
         <td>
@@ -1125,4 +1122,8 @@ const addProductField = () => {
     addProductFieldRow(fieldNumber);
 };
 
-generalProductFieldsAddButton.onclick = addProductField;
+if(generalProductFieldsAddButton){
+    generalProductFieldsAddButton.onclick = addProductField;
+
+}
+
