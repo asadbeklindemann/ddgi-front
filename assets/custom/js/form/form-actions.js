@@ -375,7 +375,6 @@ const calcPrice = () => {
     insuranceTotalAward = 0;
     insuranceTotalSum = 0;
     infoTable.querySelectorAll('[data-field]').forEach((field) => {
-        console.log(field.dataset.field)
         if (field.dataset.field === 'sum') {
             insuranceTotalSum += +field.value.trim()
             insuranceSum.value = insuranceTotalSum.toFixed(2);
@@ -488,20 +487,26 @@ if (infoTable) {
     })
 }
 
-
-if (annualTurnoverInfo) {
-    annualTurnoverInfo.addEventListener('change', event => {
-        const target = event.target
-
-        if (target.dataset.field === 'turnover') {
-            totalTurnover += +target.value.trim()
+const calcTurnover = () => {
+    totalTurnover = 0;
+    earnings = 0;
+    annualTurnoverInfo.querySelectorAll('[data-field]').forEach((field) => {
+        if (field.dataset.field === 'turnover') {
+            totalTurnover += +field.value.trim()
             totalTurnoverField.value = totalTurnover.toFixed(2)
         }
 
-        if (target.dataset.field === 'earnings') {
-            earnings += +target.value.trim()
+        if (field.dataset.field === 'earnings') {
+            earnings += +field.value.trim()
             earningsField.value = earnings.toFixed(2)
         }
+    })
+}
+
+
+if (annualTurnoverInfo) {
+    annualTurnoverInfo.addEventListener('change', event => {
+        calcTurnover();
     })
 }
 
