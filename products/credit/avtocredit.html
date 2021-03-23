@@ -563,7 +563,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <button type="button" onclick="addRow()" class="btn btn-primary ">Добавить</button>
+                                <button type="button" id="generalProductFieldsAddButton" class="btn btn-primary ">Добавить</button>
                             </div>
                             <div class="table-responsive p-0 " style="max-height: 300px;">
                                 <div id="product-fields" class="product-fields" data-field-number="0">
@@ -619,7 +619,7 @@
                                                     <input type="text" class="form-control insurance_premium-0" readonly name="polis_premium-0">
                                                 </td>
                                                 <td>
-                                                    <input type="button" value="Заполнить" class="btn btn-success product-fields-button" id="product-fields-button" data-field-number="0">
+                                                    <input type="button" onclick="openModal(0)" value="Заполнить" class="btn btn-success product-fields-button" id="product-fields-button" data-field-number="0">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -633,13 +633,10 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div id="general-product-fields">
                             <div id="product-field-modal-0" class="modal" data-field-number="0">
                                 <div class="modal-content" id="product-field-modal-content-0">
-                                    <span class="close product-fields-close" id="product-fields-close-0" data-field-number="0">&times;</span>
+                                    <span onclick="closeModal(0)" class="close product-fields-close" id="product-fields-close-0" data-field-number="0">&times;</span>
                                     <div class="card card-success">
                                         <div class="card-header">
                                             <h3 class="card-title">Перечень дополнительного оборудования</h3>
@@ -1316,11 +1313,12 @@
 
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
-<script src="../../assets/custom/js/form/variables.js"></script>
-<script src="../../assets/custom/js/form/add-clients.js"></script>
-<script src="../../assets/custom/js/form/product-fields.js"></script>
-<script src="../../assets/custom/js/form/product-fields.add.js"></script>
-<!-- 
+<script src="../../assets/custom/js/form/form-actions.js"></script>
+<!--<script src="../../assets/custom/js/form/variables.js"></script>-->
+<!--<script src="../../assets/custom/js/form/add-clients.js"></script>-->
+<!--<script src="../../assets/custom/js/form/product-fields.js"></script>-->
+<!--<script src="../../assets/custom/js/form/product-fields.add.js"></script>-->
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -1436,7 +1434,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');
