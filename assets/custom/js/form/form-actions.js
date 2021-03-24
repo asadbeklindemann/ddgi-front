@@ -27,9 +27,9 @@ const formRealtors = document.querySelector('#formRealtors')
 
 // Блок "Период деятельности оганизации"
 const periodActiveOrg = document.querySelector('#period-active-org')
-// Блок с элементами "radio" и "select" форм
+    // Блок с элементами "radio" и "select" форм
 const fieldsChanged = document.querySelector('#fields-changed')
-// Форма "Условия оплаты страховой премии"
+    // Форма "Условия оплаты страховой премии"
 const paymentsForm = document.querySelector('#payment-terms-form')
 
 const actedBoxDescription = document.querySelector('[data-acted]')
@@ -240,7 +240,7 @@ if (formNatarius) {
 }
 
 if (formOtsenshiki) {
-    formOtsenshiki.addEventListener('submit', event => {
+    formOtsenshёiki.addEventListener('submit', event => {
         event.preventDefault()
 
         // Данные из формы audit
