@@ -1089,17 +1089,12 @@ const addProductFieldRow = (fieldNumber) => {
         </td>
     </tr>
 `
-
     productFieldsTable.querySelector('tbody').querySelector('tr').insertAdjacentHTML('afterend', fields);
 };
 
 const removeProductsFieldRow = (fieldNumber) => {
     productFieldsTable.deleteRow(fieldNumber + 1); // buttton -> td -> tr
     document.getElementById("product-field-modal-" + fieldNumber).remove();
-    // calculateSum();
-    // calculateSum2();
-    // calculateSum3();
-    // calculateSum5();
 };
 
 const openModal = (fieldNumber) => {
@@ -1122,8 +1117,58 @@ const addProductField = () => {
     addProductFieldRow(fieldNumber);
 };
 
-if(generalProductFieldsAddButton){
+if (generalProductFieldsAddButton) {
     generalProductFieldsAddButton.onclick = addProductField;
-
 }
+
+
+const covidFizAddBtn = document.querySelector('[data-btn-covid-fiz]');
+
+if (covidFizAddBtn) {
+    covidFizAddBtn.addEventListener('click', event => {
+        const id = Math.random();
+        const rowInfo = `
+      <tr id="${id}">
+           <td>
+                <input type="text" class="form-control" name="polis_mark[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_mark[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_model[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <input type="date" class="form-control" name="from_date">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <input type="text" data-field="value" class="form-control" name="polis-modification-0">
+            </td>
+            <td>
+                <input type="text" data-field="sum" class="form-control" name="polis-gos-num-0">
+            </td>
+            <td>
+                <input type="text" data-field="premiya" class="form-control" name="polis-teh-passport-0">
+            </td>
+        <td>
+            <input onclick="removeAndCalc(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
+        </td>
+      </tr>`
+        infoTable.querySelector('tbody').insertAdjacentHTML('afterbegin', rowInfo)
+    })
+}
+
+
 
