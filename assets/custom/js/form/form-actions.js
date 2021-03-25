@@ -642,10 +642,6 @@ function addProductFields(fieldNumber) {
                                     <td><input type="text" class="form-control" name="series_number"></td>
                                     <td><input type="text" class="form-control forsum5" name="insurance_sum" id="insurance_sum-${fieldNumber}"></td>
                                 </tr>
-                                <tr>
-                                    <td colspan="3"><label class="text-bold">Итого</label></td>
-                                    <td><input type="text" class="form-control overall-sum${fieldNumber}" readonly name="total"></td>
-                                </tr>
                             </tbody>
                         </table>
                     </form>
@@ -723,18 +719,17 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-sm-1">
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess1-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}')" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess1-${fieldNumber}" value="1">
                                     <label for="radioSuccess1-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess2-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}', false)" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess2-${fieldNumber}" value="0">
                                     <label for="radioSuccess2-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group other_insurance_info-${fieldNumber}\
-                    " style="display:none">
+                    <div data-radioSuccess1-${fieldNumber} class="form-group other_insurance_info-${fieldNumber}" style="display:none">
                         <label>Укажите название и адрес страховой организации и номер Полиса</label>
                         <input class="form-control" type="text" name="other_insurance_info${fieldNumber}">
                     </div>
@@ -758,15 +753,15 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess3-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}')" type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
                                     <label for="radioSuccess3-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess4-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}', false)" type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
                                     <label for="radioSuccess4-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
-                            <div class="row r-1-show-${fieldNumber}" style="display: none;">
+                            <div data-radioSuccess3-${fieldNumber} class="row r-1-show-${fieldNumber}" style="display: none;">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
@@ -807,15 +802,15 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-sm-1">
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" name="civil_liability-${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess5-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess5-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}')" type="radio" name="civil_liability-${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess5-${fieldNumber}" value="1">
                                     <label for="radioSuccess5-${fieldNumber}">Да</label>
                                 </div>
-                                <div class="checkbox icheck-success">
+                                <div onchange="toggleBlockRadio('radioSuccess6-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}', false)" class="checkbox icheck-success">
                                     <input type="radio" name="civil_liability-${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess6-${fieldNumber}" value="0">
                                     <label for="radioSuccess6-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
-                            <div class="row r-2-show-${fieldNumber}" style="display: none;">
+                            <div data-radioSuccess5-${fieldNumber} class="row r-2-show-${fieldNumber}" style="display: none;">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
@@ -847,17 +842,17 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
                                     <label for="radioSuccess7-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
                                     <label for="radioSuccess8-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="table-responsive p-0 r-3-show-${fieldNumber}" style="display: none;">
+                    <div data-radioSuccess7-${fieldNumber} class="table-responsive p-0 r-3-show-${fieldNumber}" style="display: none;">
                         <form method="POST" id="product-fields-${fieldNumber}-7">
                             <table class="table table-hover table-head-fixed">
                                 <thead>
@@ -1070,16 +1065,16 @@ const addProductFieldRow = (fieldNumber) => {
             <input type="text" class="form-control" name="polis-payload[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-places[]">
+            <input type="text"  class="form-control" name="polis-places[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-places[]">
+            <input type="text" data-field="value" class="form-control" name="polis-places[]">
         </td>
         <td>
-            <input type="text" class="form-control calc1 overall_insurance_sum-0" name="overall_polis_sum[]">
+            <input type="text" data-field="sum" class="form-control calc1 overall_insurance_sum-0" name="overall_polis_sum[]">
         </td>
         <td>
-            <input type="text" class="form-control insurance_premium-0" readonly name="polis_premium[]">
+            <input type="text" data-field="premiya"  class="form-control insurance_premium-0" readonly name="polis_premium[]">
         </td>
          <td>
             <input type="button" onclick="openModal(${fieldNumber})" value="Заполнить" class="btn btn-success product-fields-button" id="product-fields-button" data-field-number="${fieldNumber}">
@@ -1095,6 +1090,7 @@ const addProductFieldRow = (fieldNumber) => {
 const removeProductsFieldRow = (fieldNumber) => {
     productFieldsTable.deleteRow(fieldNumber + 1); // buttton -> td -> tr
     document.getElementById("product-field-modal-" + fieldNumber).remove();
+    calcPrice();
 };
 
 const openModal = (fieldNumber) => {
@@ -1171,4 +1167,188 @@ if (covidFizAddBtn) {
 }
 
 
+const toggleBlock = (id, dataAttr) => {
+    const formEl = document.getElementById(id);
+    const hiddenEl = document.querySelector(`[${dataAttr}]`);
+    console.log(formEl.checked)
+    if (formEl.checked) {
+        hiddenEl.style.display = 'block';
+    } else {
+        hiddenEl.style.display = 'none';
+    }
+}
 
+const toggleBlockRadio = (id, dataAttr, open = true) => {
+    const formEl = document.getElementById(id);
+    const hiddenEl = document.querySelector(`[${dataAttr}]`);
+    if (open) {
+        if (formEl.checked) {
+            hiddenEl.style.display = 'block'
+        }
+    } else {
+        hiddenEl.style.display = 'none'
+    }
+}
+
+const addInsurer = () => {
+    const id = Math.random();
+    const ln = document.querySelectorAll('#clone-insurance').length + 1
+    const html = ` 
+        <div id="${id}" class="card-body">
+          <div class="card card-info" id="clone-insurance">
+              <div class="card-header">
+                  <h3 class="card-title">Страхователь №${ln}</h3>
+                  <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                              data-toggle="tooltip" title="Collapse">
+                          <i class="fas fa-minus"></i>
+                      </button>
+                  </div>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="insurer-name" class="col-form-label">ФИО страхователя</label>
+                              <input type="text" id="insurer-name" name="fio-insurer" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="insurer-address" class="col-form-label">Юр адрес
+                                  страхователя</label>
+                              <input type="text" id="insurer-address" name="address-insurer"
+                                     class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-tel" class="col-form-label">Телефон</label>
+                              <input type="text" id="insurer-tel" name="tel-insurer" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-schet" class="col-form-label">Расчетный счет</label>
+                              <input type="text" id="insurer-schet" name="address-schet" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-inn" class="col-form-label">ИНН</label>
+                              <input type="text" id="insurer-inn" name="inn-insurer" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-mfo" class="col-form-label">МФО</label>
+                              <input type="text" id="insurer-mfo" name="mfo-insurer" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-bank" class="col-form-label">Банк</label>
+                              <input type="text" id="insurer-bank" name="bank-insurer" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="insurer-okonh" class="col-form-label">ОКОНХ</label>
+                              <input type="text" id="insurer-okonh" name="okonh-insurer" class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input onclick="removeEl(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
+                  </div>
+              </div>
+          </div>
+      </div>`
+    document.getElementById('insurer').insertAdjacentHTML('beforeend', html)
+}
+
+const addAnketa = () => {
+    const id = Math.random();
+    const ln = document.querySelectorAll('#clone-beneficiary').length + 1
+    const html = `<div class="card-body" id="${id}">
+                        <div class="card card-info" id="clone-beneficiary">
+                            <div class="card-header">
+                                <h3 class="card-title">Выгодоприобретатель №${ln}</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body" id="beneficiary-card-body">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="beneficiary-name" class="col-form-label">ФИО
+                                                    выгодоприобретателя</label>
+                                                <input type="text" id="beneficiary-name" name="fio-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="beneficiary-address" class="col-form-label">Юр адрес
+                                                    выгодоприобретателя</label>
+                                                <input type="text" id="beneficiary-address" name="address-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-tel" class="col-form-label">Телефон</label>
+                                                <input type="text" id="beneficiary-tel" name="tel-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-schet" class="col-form-label">Расчетный счет</label>
+                                                <input type="text" id="beneficiary-schet" name="beneficiary-schet"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-inn" class="col-form-label">ИНН</label>
+                                                <input type="text" id="beneficiary-inn" name="inn-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-mfo" class="col-form-label">МФО</label>
+                                                <input type="text" id="beneficiary-mfo" name="mfo-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-bank" class="col-form-label">Банк</label>
+                                                <input type="text" id="beneficiary-bank" name="bank-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="beneficiary-okonh" class="col-form-label">ОКОНХ</label>
+                                                <input type="text" id="beneficiary-okonh" name="okonh-beneficiary"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                       <input onclick="removeEl(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+    document.getElementById('anketa').insertAdjacentHTML('beforeend', html)
+}

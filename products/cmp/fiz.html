@@ -661,7 +661,8 @@
                                             <div class="col-12">
                                                 <div class="col-md-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="losses"
+                                                        <input onchange="toggleBlock('losses', 'data-losses-descr')"
+                                                               class="form-check-input" type="checkbox" name="losses"
                                                                id="losses">
                                                         <label class="form-check-label" for="losses">
                                                             Убытки
@@ -670,14 +671,15 @@
                                                     <!-- TODO: Блок должен находится в скрытом состоянии
                                                         отображаться только тогда, когда выбран checkbox "Убытки"
                                                     -->
-                                                    <div class="form-group" data-losses-descr>
+                                                    <div class="form-group" data-losses-descr style="display: none">
                                                         <label for="descrLosses" class="col-form-label">Описание</label>
                                                         <textarea class="form-control" id="descrLosses"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="fences"
+                                                        <input onchange="toggleBlock('fences', 'data-fence-descr')"
+                                                               class="form-check-input" type="checkbox" name="fences"
                                                                id="fences">
                                                         <label class="form-check-label" for="fences">
                                                             Ограждения
@@ -686,7 +688,7 @@
                                                     <!-- TODO: Блок должен находится в скрытом состоянии
                                                         отображаться только тогда, когда выбран checkbox "Ограждение"
                                                     -->
-                                                    <div class="form-group" data-fence-descr>
+                                                    <div class="form-group" data-fence-descr style="display: none">
                                                         <label for="descrFences" class="col-form-label">Описание</label>
                                                         <textarea class="form-control" id="descrFences"></textarea>
                                                     </div>
@@ -694,7 +696,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="security"
+                                                    <input onchange="toggleBlock('security', 'data-security')"
+                                                           class="form-check-input" type="checkbox" name="security"
                                                            id="security">
                                                     <label class="form-check-label" for="security">
                                                         Охрана
@@ -703,7 +706,7 @@
                                                 <!-- TODO: Блок должен находится в скрытом состоянии
                                                     отображаться только тогда, когда выбран checkbox "Охрана"
                                                 -->
-                                                <div data-security>
+                                                <div data-security style="display: none">
                                                     <div class="form-group">
                                                         <label for="securityFio" class="col-form-label">ФИО
                                                             охранника</label>
@@ -739,8 +742,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="card-body">
                         <div id="anketa-fields">
                             <div class="row">
@@ -824,7 +825,8 @@
                                             <div class="pt-3 pb-3">
                                                 <div class="form-group">
                                                     <!-- TODO: Вынести код обработчика в отдельный файл -->
-                                                    <button type="button" id="transh-payment-schedule-button" class="btn btn-primary ">
+                                                    <button type="button" id="transh-payment-schedule-button"
+                                                            class="btn btn-primary ">
                                                         Добавить
                                                     </button>
                                                 </div>
@@ -981,10 +983,6 @@
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
 <script src="../../assets/custom/js/form/form-actions.js"></script>
-<!--<script src="../../assets/custom/js/form/variables.js"></script>-->
-<!--<script src="../../assets/custom/js/form/add-clients.js"></script>-->
-<!--<script src="../../assets/custom/js/form/product-fields.js"></script>-->
-<!--<script src="../../assets/custom/js/form/product-fields.add.js"></script>-->
 <!--
 <script>
     insurerId.select2();
