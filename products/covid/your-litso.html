@@ -46,7 +46,6 @@
 
     <div class="wrapper">
 
-        <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
@@ -506,60 +505,72 @@
                                 <button type="button" onclick="addRow()" class="btn btn-primary ">Добавить</button>
                             </div>
                             <div class="table-responsive p-0 " style="max-height: 300px;">
-                                <div id="product-fields" class="product-fields" data-field-number="0">
+                                <div id="product-fields" data-info-table class="product-fields" data-field-number="0">
                                     <table class="table table-hover table-head-fixed" id="empTable">
                                         <thead>
-                                            <tr>
-                                                <th class="text-nowrap ">№</th>
-                                                <th class="text-nowrap ">Фамилия</th>
-                                                <th class="text-nowrap ">Имя</th>
-                                                <th class="text-nowrap ">Отчество</th>
-                                                <th class="text-nowrap ">Серия и номер паспорта</th>
-                                                <th class="text-nowrap ">Дата выдачи паспорта</th>
-                                                <th class="text-nowrap ">Место выдачи паспорта</th>
-                                                <th class="text-nowrap ">Номер полиса</th>
-                                                <th class="text-nowrap ">Страховая сумма</th>
-                                                <th class="text-nowrap ">Страховая премия</th>
-                                            </tr>
+                                        <tr>
+                                            <th class="text-nowrap">№</th>
+                                            <th class="text-nowrap">Фамилия</th>
+                                            <th class="text-nowrap">Имя</th>
+                                            <th class="text-nowrap">Отчество</th>
+                                            <th class="text-nowrap">Серия и номер паспорта</th>
+                                            <th class="text-nowrap">Дата выдачи паспорта</th>
+                                            <th class="text-nowrap">Место выдачи паспорта</th>
+                                            <th class="text-nowrap">Номер полиса</th>
+                                            <th class="text-nowrap">Страховая стоимость</th>
+                                            <th class="text-nowrap">Страховая сумма</th>
+                                            <th class="text-nowrap">Страховая премия</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-mark-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-mark-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-model-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-modification-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-modification-0">
-                                                </td>
-                                                <td>
-                                                    <input type="date" class="form-control" name="from_date">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-modification-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="polis-modification-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" name="polis_premium-0">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control forsum4 insurance_premium-0" name="polis_premium-0">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="8" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                <td><input readonly type="text" class="form-control overall-sum3" /></td>
-                                                <td><input readonly type="text" class="form-control overall-sum4" /></td>
-                                            </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_mark[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_mark[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_model[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_modification[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_modification[]">
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control" name="from_date">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_modification[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" name="polis_modification[]">
+                                            </td>
+                                            <td>
+                                                <input type="text" data-field="value" class="form-control" name="polis-modification-0">
+                                            </td>
+                                            <td>
+                                                <input type="text" data-field="sum" class="form-control" name="polis-gos-num-0">
+                                            </td>
+                                            <td>
+                                                <input type="text" data-field="premiya" class="form-control" name="polis-teh-passport-0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" style="text-align: right"><label class="text-bold">Итого</label>
+                                            </td>
+                                            <td><input readonly type="text" data-insurance-stoimost
+                                                       class="form-control overall-sum2"/>
+                                            </td>
+                                            <td><input readonly type="text" data-insurance-sum
+                                                       class="form-control overall-sum4"/>
+                                            </td>
+                                            <td><input readonly type="text" data-insurance-award
+                                                       class="form-control overall-sum3"/>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -609,9 +620,9 @@
                                         <div class="col-sm-4">
                                             <div class="form-group form-inline justify-content-between">
                                                 <label>Порядок оплаты страховой премии</label>
-                                                <select class="form-control payment-schedule" name="payment_term" onchange="showDiv('other-payment-schedule', this)" style="width: 100%; text-align: center">
+                                                <select class="form-control payment-schedule" name="payment_term"  id="condition" style="width: 100%; text-align: center">
                                                     <option value="1">Единовременно</option>
-                                                    <option value="other">Другое</option>
+                                                    <option value="transh">Транш</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -629,26 +640,27 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="other-payment-schedule" style="display: none;">
+                                    <div id="transh-payment-schedule" class="d-none">
                                         <div class="form-group">
-                                            <button type="button" onclick="addRow3()" class="btn btn-primary ">
+                                            <button type="button" id="transh-payment-schedule-button" class="btn btn-primary ">
                                                 Добавить
                                             </button>
                                         </div>
                                         <div class="table-responsive p-0 " style="max-height: 300px;">
                                             <table class="table table-hover table-head-fixed" id="empTable3">
                                                 <thead>
-                                                    <tr>
-                                                        <th class="text-nowrap">Сумма</th>
-                                                        <th class="text-nowrap">От</th>
-                                                        <th></th>
-                                                    </tr>
+                                                <tr>
+                                                    <th class="text-nowrap">Сумма</th>
+                                                    <th class="text-nowrap">От</th>
+                                                    <th></th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr id="payment-term-tr-0" data-field-number="0">
-                                                        <td><input type="text" class="form-control" name="payment_sum-0-0"></td>
-                                                        <td><input type="date" class="form-control" name="payment_from-0-0"></td>
-                                                    </tr>
+                                                <tr id="payment-term-tr-0" data-field-number="0">
+                                                    <td><input type="text" class="form-control" name="payment_sum-0-0"></td>
+                                                    <td><input type="date" class="form-control" name="payment_from-0-0">
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -742,12 +754,6 @@
         </form>
 
 
-
-
-
-
-
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -764,7 +770,7 @@
             #beneficiary-modal-button {
                 width: 100px;
             }
-            
+
             .btn.btn-success.product-fields-button {
                 display: none;
             }
@@ -810,11 +816,8 @@
 
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
-<script src="../../assets/custom/js/form/variables.js"></script>
-<script src="../../assets/custom/js/form/add-clients.js"></script>
-<script src="../../assets/custom/js/form/product-fields.js"></script>
-<script src="../../assets/custom/js/form/product-fields.add.js"></script>
-<!-- 
+<script src="../../assets/custom/js/form/form-actions.js"></script>
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -930,7 +933,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');

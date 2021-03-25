@@ -556,12 +556,13 @@
                                                     <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium-0">
                                                 </td>
                                                 <td>
-                                                    <input type="button" value="Заполнить" class="btn btn-success product-fields-button" id="product-fields-button" data-field-number="0">
+                                                    <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium-0">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" style="text-align: right"><label class="text-bold">Итого</label></td>
                                                 <td><input readonly type="text" class="form-control overall-sum4" /></td>
+                                                <td><input readonly type="text" class="form-control overall-sum3" /></td>
                                                 <td><input readonly type="text" class="form-control overall-sum3" /></td>
                                             </tr>
                                         </tbody>
@@ -1453,7 +1454,7 @@
 
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
-<!-- 
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -1569,7 +1570,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');
