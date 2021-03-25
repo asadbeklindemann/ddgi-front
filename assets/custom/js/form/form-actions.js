@@ -1034,8 +1034,63 @@ function addProductFields(fieldNumber) {
         </div>
     </div>
 </div>`;
-
     generalProductFields.insertAdjacentHTML('beforeend', fields);
+    const $ = (className) => document.querySelector(className)
+    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function() {
+        let overallSum =
+            parseFloat($('#insurance_sum-' + fieldNumber).value || 0) +
+            parseFloat($('.terror-tc-' + fieldNumber).value || 0) +
+            parseFloat($('.terror-zl-' + fieldNumber).value || 0) +
+            parseFloat($('.evocuation-' + fieldNumber).value || 0) +
+            parseFloat($('.r-1-sum-' + fieldNumber).value || 0) +
+            parseFloat($('.r-2-sum-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-sum-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-sum-1-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-sum-2-' + fieldNumber).value || 0);
+        let modalTableSum2 =
+            parseFloat($('.r-3-sum-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-sum-1-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-sum-2-' + fieldNumber).value || 0);
+        let modalTableSum3 =
+            parseFloat($('.r-3-premia-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-premia-1-' + fieldNumber).value || 0) +
+            parseFloat($('.r-3-premia-2-' + fieldNumber).value || 0);
+        $('#overall-sum-' + fieldNumber).value = overallSum;
+        $('.r-summ-' + fieldNumber).value = modalTableSum2;
+        $('.r-summ-premia-' + fieldNumber).value = modalTableSum3;
+
+        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function() {
+            if ($('.r-summ-' + fieldNumber).value >= $('#totalLimit-' + fieldNumber).value) {
+                $('#form-save-button').setAttribute('disabled', true)
+                // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
+            } else {
+                $('#form-save-button').removeAttribute('disabled');
+            }
+        });
+
+        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function() {
+            let numOne = this.value * $(`.r-3-pass-${fieldNumber}`).value;
+            $(`.r-3-sum-${fieldNumber}`).value = numOne;
+        });
+        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function() {
+            let numOne = this.value * $(`.r-3-one-1-${fieldNumber}`).value;
+            $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
+        });
+        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function() {
+            let numOne = this.value * $(`.r-3-pass-1-${fieldNumber}`).value;
+            $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
+        });
+        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function() {
+            let numOne = this.value * $(`.r-3-one-2-${fieldNumber}`).value;
+            $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
+        });
+        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function() {
+            let numOne = this.value * $(`.r-3-pass-2-${fieldNumber}`).value;
+            $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
+        });
+
+        // calculateSum4(fieldNumber);
+    })
 };
 
 const productFieldsTable = document.getElementById('empTable');
@@ -1352,3 +1407,5 @@ const addAnketa = () => {
                     </div>`
     document.getElementById('anketa').insertAdjacentHTML('beforeend', html)
 }
+
+
