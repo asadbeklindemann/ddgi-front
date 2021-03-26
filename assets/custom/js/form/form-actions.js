@@ -1109,7 +1109,7 @@ const productFieldsTable = document.getElementById('empTable');
 
 const addProductFieldRow = (fieldNumber) => {
     const fields = `
-    <tr id="${fieldNumber}">
+    <tr id="a${fieldNumber}">
         <td>
             <input type="text" class="form-control" name="polis-mark[]">
         </td>
@@ -1155,7 +1155,7 @@ const addProductFieldRow = (fieldNumber) => {
 };
 
 const removeProductsFieldRow = (fieldNumber) => {
-    productFieldsTable.deleteRow(fieldNumber + 1); // buttton -> td -> tr
+    document.getElementById('a' + fieldNumber).remove(); // buttton -> td -> tr
     document.getElementById("product-field-modal-" + fieldNumber).remove();
     calcPrice();
 };
