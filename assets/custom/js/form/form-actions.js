@@ -27,9 +27,9 @@ const formRealtors = document.querySelector('#formRealtors')
 
 // Блок "Период деятельности оганизации"
 const periodActiveOrg = document.querySelector('#period-active-org')
-// Блок с элементами "radio" и "select" форм
+    // Блок с элементами "radio" и "select" форм
 const fieldsChanged = document.querySelector('#fields-changed')
-// Форма "Условия оплаты страховой премии"
+    // Форма "Условия оплаты страховой премии"
 const paymentsForm = document.querySelector('#payment-terms-form')
 
 const actedBoxDescription = document.querySelector('[data-acted]')
@@ -113,9 +113,9 @@ function addRowPaymentSchedule() {
 
     const newTableRow = `
     <tr id="payment-term-tr-${fieldNumber}" data-field-number="${fieldNumber}">
-      <td><input type="text" class="form-control" data-field="sum" name="payment-sum[]">
+      <td><input type="text" class="form-control" data-field="sum" name="payment_sum[]">
       </td>
-      <td><input type="date" class="form-control" data-field="from" name="payment-from[]">
+      <td><input type="date" class="form-control" data-field="from" name="payment_from[]">
       </td>
       <td>
         <input type="button" value="Удалить" data-action="delete" class="btn btn-warning">
@@ -1048,7 +1048,7 @@ function addProductFields(fieldNumber) {
 </div>`;
     generalProductFields.insertAdjacentHTML('beforeend', fields);
     const $ = (className) => document.querySelector(className)
-    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function () {
+    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function() {
         let overallSum =
             parseFloat($('#insurance_sum-' + fieldNumber).value || 0) +
             parseFloat($('.terror-tc-' + fieldNumber).value || 0) +
@@ -1071,37 +1071,37 @@ function addProductFields(fieldNumber) {
         $('.r-summ-' + fieldNumber).value = modalTableSum2;
         $('.r-summ-premia-' + fieldNumber).value = modalTableSum3;
 
-        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function () {
+        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function() {
             if ($('.r-summ-' + fieldNumber).value >= $('#totalLimit-' + fieldNumber).value) {
                 $('#form-save-button').setAttribute('disabled', true)
-                // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
+                    // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
             } else {
                 $('#form-save-button').removeAttribute('disabled');
             }
         });
 
-        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-${fieldNumber}`).value;
             $(`.r-3-sum-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-one-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-one-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
 
-       calcPrice()
+        calcPrice()
     })
 };
 
@@ -1123,19 +1123,19 @@ const addProductFieldRow = (fieldNumber) => {
             <input type="text" class="form-control" name="polis-teh-passport[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-num-engine[]">
+            <input type="text" class="form-control" name="polis_num_engine[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-num-body[]">
+            <input type="text" class="form-control" name="polis_num_body[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-payload[]">
+            <input type="text" class="form-control" name="polis_payload[]">
         </td>
         <td>
-            <input type="text"  class="form-control" name="polis-places[]">
+            <input type="text"  class="form-control" name="polis_places[]">
         </td>
         <td>
-            <input type="text" data-field="value" class="form-control" name="polis-places[]">
+            <input type="text" data-field="value" class="form-control" name="polis_places[]">
         </td>
         <td>
             <input type="text" data-field="sum" class="form-control calc1 overall_insurance_sum-0" name="overall_polis_sum[]">
@@ -1217,13 +1217,13 @@ if (covidFizAddBtn) {
                 <input type="text" class="form-control" name="polis_modification[]">
             </td>
             <td>
-                <input type="text" data-field="value" class="form-control" name="polis-modification-0">
+                <input type="text" data-field="value" class="form-control" name="polis_modification[]">
             </td>
             <td>
-                <input type="text" data-field="sum" class="form-control" name="polis-gos-num-0">
+                <input type="text" data-field="sum" class="form-control" name="polis_gos_num[]">
             </td>
             <td>
-                <input type="text" data-field="premiya" class="form-control" name="polis-teh-passport-0">
+                <input type="text" data-field="premiya" class="form-control" name="polis_teh_passport[]">
             </td>
         <td>
             <input onclick="removeAndCalc(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
@@ -1277,51 +1277,51 @@ const addInsurer = () => {
                       <div class="col-md-6">
                           <div class="form-group">
                               <label for="insurer-name" class="col-form-label">ФИО страхователя</label>
-                              <input type="text" id="insurer-name" name="fio-insurer" class="form-control">
+                              <input type="text" id="insurer-name" name="fio_insurer" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
                               <label for="insurer-address" class="col-form-label">Юр адрес
                                   страхователя</label>
-                              <input type="text" id="insurer-address" name="address-insurer"
+                              <input type="text" id="insurer-address" name="address_insurer"
                                      class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-tel" class="col-form-label">Телефон</label>
-                              <input type="text" id="insurer-tel" name="tel-insurer" class="form-control">
+                              <input type="text" id="insurer-tel" name="tel_insurer" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-schet" class="col-form-label">Расчетный счет</label>
-                              <input type="text" id="insurer-schet" name="address-schet" class="form-control">
+                              <input type="text" id="insurer-schet" name="address_schet" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-inn" class="col-form-label">ИНН</label>
-                              <input type="text" id="insurer-inn" name="inn-insurer" class="form-control">
+                              <input type="text" id="insurer-inn" name="inn_insurer" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-mfo" class="col-form-label">МФО</label>
-                              <input type="text" id="insurer-mfo" name="mfo-insurer" class="form-control">
+                              <input type="text" id="insurer-mfo" name="mfo_insurer" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-bank" class="col-form-label">Банк</label>
-                              <input type="text" id="insurer-bank" name="bank-insurer" class="form-control">
+                              <input type="text" id="insurer-bank" name="bank_insurer" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-okonh" class="col-form-label">ОКОНХ</label>
-                              <input type="text" id="insurer-okonh" name="okonh-insurer" class="form-control">
+                              <input type="text" id="insurer-okonh" name="okonh_insurer" class="form-control">
                           </div>
                       </div>
                   </div>
@@ -1355,7 +1355,7 @@ const addAnketa = () => {
                                             <div class="form-group">
                                                 <label for="beneficiary-name" class="col-form-label">ФИО
                                                     выгодоприобретателя</label>
-                                                <input type="text" id="beneficiary-name" name="fio-beneficiary"
+                                                <input type="text" id="beneficiary-name" name="fio_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
@@ -1363,49 +1363,49 @@ const addAnketa = () => {
                                             <div class="form-group">
                                                 <label for="beneficiary-address" class="col-form-label">Юр адрес
                                                     выгодоприобретателя</label>
-                                                <input type="text" id="beneficiary-address" name="address-beneficiary"
+                                                <input type="text" id="beneficiary-address" name="address_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-tel" class="col-form-label">Телефон</label>
-                                                <input type="text" id="beneficiary-tel" name="tel-beneficiary"
+                                                <input type="text" id="beneficiary-tel" name="tel_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-schet" class="col-form-label">Расчетный счет</label>
-                                                <input type="text" id="beneficiary-schet" name="beneficiary-schet"
+                                                <input type="text" id="beneficiary-schet" name="beneficiary_schet"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-inn" class="col-form-label">ИНН</label>
-                                                <input type="text" id="beneficiary-inn" name="inn-beneficiary"
+                                                <input type="text" id="beneficiary-inn" name="inn_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-mfo" class="col-form-label">МФО</label>
-                                                <input type="text" id="beneficiary-mfo" name="mfo-beneficiary"
+                                                <input type="text" id="beneficiary-mfo" name="mfo_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-bank" class="col-form-label">Банк</label>
-                                                <input type="text" id="beneficiary-bank" name="bank-beneficiary"
+                                                <input type="text" id="beneficiary-bank" name="bank_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-okonh" class="col-form-label">ОКОНХ</label>
-                                                <input type="text" id="beneficiary-okonh" name="okonh-beneficiary"
+                                                <input type="text" id="beneficiary-okonh" name="okonh_beneficiary"
                                                        class="form-control">
                                             </div>
                                         </div>
