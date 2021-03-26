@@ -1419,3 +1419,46 @@ const addAnketa = () => {
                     </div>`
     document.getElementById('anketa').insertAdjacentHTML('beforeend', html)
 }
+
+const propertyAddButton = document.getElementById('addProperty');
+
+const propertyAdd = () => {
+    const id = Math.random();
+    const builders = document.getElementById('empTable').querySelector('tbody');
+    builders.insertAdjacentHTML('beforeend', `
+         <tr id="${id}">
+            <td>
+                <input type="text" class="form-control" name="polis_mark[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_model[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <select class="form-control polises" id="polises" name="polis_series[]" style="width: 100%;">
+                    <option selected="selected">Кв.м</option>
+                    <option>Кв.см</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" class="form-control forsum4 overall_insurance_sum-0" name="overall_polis_sum[]">
+            </td>
+            <td>
+                <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium[]">
+            </td>
+            <td>
+                <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium[]">
+            </td>
+            <td class="form-group">
+              <input onclick="removeEl(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
+          </td>
+        </tr>
+    `)
+}
+
+if(propertyAddButton) {
+    propertyAddButton.onclick = propertyAdd
+}
+
