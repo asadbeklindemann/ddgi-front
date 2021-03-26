@@ -430,10 +430,10 @@ if (buttonAddRowInfo) {
             <input type="date" class="form-control" name="validity-period-from[]">
         </td>
         <td>
-            <input type="date" class="form-control" name="validity-period-to[]">
+            <input type="date" class="form-control" name="validity_period_to[]">
         </td>
         <td>
-            <select class="form-control polises" id="polises" name="polis-agent-0" style="width: 100%;">
+            <select class="form-control polises" id="polises" name="polis_agent[]" style="width: 100%;">
                 <option selected="selected"></option>
                 <option value="1">Да</option>
                 <option value="2">Нет</option>
@@ -449,19 +449,19 @@ if (buttonAddRowInfo) {
             <input type="text" class="form-control" name="workExp[]" value="work experience">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-model[]">
+            <input type="text" class="form-control" name="polis_model[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-modification[]">
+            <input type="text" class="form-control" name="polis_modification[]">
         </td>
         <td>
-            <input type="text" class="form-control" data-field="value" name="polis-modification[]">
+            <input type="text" class="form-control" data-field="value" name="polis_modification[]">
         </td>
         <td>
-            <input type="text" class="form-control" data-field="sum" name="polis-gos-num[]">
+            <input type="text" class="form-control" data-field="sum" name="polis_gos_num[]">
         </td>
         <td>
-            <input type="text" class="form-control" data-field="premiya" name="polis-teh-passport[]">
+            <input type="text" class="form-control" data-field="premiya" name="polis_teh_passport[]">
         </td>
         <td>
             <input onclick="removeAndCalc(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
@@ -564,7 +564,7 @@ const addBuilder = () => {
     const builders = document.getElementById('builders');
     builders.insertAdjacentHTML('beforeend', `
         <div id="${id}" class="d-flex form-group mb-20">
-            <input type="text" name="сonstruct-participants" class="form-control mr-5">
+            <input type="text" name="сonstruct_participants" class="form-control mr-5">
             <input onclick="removeEl(${id})" type="button" value="Удалить" class="btn btn-warning">
         </div>
     `)
@@ -726,11 +726,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-sm-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}')" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess1-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}')" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka_${fieldNumber}" id="radioSuccess1-${fieldNumber}" value="1">
                                     <label for="radioSuccess1-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}', false)" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka-${fieldNumber}" id="radioSuccess2-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}', false)" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka_${fieldNumber}" id="radioSuccess2-${fieldNumber}" value="0">
                                     <label for="radioSuccess2-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -760,11 +760,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess3-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}')" type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess3-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}')" type="radio" name="vehicle_damage_${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
                                     <label for="radioSuccess3-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess4-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}', false)" type="radio" name="vehicle_damage-${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess4-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}', false)" type="radio" name="vehicle_damage_${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
                                     <label for="radioSuccess4-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -776,7 +776,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Сумма</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-sum-${fieldNumber}" name="one-sum-${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-sum-${fieldNumber}" name="one_sum_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -786,7 +786,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Страховая премия</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-premia-${fieldNumber}" name="one-premia-${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-premia-${fieldNumber}" name="one_premia_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -796,7 +796,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Франшиза</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-frnshiza-${fieldNumber}" name="one-franshiza-${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-frnshiza-${fieldNumber}" name="one-franshiza_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -811,7 +811,7 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess5-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}')" type="radio" name="civil_liability-${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess5-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess5-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}')" type="radio" name="civil_liability_${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess5-${fieldNumber}" value="1">
                                     <label for="radioSuccess5-${fieldNumber}">Да</label>
                                 </div>
                                 <div onchange="toggleBlockRadio('radioSuccess6-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}', false)" class="checkbox icheck-success">
@@ -828,7 +828,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Сумма</span>
                                                 </div>
-                                                <input type="text" class="form-control r-2-sum-${fieldNumber}" name="tho_sum-${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-2-sum-${fieldNumber}" name="tho_sum_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -838,7 +838,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Страховая премия</span>
                                                 </div>
-                                                <input type="text" class="form-control r-2-premia-${fieldNumber}" name="two-preim-${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-2-premia-${fieldNumber}" name="two_preim_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -854,11 +854,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents_${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
                                     <label for="radioSuccess7-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents-${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents_${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
                                     <label for="radioSuccess8-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -879,27 +879,27 @@ function addProductFields(fieldNumber) {
                                 <tbody>
                                     <tr>
                                         <td><label>Водитель(и)</label></td>
-                                        <td><input type="number" class="form-control r-3-pass-${fieldNumber}" value="1" readonly name="driver_quantity-${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-pass-${fieldNumber}" value="1" readonly name="driver_quantity_${fieldNumber}"></td>
                                         <td>
                                             <div class="input-group mb-4">
-                                                <input type="text" class="form-control r-3-one-${fieldNumber}" name="driver_one_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-3-one-${fieldNumber}" name="driver_one_sum_${fieldNumber}">
                                                 <div class="input-group-append">
-                                                    <select class="form-control success" name="driver_currency-" style="width: 100%;">
+                                                    <select class="form-control success" name="driver_currency_${fieldNumber}" style="width: 100%;">
                                                         <option selected="selected">UZS</option>
                                                         <option>USD</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><input type="number" class="form-control r-3-sum-${fieldNumber}" name="driver_total_sum-${fieldNumber}" id="driver_total_sum-${fieldNumber}"></td>
-                                        <td><input type="number" class="form-control r-3-premia-${fieldNumber}" name="driver_preim_sum-${fieldNumber}" id="driver_total_sum-${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-sum-${fieldNumber}" name="driver_total_sum-${fieldNumber}" id="driver_total_sum_${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-premia-${fieldNumber}" name="driver_preim_sum-${fieldNumber}" id="driver_total_sum_${fieldNumber}"></td>
                                     </tr>
                                     <tr>
                                         <td><label>Пассажиры</label></td>
-                                        <td><input type="number" class="form-control r-3-pass-1-${fieldNumber}" name="passenger_quantity-${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-pass-1-${fieldNumber}" name="passenger_quantity_${fieldNumber}"></td>
                                         <td>
                                             <div class="input-group mb-4">
-                                                <input type="text" class="form-control r-3-one-1-${fieldNumber}" name="passenger_one_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-3-one-1-${fieldNumber}" name="passenger_one_sum_${fieldNumber}">
                                                 <div class="input-group-append">
                                                     <select class="form-control success" name="passenger_currency" style="width: 100%;">
                                                         <option selected="selected">UZS</option>
@@ -969,7 +969,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="polises">Полис</label>
-                                    <select class="form-control polises" id="polises" name="policy-${fieldNumber}" style="width: 100%;">
+                                    <select class="form-control polises" id="polises" name="policy_${fieldNumber}" style="width: 100%;">
                                         <option selected="selected"></option>
                                     </select>
                                     <div class="input-group mb-3">
@@ -984,7 +984,7 @@ function addProductFields(fieldNumber) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">от</span>
                                         </div>
-                                        <input type="date" class="form-control" name="from_date-${fieldNumber}">
+                                        <input type="date" class="form-control" name="from_date_${fieldNumber}">
                                     </div>
                                 </div>
                             </div>
@@ -1002,7 +1002,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Оплата страховой премии</label>
-                                    <select class="form-control select2" name="payment-${fieldNumber}" style="width: 100%;">
+                                    <select class="form-control select2" name="payment_${fieldNumber}" style="width: 100%;">
                                         <option selected="selected">Сум</option>
                                         <option>Доллар</option>
                                         <option>Евро</option>
@@ -1012,7 +1012,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Порядок оплаты</label>
-                                        <select class="form-control select2" name="payment-order-${fieldNumber}" style="width: 100%;">
+                                        <select class="form-control select2" name="payment_order_${fieldNumber}" style="width: 100%;">
                                         <option selected="selected">Сум</option>
                                         <option>Доллар</option>
                                         <option>Евро</option>
@@ -1038,7 +1038,7 @@ function addProductFields(fieldNumber) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Общая страховая сумма</span>
                             </div>
-                            <input type="text" data-overall class="form-control" readonly id="overall-sum-${fieldNumber}">
+                            <input type="text" data-overall class="form-control" readonly id="overall_sum_${fieldNumber}">
                         </div>
                     </div>
                 </div>
@@ -1067,7 +1067,7 @@ function addProductFields(fieldNumber) {
             parseFloat($('.r-3-premia-' + fieldNumber).value || 0) +
             parseFloat($('.r-3-premia-1-' + fieldNumber).value || 0) +
             parseFloat($('.r-3-premia-2-' + fieldNumber).value || 0);
-        $('#overall-sum-' + fieldNumber).value = overallSum;
+        $('#overall_sum_' + fieldNumber).value = overallSum;
         $('.r-summ-' + fieldNumber).value = modalTableSum2;
         $('.r-summ-premia-' + fieldNumber).value = modalTableSum3;
 
