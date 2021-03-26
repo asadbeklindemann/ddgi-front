@@ -27,9 +27,9 @@ const formRealtors = document.querySelector('#formRealtors')
 
 // Блок "Период деятельности оганизации"
 const periodActiveOrg = document.querySelector('#period-active-org')
-    // Блок с элементами "radio" и "select" форм
+// Блок с элементами "radio" и "select" форм
 const fieldsChanged = document.querySelector('#fields-changed')
-    // Форма "Условия оплаты страховой премии"
+// Форма "Условия оплаты страховой премии"
 const paymentsForm = document.querySelector('#payment-terms-form')
 
 const actedBoxDescription = document.querySelector('[data-acted]')
@@ -380,6 +380,13 @@ const calcPrice = () => {
     insuranceTotalValue = 0;
     insuranceTotalAward = 0;
     insuranceTotalSum = 0;
+
+    const modals = document.querySelectorAll('[data-overall]');
+    console.log(modals)
+    modals.forEach(modal => {
+        insuranceTotalValue += +modal.value;
+    })
+
     infoTable.querySelectorAll('[data-field]').forEach((field) => {
         if (field.dataset.field === 'sum') {
             insuranceTotalSum += +field.value.trim()
@@ -1031,7 +1038,7 @@ function addProductFields(fieldNumber) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Общая страховая сумма</span>
                             </div>
-                            <input type="text" class="form-control" readonly id="overall-sum-${fieldNumber}">
+                            <input type="text" data-overall class="form-control" readonly id="overall-sum-${fieldNumber}">
                         </div>
                     </div>
                 </div>
@@ -1041,7 +1048,7 @@ function addProductFields(fieldNumber) {
 </div>`;
     generalProductFields.insertAdjacentHTML('beforeend', fields);
     const $ = (className) => document.querySelector(className)
-    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function() {
+    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function () {
         let overallSum =
             parseFloat($('#insurance_sum-' + fieldNumber).value || 0) +
             parseFloat($('.terror-tc-' + fieldNumber).value || 0) +
@@ -1064,37 +1071,37 @@ function addProductFields(fieldNumber) {
         $('.r-summ-' + fieldNumber).value = modalTableSum2;
         $('.r-summ-premia-' + fieldNumber).value = modalTableSum3;
 
-        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function() {
+        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function () {
             if ($('.r-summ-' + fieldNumber).value >= $('#totalLimit-' + fieldNumber).value) {
                 $('#form-save-button').setAttribute('disabled', true)
-                    // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
+                // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
             } else {
                 $('#form-save-button').removeAttribute('disabled');
             }
         });
 
-        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function() {
+        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function () {
             let numOne = this.value * $(`.r-3-pass-${fieldNumber}`).value;
             $(`.r-3-sum-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function() {
+        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function () {
             let numOne = this.value * $(`.r-3-one-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function() {
+        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function () {
             let numOne = this.value * $(`.r-3-pass-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function() {
+        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function () {
             let numOne = this.value * $(`.r-3-one-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function() {
+        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function () {
             let numOne = this.value * $(`.r-3-pass-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
 
-        // calculateSum4(fieldNumber);
+       calcPrice()
     })
 };
 
