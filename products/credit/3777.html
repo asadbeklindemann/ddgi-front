@@ -557,8 +557,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label for="polises">Условия оплаты страховой премии</label>
-                                            <select class="form-control polises" id="polises" name="polis_series[]" style="width: 100%;">
+                                            <select class="form-control polises" id="condition" name="polis_series[]" style="width: 100%;">
                                                 <option selected="selected">Единовременная</option>
+                                                <option value="transh">Транш</option>
                                             </select>
                                         </div>
                                     </div>
@@ -672,8 +673,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="col-md-12 d-none" id="transh-payment-schedule">
                                     <div class="pt-3 pb-3">
                                         <div class="form-group">
@@ -705,7 +704,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -854,7 +852,6 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../assets/dist/js/demo.js"></script>
-
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
 <script src="../../assets/custom/js/form/form-actions.js"></script>

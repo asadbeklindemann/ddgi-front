@@ -478,16 +478,16 @@ if (buttonAddRowInfo2) {
         const rowInfo = `
       <tr id="${id}">
         <td>
-            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="number" name="number">
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="number" name="number[]">
         </td>
         <td>
-            <input type="text" class="form-control forsum4 insurance_premium-0" data-field="director" name="director">
+            <input type="text" class="form-control forsum4 insurance_premium-0" data-field="director" name="director[]">
         </td>
         <td>
-            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="qualified" name="qualified">
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="qualified" name="qualified[]">
         </td>
         <td>
-            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="other" name="other">
+            <input type="text" class="form-control forsum3 insurance_premium-0" data-field="other" name="other[]">
         </td>
         <td>
             <input onclick="removeEl(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
@@ -564,7 +564,7 @@ const addBuilder = () => {
     const builders = document.getElementById('builders');
     builders.insertAdjacentHTML('beforeend', `
         <div id="${id}" class="d-flex form-group mb-20">
-            <input type="text" name="сonstruct_participants" class="form-control mr-5">
+            <input type="text" name="сonstruct_participants[]" class="form-control mr-5">
             <input onclick="removeEl(${id})" type="button" value="Удалить" class="btn btn-warning">
         </div>
     `)
@@ -644,10 +644,10 @@ function addProductFields(fieldNumber) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input type="text" class="form-control" name="mark_model"></td>
-                                    <td><input type="text" class="form-control" name="name"></td>
-                                    <td><input type="text" class="form-control" name="series_number"></td>
-                                    <td><input type="text" class="form-control forsum5" name="insurance_sum" id="insurance_sum-${fieldNumber}"></td>
+                                    <td><input type="text" class="form-control" name="mark_model[]"></td>
+                                    <td><input type="text" class="form-control" name="name[]"></td>
+                                    <td><input type="text" class="form-control" name="series_number[]"></td>
+                                    <td><input type="text" class="form-control forsum5" name="insurance_sum[]" id="insurance_sum-${fieldNumber}"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -671,7 +671,7 @@ function addProductFields(fieldNumber) {
                     <div class="form-group">
                         <label>Покрытие террористических актов с ТС </label>
                         <div class="input-group mb-4">
-                            <input type="text" class="form-control terror-tc-${fieldNumber}" name="cover_terror_attacks_sum">
+                            <input type="text" class="form-control terror-tc-${fieldNumber}" name="cover_terror_attacks_sum[]">
                             <div class="input-group-append">
                                 <select class="form-control success" name="cover_terror_attacks_currency" style="width: 100%;">
                                     <option selected="selected">UZS</option>
@@ -684,7 +684,7 @@ function addProductFields(fieldNumber) {
                     <div class="form-group">
                         <label>Покрытие террористических актов с застрахованными лицами </label>
                         <div class="input-group mb-4">
-                            <input type="text" class="form-control terror-zl-${fieldNumber}" name="cover_terror_attacks_insured_sum">
+                            <input type="text" class="form-control terror-zl-${fieldNumber}" name="cover_terror_attacks_insured_sum[]">
                             <div class="input-group-append">
                                 <select class="form-control success" name="cover_terror_attacks_insured_currency" style="width: 100%;">
                                     <option selected="selected">UZS</option>
@@ -697,7 +697,7 @@ function addProductFields(fieldNumber) {
                     <div class="form-group">
                         <label>Покрытие расходы по эвакуации</label>
                         <div class="input-group mb-4">
-                            <input type="text" class="form-control evocuation-${fieldNumber}" name="coverage_evacuation_cost">
+                            <input type="text" class="form-control evocuation-${fieldNumber}" name="coverage_evacuation_cost[]">
                             <div class="input-group-append">
                                 <select class="form-control success" name="coverage_evacuation_currency" style="width: 100%;">
                                 <option selected="selected">UZS</option>
@@ -726,11 +726,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-sm-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}')" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka_${fieldNumber}" id="radioSuccess1-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}')" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka[]" id="radioSuccess1-${fieldNumber}" value="1">
                                     <label for="radioSuccess1-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}', false)" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka_${fieldNumber}" id="radioSuccess2-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess1-${fieldNumber}', 'data-radioSuccess1-${fieldNumber}', false)" type="radio" class="other_insurance-${fieldNumber}" name="strtahovka[]" id="radioSuccess2-${fieldNumber}" value="0">
                                     <label for="radioSuccess2-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -738,7 +738,7 @@ function addProductFields(fieldNumber) {
                     </div>
                     <div data-radioSuccess1-${fieldNumber} class="form-group other_insurance_info-${fieldNumber}" style="display:none">
                         <label>Укажите название и адрес страховой организации и номер Полиса</label>
-                        <input class="form-control" type="text" name="other_insurance_info${fieldNumber}">
+                        <input class="form-control" type="text" name="other_insurance_info[]">
                     </div>
                 </form>
             </div>
@@ -760,11 +760,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess3-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}')" type="radio" name="vehicle_damage_${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess3-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}')" type="radio" name="vehicle_damage[]" class="r-1-${fieldNumber}" id="radioSuccess3-${fieldNumber}" value="1">
                                     <label for="radioSuccess3-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess4-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}', false)" type="radio" name="vehicle_damage_${fieldNumber}" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess4-${fieldNumber}', 'data-radioSuccess3-${fieldNumber}', false)" type="radio" name="vehicle_damage[]" class="r-1-${fieldNumber}" id="radioSuccess4-${fieldNumber}" value="0">
                                     <label for="radioSuccess4-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -776,7 +776,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Сумма</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-sum-${fieldNumber}" name="one_sum_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-sum-${fieldNumber}" name="one_sum[]" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -786,7 +786,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Страховая премия</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-premia-${fieldNumber}" name="one_premia_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-premia-${fieldNumber}" name="one_premia[]" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -796,7 +796,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Франшиза</span>
                                                 </div>
-                                                <input type="text" class="form-control r-1-frnshiza-${fieldNumber}" name="one-franshiza_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-1-frnshiza-${fieldNumber}" name="one-franshiza[]" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -815,7 +815,7 @@ function addProductFields(fieldNumber) {
                                     <label for="radioSuccess5-${fieldNumber}">Да</label>
                                 </div>
                                 <div onchange="toggleBlockRadio('radioSuccess6-${fieldNumber}', 'data-radioSuccess5-${fieldNumber}', false)" class="checkbox icheck-success">
-                                    <input type="radio" name="civil_liability-${fieldNumber}" class="r-2-${fieldNumber}" id="radioSuccess6-${fieldNumber}" value="0">
+                                    <input type="radio" name="civil_liability[]" class="r-2-${fieldNumber}" id="radioSuccess6-${fieldNumber}" value="0">
                                     <label for="radioSuccess6-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -828,7 +828,7 @@ function addProductFields(fieldNumber) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Сумма</span>
                                                 </div>
-                                                <input type="text" class="form-control r-2-sum-${fieldNumber}" name="tho_sum_${fieldNumber}" id="vehicle_damage_sum-${fieldNumber}">
+                                                <input type="text" class="form-control r-2-sum-${fieldNumber}" name="tho_sum[]" id="vehicle_damage_sum-${fieldNumber}">
                                             </div>
                                         </div>
                                     </div>
@@ -854,11 +854,11 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents_${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
+                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents[]}" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
                                     <label for="radioSuccess7-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents_${fieldNumber}" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
+                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents[]" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
                                     <label for="radioSuccess8-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
@@ -879,29 +879,29 @@ function addProductFields(fieldNumber) {
                                 <tbody>
                                     <tr>
                                         <td><label>Водитель(и)</label></td>
-                                        <td><input type="number" class="form-control r-3-pass-${fieldNumber}" value="1" readonly name="driver_quantity_${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-pass-${fieldNumber}" value="1" readonly name="driver_quantity[]"></td>
                                         <td>
                                             <div class="input-group mb-4">
-                                                <input type="text" class="form-control r-3-one-${fieldNumber}" name="driver_one_sum_${fieldNumber}">
+                                                <input type="text" class="form-control r-3-one-${fieldNumber}" name="driver_one_sum[]">
                                                 <div class="input-group-append">
-                                                    <select class="form-control success" name="driver_currency_${fieldNumber}" style="width: 100%;">
+                                                    <select class="form-control success" name="driver_currency[]" style="width: 100%;">
                                                         <option selected="selected">UZS</option>
                                                         <option>USD</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><input type="number" class="form-control r-3-sum-${fieldNumber}" name="driver_total_sum-${fieldNumber}" id="driver_total_sum_${fieldNumber}"></td>
-                                        <td><input type="number" class="form-control r-3-premia-${fieldNumber}" name="driver_preim_sum-${fieldNumber}" id="driver_total_sum_${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-sum-${fieldNumber}" name="driver_total_sum[]}" id="driver_total_sum_${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-premia-${fieldNumber}" name="driver_preim_sum[]" id="driver_total_sum_${fieldNumber}"></td>
                                     </tr>
                                     <tr>
                                         <td><label>Пассажиры</label></td>
-                                        <td><input type="number" class="form-control r-3-pass-1-${fieldNumber}" name="passenger_quantity_${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-pass-1-${fieldNumber}" name="passenger_quantity[]"></td>
                                         <td>
                                             <div class="input-group mb-4">
-                                                <input type="text" class="form-control r-3-one-1-${fieldNumber}" name="passenger_one_sum_${fieldNumber}">
+                                                <input type="text" class="form-control r-3-one-1-${fieldNumber}" name="passenger_one_sum[]">
                                                 <div class="input-group-append">
-                                                    <select class="form-control success" name="passenger_currency" style="width: 100%;">
+                                                    <select class="form-control success" name="passenger_currency[]" style="width: 100%;">
                                                         <option selected="selected">UZS</option>
                                                         <option>USD</option>
                                                     </select>
@@ -925,8 +925,8 @@ function addProductFields(fieldNumber) {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><input type="number" class="form-control r-3-sum-2-${fieldNumber}" name="limit_total_sum-${fieldNumber}"></td>
-                                        <td><input type="number" class="form-control r-3-premia-2-${fieldNumber}" name="limit_preim_sum-${fieldNumber}"></td>
+                                        <td><input type="number" class="form-control r-3-sum-2-${fieldNumber}" name="limit_total_sum[]"></td>
+                                        <td><input type="number" class="form-control r-3-premia-2-${fieldNumber}" name="limit_preim_sum[]"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3"><label class="text-bold">Итого</label></td>
@@ -940,9 +940,9 @@ function addProductFields(fieldNumber) {
                     <div class="form-group col-sm-8">
                         <label>Общий лимит ответственности </label>
                         <div class="input-group mb-4">
-                            <input type="text" class="form-control" id="totalLimit-${fieldNumber}" name="total_liability_limit-${fieldNumber}">
+                            <input type="text" class="form-control" id="totalLimit-${fieldNumber}" name="total_liability_limit}[]">
                             <div class="input-group-append">
-                                <select class="form-control success" name="total_liability_limit_currency-${fieldNumber}" style="width: 100%;">
+                                <select class="form-control success" name="total_liability_limit_currency[]" style="width: 100%;">
                                     <option selected="selected">UZS</option>
                                     <option>USD</option>
                                 </select>
@@ -969,7 +969,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="polises">Полис</label>
-                                    <select class="form-control polises" id="polises" name="policy_${fieldNumber}" style="width: 100%;">
+                                    <select class="form-control polises" id="polises" name="policy_${fieldNumber}[]" style="width: 100%;">
                                         <option selected="selected"></option>
                                     </select>
                                     <div class="input-group mb-3">
@@ -984,14 +984,14 @@ function addProductFields(fieldNumber) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">от</span>
                                         </div>
-                                        <input type="date" class="form-control" name="from_date_${fieldNumber}">
+                                        <input type="date" class="form-control" name="from_date_${fieldNumber}[]">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Ответственный Агент</label>
-                                    <select class="form-control select2" name="agent-${fieldNumber}" style="width: 100%;">
+                                    <select class="form-control select2" name="agent-${fieldNumber}[]" style="width: 100%;">
                                         <option selected="selected">Ф.И.О агента</option>
                                         <option></option>
                                     </select>
@@ -1002,7 +1002,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Оплата страховой премии</label>
-                                    <select class="form-control select2" name="payment_${fieldNumber}" style="width: 100%;">
+                                    <select class="form-control select2" name="payment_${fieldNumber}[]" style="width: 100%;">
                                         <option selected="selected">Сум</option>
                                         <option>Доллар</option>
                                         <option>Евро</option>
@@ -1012,7 +1012,7 @@ function addProductFields(fieldNumber) {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Порядок оплаты</label>
-                                        <select class="form-control select2" name="payment_order_${fieldNumber}" style="width: 100%;">
+                                        <select class="form-control select2" name="payment_order_${fieldNumber}[]" style="width: 100%;">
                                         <option selected="selected">Сум</option>
                                         <option>Доллар</option>
                                         <option>Евро</option>
@@ -1111,16 +1111,16 @@ const addProductFieldRow = (fieldNumber) => {
     const fields = `
     <tr id="a${fieldNumber}">
         <td>
-            <input type="text" class="form-control" name="polis-mark[]">
+            <input type="text" class="form-control" name="polis_mark[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-model[]">
+            <input type="text" class="form-control" name="polis_model[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-gos-num[]">
+            <input type="text" class="form-control" name="polis_gos_num[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis-teh-passport[]">
+            <input type="text" class="form-control" name="polis_teh_passport[]">
         </td>
         <td>
             <input type="text" class="form-control" name="polis_num_engine[]">
@@ -1208,7 +1208,7 @@ if (covidFizAddBtn) {
                 <input type="text" class="form-control" name="polis_modification[]">
             </td>
             <td>
-                <input type="date" class="form-control" name="from_date">
+                <input type="date" class="form-control" name="from_date[]">
             </td>
             <td>
                 <input type="text" class="form-control" name="polis_modification[]">
@@ -1277,51 +1277,51 @@ const addInsurer = () => {
                       <div class="col-md-6">
                           <div class="form-group">
                               <label for="insurer-name" class="col-form-label">ФИО страхователя</label>
-                              <input type="text" id="insurer-name" name="fio_insurer" class="form-control">
+                              <input type="text" id="insurer-name" name="fio_insurer[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
                               <label for="insurer-address" class="col-form-label">Юр адрес
                                   страхователя</label>
-                              <input type="text" id="insurer-address" name="address_insurer"
+                              <input type="text" id="insurer-address" name="address_insurer[]"
                                      class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-tel" class="col-form-label">Телефон</label>
-                              <input type="text" id="insurer-tel" name="tel_insurer" class="form-control">
+                              <input type="text" id="insurer-tel" name="tel_insurer[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-schet" class="col-form-label">Расчетный счет</label>
-                              <input type="text" id="insurer-schet" name="address_schet" class="form-control">
+                              <input type="text" id="insurer-schet" name="address_schet[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-inn" class="col-form-label">ИНН</label>
-                              <input type="text" id="insurer-inn" name="inn_insurer" class="form-control">
+                              <input type="text" id="insurer-inn" name="inn_insurer[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-mfo" class="col-form-label">МФО</label>
-                              <input type="text" id="insurer-mfo" name="mfo_insurer" class="form-control">
+                              <input type="text" id="insurer-mfo" name="mfo_insurer[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-bank" class="col-form-label">Банк</label>
-                              <input type="text" id="insurer-bank" name="bank_insurer" class="form-control">
+                              <input type="text" id="insurer-bank" name="bank_insurer[]" class="form-control">
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="insurer-okonh" class="col-form-label">ОКОНХ</label>
-                              <input type="text" id="insurer-okonh" name="okonh_insurer" class="form-control">
+                              <input type="text" id="insurer-okonh" name="okonh_insurer[]" class="form-control">
                           </div>
                       </div>
                   </div>
@@ -1355,7 +1355,7 @@ const addAnketa = () => {
                                             <div class="form-group">
                                                 <label for="beneficiary-name" class="col-form-label">ФИО
                                                     выгодоприобретателя</label>
-                                                <input type="text" id="beneficiary-name" name="fio_beneficiary"
+                                                <input type="text" id="beneficiary-name" name="fio_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
@@ -1363,49 +1363,49 @@ const addAnketa = () => {
                                             <div class="form-group">
                                                 <label for="beneficiary-address" class="col-form-label">Юр адрес
                                                     выгодоприобретателя</label>
-                                                <input type="text" id="beneficiary-address" name="address_beneficiary"
+                                                <input type="text" id="beneficiary-address" name="address_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-tel" class="col-form-label">Телефон</label>
-                                                <input type="text" id="beneficiary-tel" name="tel_beneficiary"
+                                                <input type="text" id="beneficiary-tel" name="tel_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-schet" class="col-form-label">Расчетный счет</label>
-                                                <input type="text" id="beneficiary-schet" name="beneficiary_schet"
+                                                <input type="text" id="beneficiary-schet" name="beneficiary_schet[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-inn" class="col-form-label">ИНН</label>
-                                                <input type="text" id="beneficiary-inn" name="inn_beneficiary"
+                                                <input type="text" id="beneficiary-inn" name="inn_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-mfo" class="col-form-label">МФО</label>
-                                                <input type="text" id="beneficiary-mfo" name="mfo_beneficiary"
+                                                <input type="text" id="beneficiary-mfo" name="mfo_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-bank" class="col-form-label">Банк</label>
-                                                <input type="text" id="beneficiary-bank" name="bank_beneficiary"
+                                                <input type="text" id="beneficiary-bank" name="bank_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="beneficiary-okonh" class="col-form-label">ОКОНХ</label>
-                                                <input type="text" id="beneficiary-okonh" name="okonh_beneficiary"
+                                                <input type="text" id="beneficiary-okonh" name="okonh_beneficiary[]"
                                                        class="form-control">
                                             </div>
                                         </div>

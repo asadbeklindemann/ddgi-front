@@ -599,13 +599,13 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label>ФИО</label>
-                                                                            <input type="text" class="form-control">
+                                                                            <input name="name[]" type="text" class="form-control">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label>Должность</label>
-                                                                            <input type="text" class="form-control">
+                                                                            <input name="position[]" type="text" class="form-control">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -970,11 +970,10 @@
         clone.find('#addLitso').val('Удалить').addClass('removeLitso').addClass('btn-warning')
         $('.removeLitso').on('click', function() {
             $(this).parent().parent().remove();
-
         })
     });
 </script>
-<!-- 
+<!--
 <script>
     insurerId.select2();
     beneficiaryId.select2();
@@ -1090,7 +1089,7 @@
             console.log(clientType);
 
             let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
+            //
 
             if (clientType === 'individual') {
                 console.log('beneficiary individual');
