@@ -453,16 +453,16 @@
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <div class="checkbox icheck-success">
-                                                                <input id="defects-1" type="radio" class="defects" name="defects" value="1">
+                                                                <input onchange="toggleBlockRadio('defects-1', 'data-hidden')" id="defects-1" type="radio" class="defects" name="defects" value="1">
                                                                 <label for="defects-1">Да</label>
                                                             </div>
                                                             <div class="checkbox icheck-success ">
-                                                                <input id="defects-0" type="radio" class="defects" name="defects" value="0">
+                                                                <input onchange="toggleBlockRadio('defects-0', 'data-hidden', false)" id="defects-0" type="radio" class="defects" name="defects" value="0">
                                                                 <label for="defects-0">Нет</label>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group defects_images" style="display: none;">
+                                                    <div class="form-group defects_images" data-hidden style="display: none;">
                                                         <label>Опсиание причины</label>
                                                         <input class="form-control" type="text" multiple name="defects_images">
                                                     </div>

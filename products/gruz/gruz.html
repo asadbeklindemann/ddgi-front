@@ -591,7 +591,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                    <div class="form-group">
+                                                    <div class="form-group" id="friends">
                                                         <label>Cопровождающие лица</label>
                                                         <div class="row" id="cloneLitso">
                                                             <div class="col-md-11">
@@ -963,16 +963,8 @@
 
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
-<script>
-    $('#addLitso').on('click', function() {
-        let clone = $('#cloneLitso').clone();
-        clone.insertAfter('#cloneLitso:last');
-        clone.find('#addLitso').val('Удалить').addClass('removeLitso').addClass('btn-warning')
-        $('.removeLitso').on('click', function() {
-            $(this).parent().parent().remove();
-        })
-    });
-</script>
+<script src="../../assets/custom/js/form/form-actions.js"></script>
+
 <!--
 <script>
     insurerId.select2();

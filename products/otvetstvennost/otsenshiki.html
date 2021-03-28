@@ -421,13 +421,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <button type="button" data-btn-add-row-info class="btn btn-primary ">Добавить</button>
+                                    <button type="button" data-otsenshik-btn class="btn btn-primary ">Добавить</button>
                                 </div>
                                 <div class="table-responsive p-0 " style="max-height: 300px;">
                                     <div id="product-fields" data-info-table class="product-fields" data-field-number="0">
                                         <table class="table table-hover table-head-fixed" id="empTable">
                                             <thead>
                                                 <tr>
+                                                    <th class="text-nowrap">№</th>
                                                     <th class="text-nowrap">Номер полиса</th>
                                                     <th class="text-nowrap">Серия полиса</th>
                                                     <th class="text-nowrap">Период действия полиса от</th>
@@ -445,52 +446,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-
-                                                    <td>
-                                                        <input type="text" class="form-control" name="period_polis[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="polis_id[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="date" class="form-control" name="validity_period_from[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="date" class="form-control" name="validity_period_to[]">
-                                                    </td>
-                                                    <td>
-                                                        <select class="form-control polises" id="polises" name="polis_agent[]" style="width: 100%;">
-                                                            <option selected="selected"></option>
-                                                            <option value="1">Да</option>
-                                                            <option value="2">Нет</option>
-                                                        </select>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="polis_mark[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="specialty[]" value="Specialty">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="workExp[]" value="work experience">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="polis_model[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" name="polis_modification[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" data-field="value" class="form-control" name="polis_modification[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" data-field="sum" class="form-control" name="polis_gos_num[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" data-field="premiya" class="form-control" name="polis_teh_passport[]">
-                                                    </td>
-                                                </tr>
-                                                <tr>
+                                                    <td></td>
                                                     <td colspan="10" style="text-align: right"><label class="text-bold">Итого</label></td>
                                                     <td><input readonly type="text" data-insurance-stoimost class="form-control overall-sum2" />
                                                     </td>
@@ -530,24 +486,24 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="year[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="year" name="polis_premium[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control forsum4 insurance_premium-0" data-field="turnover[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum4 insurance_premium-0" data-field="turnover" name="polis_premium[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="earnings[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="earnings" name="polis_premium[]">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="year[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="year" name="polis_premium[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="turnover[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum3 insurance_premium-0" data-field="turnover" name="polis_premium[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control forsum4 insurance_premium-0" data-field="earnings[]" name="polis_premium[]">
+                                                    <input type="text" class="form-control forsum4 insurance_premium-0" data-field="earnings" name="polis_premium[]">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1005,10 +961,6 @@
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
 
-<script src="../../assets/custom/js/form/variables.js"></script>
-<!-- <script src="../../assets/custom/js/form/add-clients.js"></script>
-<script src="../../assets/custom/js/form/product-fields.js"></script>
-<script src="../../assets/custom/js/form/product-fields.add.js"></script> -->
 <script>
     $(document).ready(function() {
         $.ajax({
