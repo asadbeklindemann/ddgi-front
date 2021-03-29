@@ -1448,17 +1448,17 @@ const propertyAdd = () => {
                     <option>Кв.см</option>
                 </select>
             </td>
-            <td>
-                <input type="text" class="form-control forsum4 overall_insurance_sum-0" name="overall_polis_sum[]">
+              <td>
+                <input type="text" data-field="value" class="form-control" name="polis_modification[]">
             </td>
             <td>
-                <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium[]">
+                <input type="text" data-field="sum" class="form-control" name="polis_gos_num[]">
             </td>
             <td>
-                <input type="text" class="form-control forsum3 insurance_premium-0" readonly name="polis_premium[]">
+                <input type="text" data-field="premiya" class="form-control" name="polis_teh_passport[]">
             </td>
             <td class="form-group">
-              <input onclick="removeEl(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
+              <input onclick="removeAndCalc(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
           </td>
         </tr>
     `)
