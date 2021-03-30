@@ -531,6 +531,19 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="icheck-success ">
+                                            <input onchange="toggleBlock('tarif', 'data-tarif-descr')" class="form-check-input client-type-radio" type="checkbox" name="tarif" id="tarif">
+                                            <label class="form-check-label" for="tarif">Тариф</label>
+                                        </div>
+                                        <!-- TODO: Блок должен находится в скрытом состоянии
+                                        отображаться только тогда, когда выбран checkbox "Тариф"
+                                        -->
+                                        <div class="form-group" data-tarif-descr style="display: none">
+                                            <label for="descrTarif" class="col-form-label">Укажите процент тарифа</label>
+                                            <input class="form-control" id="descrTarif" type="number">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -612,21 +625,21 @@
                                         <div class="table-responsive p-0 " style="max-height: 300px;">
                                             <table class="table table-hover table-head-fixed" id="empTable3">
                                                 <thead>
-                                                <tr>
-                                                    <th class="text-nowrap">Сумма</th>
-                                                    <th class="text-nowrap">От</th>
-                                                    <th></th>
-                                                </tr>
+                                                    <tr>
+                                                        <th class="text-nowrap">Сумма</th>
+                                                        <th class="text-nowrap">От</th>
+                                                        <th></th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr id="payment-term-tr-0" data-field-number="0">
-                                                    <td>
-                                                        <input type="text" class="form-control" name="payment_sum[]">
-                                                    </td>
-                                                    <td>
-                                                        <input type="date" class="form-control" name="payment_from[]">
-                                                    </td>
-                                                </tr>
+                                                    <tr id="payment-term-tr-0" data-field-number="0">
+                                                        <td>
+                                                            <input type="text" class="form-control" name="payment_sum[]">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control" name="payment_from[]">
+                                                        </td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -512,6 +512,19 @@
                                     <label for="geographic-zone">Географическая зона:</label>
                                     <input type="text" id="geographic-zone" name="geograph_zone" class="form-control">
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="icheck-success ">
+                                        <input onchange="toggleBlock('tarif', 'data-tarif-descr')" class="form-check-input client-type-radio" type="checkbox" name="tarif" id="tarif">
+                                        <label class="form-check-label" for="tarif">Тариф</label>
+                                    </div>
+                                    <!-- TODO: Блок должен находится в скрытом состоянии
+                                    отображаться только тогда, когда выбран checkbox "Тариф"
+                                    -->
+                                    <div class="form-group" data-tarif-descr style="display: none">
+                                        <label for="descrTarif" class="col-form-label">Укажите процент тарифа</label>
+                                        <input class="form-control" id="descrTarif" type="number">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -762,10 +775,6 @@
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
 
-<script src="../../assets/custom/js/form/variables.js"></script>
-<!-- <script src="../../assets/custom/js/form/add-clients.js"></script>
-<script src="../../assets/custom/js/form/product-fields.js"></script>
-<script src="../../assets/custom/js/form/product-fields.add.js"></script> -->
 
 <!-- TODO: скрипты на чистом JS для обработки формы audit -->
 <script src="../../assets/custom/js/form/form-actions.js"></script>
