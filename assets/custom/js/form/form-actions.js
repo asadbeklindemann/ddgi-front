@@ -445,7 +445,7 @@ const renderSelect = () => {
     agentsList.data.forEach(agentItem => {
         console.log(agentItem)
         const option = `<option value="${agentItem.id}">${agentItem.name}</option>`
-        document.getElementById('police_agents').insertAdjacentHTML('afterbegin', option)
+        document.getElementById('polise_agents').insertAdjacentHTML('afterbegin', option)
     })
 }
 
@@ -470,10 +470,8 @@ if (buttonAddRowInfo) {
             <input type="date" class="form-control" name="validity_period_to[]">
         </td>
         <td>
-            <select class="form-control polises" id="polises" name="polis_agent[]" style="width: 100%;">
+            <select class="form-control polises" id="polise_agents" name="polis_agent[]" style="width: 100%;">
                 <option selected="selected"></option>
-                <option value="1">Да</option>
-                <option value="2">Нет</option>
             </select>
         </td>
         <td>
@@ -504,7 +502,8 @@ if (buttonAddRowInfo) {
             <input onclick="removeAndCalc(${id})" type="button" value="Удалить" data-action="delete" class="btn btn-warning">
         </td>
       </tr>`
-        infoTable.querySelector('tbody').insertAdjacentHTML('afterbegin', rowInfo)
+        infoTable.querySelector('tbody').insertAdjacentHTML('afterbegin', rowInfo);
+        renderSelect();
     })
 }
 
@@ -1536,10 +1535,8 @@ const addOtsenshik = () => {
             <input type="date" class="form-control" name="validity_period_to[]">
         </td>
         <td>
-            <select class="form-control polises" id="polises" name="polis_agent[]" style="width: 100%;">
+            <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
                 <option selected="selected"></option>
-                <option value="1">Да</option>
-                <option value="2">Нет</option>
             </select>
         </td>
         <td>
@@ -1572,6 +1569,7 @@ const addOtsenshik = () => {
     </tr>`
 
     infoTable.querySelector('tbody').insertAdjacentHTML('beforebegin', fields);
+    renderSelect();
 
 }
 
@@ -1601,10 +1599,8 @@ const addTcRow = () => {
             </select>
         </td>
         <td>
-            <select class="form-control" id="agents" name="agents[]" style="width: 100%;">
+            <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
                 <option selected="selected"></option>
-                <option value="1">Да</option>
-                <option value="2">Нет</option>
             </select>
         </td>
         <td>
@@ -1633,6 +1629,7 @@ const addTcRow = () => {
           </td>
     </tr>`
     infoTable.querySelector('tbody').insertAdjacentHTML('beforebegin', fields);
+    renderSelect();
 
 }
 
@@ -1737,7 +1734,9 @@ const addSportmanRow = (fieldNumber) => {
             <input disabled type="date" class="form-control">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis_mark[]">
+             <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
+                <option selected="selected"></option>
+            </select>
         </td>
         <td>
             <input type="text" class="form-control" name="polis_model[]">
@@ -1762,6 +1761,7 @@ const addSportmanRow = (fieldNumber) => {
         </td>
     </tr>`
     infoTable.querySelector('tbody').insertAdjacentHTML('beforebegin', field);
+    renderSelect();
 }
 
 const addSportmanBtn = document.getElementById('addSportmanBtn');
@@ -1933,7 +1933,7 @@ const addCascoFieldRow = (fieldNumber) => {
             <input type="date" class="form-control" name="polis_num_engine[]">
         </td>
         <td>
-           <select class="form-control" id="police_agents" name="agents[]" style="width: 100%;">
+           <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
                 <option selected="selected"></option>
             </select>
         </td>
