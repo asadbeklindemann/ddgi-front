@@ -437,15 +437,63 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="filter_number" class="col-form-label">Номер полиса</label>
-                                                    <input type="text" id="filter_number" name="filter_number" class="form-control">
+                                                <label for="filter_number_ot" class="col-form-label">Номер полиса</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="filter_number_ot">
+                                                    <div class="input-group-append">
+                                                        <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                            <option selected="selected">=</option>
+                                                            <option><</option>
+                                                            <option><=</option>
+                                                            <option>></option>
+                                                            <option>>=</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="filter_series" class="col-form-label">Серия полиса</label>
-                                                    <input type="text" id="filter_series" name="filter_series" class="form-control">
+                                                <label for="filter_number_do" class="col-form-label">Номер полиса до</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="filter_number_do" name="filter_number_do" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                            <option selected="selected">=</option>
+                                                            <option><</option>
+                                                            <option><=</option>
+                                                            <option>></option>
+                                                            <option>>=</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="filter_series_ot" class="col-form-label">Серия полиса от</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="filter_series_ot" name="filter_series_ot" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                            <option selected="selected">=</option>
+                                                            <option><</option>
+                                                            <option><=</option>
+                                                            <option>></option>
+                                                            <option>>=</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="filter_series_do" class="col-form-label">Серия полиса до</label>
+                                                <div class="input-group">
+                                                    <input type="text" id="filter_series_do" name="filter_series_do" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                            <option selected="selected">=</option>
+                                                            <option><</option>
+                                                            <option><=</option>
+                                                            <option>></option>
+                                                            <option>>=</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -472,7 +520,11 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="filter_agent" class="col-form-label">Агент</label>
-                                                    <input type="text" id="filter_agent" name="filter_agent" class="form-control">
+                                                    <select id="filter_agent" class="form-control select2" name="filter_agent">
+                                                        <option selected="selected">говно</option>
+                                                        <option selected="selected">говно 2</option>
+                                                        <option value="1">asdc</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -503,8 +555,10 @@
                                                 <div class="form-group">
                                                     <label for="filter_form" class="col-form-label">Куда поступили деньги</label>
                                                     <select id="filter_form" class="form-control select2" name="filter_form">
-                                                        <option selected="selected">говно 1</option>
-                                                        <option>говно 2</option>
+                                                        <option selected="selected">Основной счет</option>
+                                                        <option>Вторичный счет</option>
+                                                        <option>Агент</option>
+                                                        <option>Электронная коммерция</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -516,6 +570,9 @@
                                                         <option>Нет</option>
                                                     </select>
                                                 </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a style="margin: 38px 0 0 auto; display: block;" class="btn btn-success" href="http://wecloud.rocks/all_products/create">Найти</a>
                                             </div>
                                         </div>
                                     </div>
@@ -530,26 +587,16 @@
                                                 <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
                                             </div>
                                             <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Обновить</a>
                                             </div>
                                             <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Export</a>
                                             </div>
                                             <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Import</a>
                                             </div>
-                                            <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Создать</a>
-                                            </div>
+                                        </div>
+                                        <div class="row">
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
