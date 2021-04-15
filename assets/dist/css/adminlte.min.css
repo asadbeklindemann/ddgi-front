@@ -2806,7 +2806,8 @@ fieldset:disabled a.btn {
 .btn-success {
     color: #fff;
     background-color: #28a745;
-    width: 100px;
+    width: 100%;
+    min-width: 100px;
     border-color: #28a745;
     box-shadow: none
 }

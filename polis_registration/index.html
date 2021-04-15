@@ -1,399 +1,1122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>ValleyWood Clients</title>
+    <title>Создать Анкету</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <!-- Tempusdominus Bbootstrap 4 -->
-        <link rel="stylesheet"
-              href="../assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-        <!-- iCheck -->
-        <link rel="stylesheet" href="../assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-        <!-- JQVMap -->
-        <link rel="stylesheet" href="../assets/plugins/jqvmap/jqvmap.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
-        <!-- overlayScrollbars -->
-        <link rel="stylesheet" href="../assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-        <!-- Daterange picker -->
-        <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker.css">
-        <!-- summernote -->
-        <link rel="stylesheet" href="../assets/plugins/summernote/summernote-bs4.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-autofill/css/autoFill.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-colreorder/css/colReorder.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-fixedheader/css/fixedHeader.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-keytable/css/keyTable.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-scroller/css/scroller.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/datatables-select/css/select.bootstrap4.min.css">
-        <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
-        <link rel="stylesheet" href="../assets/plugins/glyphicon/css/glyphicon.css">
-        <!-- Google Font: Source Sans Pro -->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="/assets/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/assets/plugins/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-autofill/css/autoFill.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-colreorder/css/colReorder.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-fixedheader/css/fixedHeader.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-keytable/css/keyTable.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-scroller/css/scroller.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-select/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/plugins/glyphicon/css/glyphicon.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/plugins/bootstrap-fileinput/css/fileinput.min.css">
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+    <div class="wrapper">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Logout</a>
-      </li>
-    </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
-            class="fas fa-th-large"></i></a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <span class="brand-text font-weight-light">DDGI</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Username</a>
-        </div>
-      </div>
-
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview  {% if individual_client_url == request.path or form_url or legal_client_url == request.path %} menu-open {% endif %}">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-book-open"></i>
-              <p>
-                Business Book
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item has-treeview {% if individual_client_url == request.path or legal_client_url == request.path %} menu-open {% endif %}">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas far fa-user"></i>
-                      <p>
-                        Клиенты
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item menu-open">
-                        <a href="{{ individual_client_url }}" class="nav-link {% if individual_client_url == request.path %}active{% endif %}">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Физические лица</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="{{ legal_client_url }}" class="nav-link {% if legal_client_url == request.path %}active{% endif %}">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Юредические лица</p>
-                        </a>
-                      </li>
-                    </ul>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-              <li class="nav-item">
-                <a href="{{ form_url }}" class="nav-link {% if form_url == request.path %}active{% endif %}">
-                  <i class="far fa-window-restore nav-icon"></i>
-                  <p>Продукты</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-window-restore nav-icon"></i>
-                  <p>Orders</p>
-                </a>
-              </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="http://wecloud.rocks/logout" class="nav-link" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="http://wecloud.rocks/logout" method="POST" class="d-none">
+                        <input type="hidden" name="_token" value="W6swfOIjSoPt9rsWhPEeddvNjSgbs1gTcT2TaEOM"> </form>
+                </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="{{ branch_url }}" class="nav-link {% if branch_url == request.path %}active{% endif %}">
-              <i class="nav-icon far fa-building"></i>
-              <p>
-                Филиалы
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-      <div class="row" style="width: 100%; padding-top: 2px; margin: 0;">
-    <div class="col-sm-12">
-      <div id="buttonrow" style="display: inline-block">
-        <button class="btn btn-primary" onclick="addClient()">Добавить</button>
-        <button class="btn btn-primary" onclick="editClient()">Редактировать</button>
-        <button class="btn btn-warning">Удалить</button>
-      </div>
-      <div style="float: right">
-          <input type="text" class="form-control" id="custom_searchbox">
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-comments"></i>
+                        <span class="badge badge-danger navbar-badge">3</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Brad Diesel
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Call me whenever you can...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        John Pierce
+                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">I got your message bro</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Nora Silvester
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">The subject goes here</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                    </div>
+                </li>
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> 8 friend requests
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i> 3 new reports
+                            <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <!-- Вертикальный меню -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <!-- <img src="../dist/img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+              style="opacity: .8">-->
+                <span class="brand-text font-weight-light">DD General Insurance</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional)
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">Alexander Pierce</a>
+          </div>
+        </div>-->
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Управление-->
+                        <li class="nav-header">Заказы с сайта ddgi</li>
+                        <li class="nav-item has-treeview">
+                            <a href="http://wecloud.rocks/site_order" class="nav-link">
+                                <i class="nav-icon fas fa-folder-open"></i>
+                                <p>
+                                    Заказы
+                                </p>
+                            </a>
+                        </li>
+
+
+                        <!--Управление-->
+                        <li class="nav-header">Договора</li>
+                        <li class="nav-item has-treeview">
+                            <a href="http://wecloud.rocks/all_products" class="nav-link">
+                                <i class="nav-icon fas fa-folder-open"></i>
+                                <p>
+                                    Продукты
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Претензия-->
+
+                        <li class="nav-header">Претензии</li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/pretensii" class="nav-link">
+                                <i class="nav-icon fas fa-medkit"></i>
+                                <p>
+                                    Претензии
+                                    <!--<span class="badge badge-info right">2</span>-->
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/pretensii_overview" class="nav-link">
+                                <i class="nav-icon fas fa-medkit"></i>
+                                <p>
+                                    Рассмотр претензий
+                                    <!--<span class="badge badge-info right">2</span>-->
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Финансы-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Продажа-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Полисы-->
+                        <li class="nav-header">Полисы</li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/policy_registration/create" class="nav-link">
+                                <i class="nav-icon fas fa-file-signature"></i>
+                                <p>
+                                    Регистрация
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/policy_transfer" class="nav-link">
+                                <i class="nav-icon fab fa-hubspot"></i>
+                                <p>
+                                    Распределения
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/policy_retransfer" class="nav-link">
+                                <i class="nav-icon fab fa-hubspot"></i>
+                                <p>
+                                    Перераспределения
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/policy" class="nav-link">
+                                <i class="nav-icon fas fa-file-archive"></i>
+                                <p>
+                                    Полисы
+                                </p>
+                            </a>
+                        </li>
+                        <!--Филилалы-->
+                        <li class="nav-header">Филиалы</li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/branch" class="nav-link">
+                                <i class="nav-icon fab fa-buffer"></i>
+                                <p>
+                                    Офисы
+                                </p>
+                            </a>
+                        </li>
+                        <!--Клиенты-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Пользователи-->
+                        <li class="nav-header">Пользователи</li>
+
+
+
+
+
+
+
+
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/director" class="nav-link">
+                                <i class="nav-icon far fa-address-card"></i>
+                                <p>
+                                    Директора
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/agent" class="nav-link">
+                                <i class="nav-icon far fa-address-card"></i>
+                                <p>
+                                    Агенты
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/manager" class="nav-link">
+                                <i class="nav-icon far fa-address-card"></i>
+                                <p>
+                                    Менеджеры
+                                </p>
+                            </a>
+                        </li>
+                        <!--Справочники-->
+                        <li class="nav-header">Справочники</li>
+
+
+
+
+
+
+
+
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/bank" id="banki" class="nav-link">
+                                <i class="nav-icon far fa-building"></i>
+                                <p>
+                                    Банки
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/group" class="nav-link">
+                                <i class="nav-icon far fa-building"></i>
+                                <p>
+                                    Группы
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/klass" class="nav-link">
+                                <i class="nav-icon far fa-building"></i>
+                                <p>
+                                    Классы
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/product" class="nav-link">
+                                <i class="nav-icon far fa-building"></i>
+                                <p>
+                                    Продукты
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/request" id="banki" class="nav-link ">
+                                <i class="nav-icon fas fa-question-circle"></i>
+                                <p>
+                                    Запрос
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/spravochniki/policy_series" class="nav-link">
+                                <i class="nav-icon fab fa-product-hunt"></i>
+                                <p>
+                                    Серии поюсов
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://wecloud.rocks/export-database" class="nav-link">
+                                <i class="nav-icon fab fa-product-hunt"></i>
+                                <p>
+                                    export database
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+                        <!--
+                 <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+                 <li class="nav-item">
+                   <a href="#" class="nav-link">
+                     <i class="fas fa-circle nav-icon"></i>
+                     <p>Level 1</p>
+                   </a>
+                 </li>
+                 <li class="nav-item has-treeview">
+                   <a href="#" class="nav-link">
+                     <i class="nav-icon fas fa-circle"></i>
+                     <p>
+                       Level 1
+                       <i class="right fas fa-angle-left"></i>
+                     </p>
+                   </a>
+                   <ul class="nav nav-treeview">
+                     <li class="nav-item">
+                       <a href="#" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Level 2</p>
+                       </a>
+                     </li>
+                     <li class="nav-item has-treeview">
+                       <a href="#" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>
+                           Level 2
+                           <i class="right fas fa-angle-left"></i>
+                         </p>
+                       </a>
+                       <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                           <a href="#" class="nav-link">
+                             <i class="far fa-dot-circle nav-icon"></i>
+                             <p>Level 3</p>
+                           </a>
+                         </li>
+                         <li class="nav-item">
+                           <a href="#" class="nav-link">
+                             <i class="far fa-dot-circle nav-icon"></i>
+                             <p>Level 3</p>
+                           </a>
+                         </li>
+                         <li class="nav-item">
+                           <a href="#" class="nav-link">
+                             <i class="far fa-dot-circle nav-icon"></i>
+                             <p>Level 3</p>
+                           </a>
+                         </li>
+                       </ul>
+                     </li>
+                     <li class="nav-item">
+                       <a href="#" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Level 2</p>
+                       </a>
+                     </li>
+                   </ul>
+                 </li>
+                 <li class="nav-item">
+                   <a href="#" class="nav-link">
+                     <i class="fas fa-circle nav-icon"></i>
+                     <p>Level 1</p>
+                   </a>
+                 </li>
+                -->
+                        <br>
+                        <br>
+
+                    </ul>
+                </nav>
+
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div id="ajaxData">
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Список договоров</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                                    <li class="breadcrumb-item active">Список договоров</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Зарегистроровать</a>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Распределить</a>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Перераспределить</a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Обновить</a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Export</a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a class="btn btn-success" href="http://wecloud.rocks/all_products/create">Import</a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <div class="card card-success product-type">
+                        <div class="card-header">
+                            <h3 class="card-title">Фильтры</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="filter_stat" class="col-form-label">Статус</label>
+                                            <select id="filter_stat" class="form-control select2" name="filter_stat">
+                                            <option selected="selected">говно</option>
+                                            <option selected="selected">говно 2</option>
+                                            <option value="1">asdc</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="filter_data_akt" class="col-form-label">Дата акта</label>
+                                            <input type="date" id="filter_data_akt" name="filter_data_akt" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="filter_akt" class="col-form-label">Номер акта</label>
+                                            <input type="text" id="filter_akt" name="filter_akt" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="filter_number_ot" class="col-form-label">Серия полиса</label>
+                                        <div class="input-group">
+                                            <input type="text" id="filter_number_ot" class="form-control" name="filter_number_ot">
+                                            <div class="input-group-append">
+                                                <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                <option selected="selected">=</option>
+                                                <option><</option>
+                                                <option><=</option>
+                                                <option>></option>
+                                                <option>>=</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="filter_number_do" class="col-form-label">Серия полиса</label>
+                                        <div class="input-group">
+                                            <input type="text" id="filter_number_do" name="filter_number_do" class="form-control">
+                                            <div class="input-group-append">
+                                                <select class="form-control success" name="filter_sings" style="width: 100%;">
+                                                <option selected="selected">=</option>
+                                                <option><</option>
+                                                <option><=</option>
+                                                <option>></option>
+                                                <option>>=</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="filter_name_send" class="col-form-label">От кого</label>
+                                            <select id="filter_name_send" class="form-control select2" name="filter_name_send">
+                                            <option selected="selected">говно</option>
+                                            <option selected="selected">говно 2</option>
+                                            <option value="1">asdc</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="filter_komu" class="col-form-label">Кому</label>
+                                            <select id="filter_komu" class="form-control select2" name="filter_komu">
+                                            <option selected="selected">говно</option>
+                                            <option selected="selected">говно 2</option>
+                                            <option value="1">asdc</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a style="margin: 38px 0 0 auto; display: block;" class="btn btn-success" href="http://wecloud.rocks/all_products/create">Найти</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="filter_ustatok_sklad_a4" class="col-form-label">Остаток на складе A4</label>
+                                                    <input type="text" disabled id="filter_ustatok_sklad_a4" name="filter_ustatok_sklad_a4" class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="filter_ustatok_sklad_a5" class="col-form-label">Остаток на складе A5</label>
+                                                    <input type="text" disabled id="filter_ustatok_sklad_a5" name="filter_ustatok_sklad_a5" class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="filter_raspredelen_a4" class="col-form-label">Распределен A4</label>
+                                                    <input type="text" disabled id="filter_raspredelen_a4" name="filter_raspredelen_a4" class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="filter_raspredelen_a5" class="col-form-label">Распределен A5</label>
+                                                    <input type="text" disabled id="filter_raspredelen_a5" name="filter_raspredelen_a5" class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Серия от</th>
+                                                    <th>Серия до</th>
+                                                    <th>Период от</th>
+                                                    <th>Период до</th>
+                                                    <th>Филиал</th>
+                                                    <th>Пользователь</th>
+                                                    <th>Агент</th>
+                                                    <th>Действия</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>05</td>
+                                                    <td>27/09/2020</td>
+                                                    <td>27/09/2021</td>
+                                                    <td>Головной офис</td>
+                                                    <td>Имя Фамилия</td>
+                                                    <td>Имя Фамилия</td>
+                                                    <td>
+                                                        <form action="http://wecloud.rocks/otvetstvennost-podryadchik/3" method="POST">
+                                                            <a class="btn btn-success" href="http://wecloud.rocks/otvetstvennost-podryadchik/3/edit">Принять</a>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
         </div>
+        <!-- /.content-wrapper -->
     </div>
-    <div class="col-sm-12">
-      <table id="client_table" class="table table-bordered table-hover dataTable dtr-inline" role="grid" style="width: 100%;">
-        <thead>
-          <tr role="row">
-            <th>ID</th>
-            <th>Policy number</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-  </div>
-  </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    <!-- ./wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
 </body>
-
 <!-- jQuery -->
-<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<script src="/assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="../assets/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-{#    <script src="../assets/plugins/sparklines/sparkline.js"></script>#}
+<script src="/assets/plugins/chart.js/Chart.min.js"></script>
 <!-- JQVMap -->
-<script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="/assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="/assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="../assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="/assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="../assets/plugins/moment/moment.min.js"></script>
-<script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/assets/plugins/moment/moment.min.js"></script>
+<script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="../assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="../assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../assets/dist/js/adminlte.min.js"></script>
-<script src="../assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="/assets/dist/js/adminlte.min.js"></script>
+<script src="/assets/plugins/select2/js/select2.full.min.js"></script>
 
 <!-- AdminLTE for demo purposes -->
-<script src="../assets/dist/js/demo.js"></script>
+<script src="/assets/dist/js/demo.js"></script>
+<script src="/assets/custom/js/csrftoken.js"></script>
 
-<script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="../assets/plugins/datatables-autofill/js/dataTables.autoFill.min.js"></script>
-  <script src="../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="../assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="../assets/plugins/datatables-colreorder/js/dataTables.colReorder.min.js"></script>
-  <script src="../assets/plugins/datatables-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-  <script src="../assets/plugins/datatables-keytable/js/dataTables.keyTable.min.js"></script>
-  <script src="../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="../assets/plugins/datatables-scroller/js/dataTables.scroller.min.js"></script>
-  <script src="../assets/plugins/datatables-select/js/dataTables.select.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      var obec=5;
-      var table = $('#client_table').DataTable({
-          dom: '<"top"<\'row\'<\'col-md-8\'B><\'col-md-4\'f>>>rt<"bottom"<\'row\'<\'col-md-6\'i><\'col-md-6\'p>>>',
-          buttons: ['pdf', 'excel', 'print'],
-          retrieve: true,
-          scroller: true,
-          processing: true,
-          serverSide: true,
-          stateSave: true,
-          colReorder: true,
-          fixedHeader: true,
-          keys: true,
-          responsive: {
-            details: {
-              display: $.fn.dataTable.Responsive.display.modal({
-                header: function (row) {
-                  var data = row.data();
-                  return 'Details for ' + data.name;
-                }
-              }),
-              renderer: $.fn.dataTable.Responsive.renderer.tableAll()
-            }
-          },
-          scrollY: "70vh",
-          select: true,
-          ajax: "/api/polis-registration?format=datatables",
-          columns: [
-            {"data": "id"},
-            {"data": "act_number"}
-          ]
-        }
-      );
-      table.buttons().container().appendTo($('#buttonrow'));
-      $("#custom_searchbox").keyup(function () {
-        table.search(this.value).draw();
-      });
 
+
+<script src="/assets/custom/js/formjs/product-fields.add.js"></script>
+
+<!-- TODO: скрипты на чистом JS для обработки формы audit -->
+<script src="/assets/custom/js/form/form-actions.js"></script>
+
+<script src="/assets/plugins/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script src="/assets/plugins/bootstrap-fileinput/themes/fa/theme.min.js"></script>
+<script src="/assets/plugins/bootstrap-fileinput/js/locales/LANG.js"></script>
+<!-- Bootstrap Switch -->
+<script src="/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<script>
+    // let appendData = $("#ajaxData");
+    // $('#banki').click(function(event){
+    //     event.preventDefault();
+    //     $.ajax({
+    //         url:'/spravochniki/bank',
+    //         method:'GET',
+    //         success:function(response){
+    //             appendData.html(response)
+    //         },
+    //         errors:function(error){
+    //             console.log(error)
+    //         }
+    //     })
+    // });
+</script>
+<script>
+    $("input[data-bootstrap-switch]").each(function() {
+        $(this).bootstrapSwitch();
     });
+</script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'http://wecloud.rocks/cbu_currencies',
+            method: "GET",
+            type: 'json',
+            // beforeSend: function(xhr) {
+            //     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            // },
+            success: function(data) {
+                // $('#walletNames').append('<option selected="selected"></option>');
+                const products = data;
+                const length = products.length;
+                for (let i = 0; i < length; i++) {
+                    $('#walletNames').append(`<option value="${products[i].Ccy}">${products[i].Ccy}</option>`);
+                }
+            },
+            error: function() {
+                console.log('error');
+            }
+        })
+    });
+    // fetch('https://cbu.uz/ru/arkhiv-kursov-valyut/json/')
+    //     .then(function(data) {
+    //         console.log(data)
+    //     });
+</script>
 
-    function addClient() {
-        window.location.href ='{% url "polis_registration_add" %}';
-    }
+<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function() {
 
+        $('#example1').DataTable({
+            orderCellsTop: true,
+            fixedHeader: true,
+            "language": {
+                "info": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "search": "Поиск",
+                "lengthMenu": "Показать _MENU_ записи",
+                "paginate": {
+                    "sFirst": "Первая:с", // This is the link to the first page
+                    "sPrevious": "Предыдущая:с", // This is the link to the previous page
+                    "sNext": "Следующая:с", // This is the link to the next page
+                    "sLast": "Предыдущая:с" // This is the link to the last page
+                },
+            },
 
-  </script>
-  <style>
-  .dataTables_filter {
-     display: none;
-}
-</style>
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [5, 25, 50, -1],
+                [5, 25, 50, "All"]
+            ]
+        });
+    });
+</script>
 
 </html>
-
-

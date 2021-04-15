@@ -306,21 +306,21 @@
                                             </div>
                                             <div class="col-md-12" data-a4 style="display: none">
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="polis_number_from" class="col-form-label">Номер полиса с:</label>
                                                             <input id="polis_number_from" type="number" class="form-control" name="polis_number_from" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="polis_number_to" class="col-form-label">Номер полиса до:</label>
                                                             <input id="polis_number_to" type="number" class="form-control" name="polis_number_from" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-4">
                                                         <label for="polis_kolvo" class="col-form-label">Количество полисов</label>
-                                                        <input type="text" id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                        <input type="text" disabled id="polis_kolvo" name="polis_kolvo" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -339,18 +339,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="polis_number_from" class="col-form-label">Номер полиса с:</label>
-                                                    <input id="polis_number_from" type="number" class="form-control" name="from_number">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="polis_number_to" class="col-form-label">Номер полиса до:</label>
-                                                    <input id="polis_number_to" type="number" class="form-control" name="to_number">
-                                                </div>
-                                            </div>
+
                                         </div>
 
                                         <div class="row">
@@ -363,7 +352,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="polis_series" class="col-form-label">Всего стоимость</label>
-                                                    <input type="text" class="form-control" name="akt_stoimost_vsego">
+                                                    <input type="text" disabled class="form-control" name="akt_stoimost_vsego">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -407,9 +396,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="polis-series" class="col-form-label">Загрузка документов</label>
-                                                    <input type="file" id="geographic-zone" name="akt_docs" class="form-control">
+                                                <label for="filter_number_do" class="col-form-label">Загрузка документов</label>
+                                                <div class="input-group">
+                                                    <input type="file" multiple id="filter_number_do" name="filter_number_do" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <a class="btn btn-info" href="#"><i class="fas fa-download"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
