@@ -274,9 +274,6 @@
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                               <i class="fas fa-minus"></i>
                                             </button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                              <i class="fas fa-times"></i>
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -298,41 +295,125 @@
                                         </div>
 
                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="icheck-success ">
+                                                    <input onchange="toggleBlock('a4', 'data-a4')" class="form-check-input client-type-radio" type="checkbox" name="a4" id="a4">
+                                                    <label class="form-check-label" for="a4">A4</label>
+                                                </div>
+                                                <!-- TODO: Блок должен находится в скрытом состоянии
+                                                отображаться только тогда, когда выбран checkbox "Тариф"
+                                                -->
+                                            </div>
+                                            <div class="col-md-12" data-a4 style="display: none">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="polis_number_from" class="col-form-label">Номер полиса с:</label>
+                                                            <input id="polis_number_from" type="number" class="form-control" name="polis_number_from" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="polis_number_to" class="col-form-label">Номер полиса до:</label>
+                                                            <input id="polis_number_to" type="number" class="form-control" name="polis_number_from" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label for="polis_kolvo" class="col-form-label">Количество полисов</label>
+                                                        <input type="text" id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="icheck-success ">
+                                                    <input onchange="toggleBlock('a5', 'data-a5')" class="form-check-input client-type-radio" type="checkbox" name="a5" id="a5">
+                                                    <label class="form-check-label" for="a5">A5</label>
+                                                </div>
+                                                <!-- TODO: Блок должен находится в скрытом состоянии
+                                                отображаться только тогда, когда выбран checkbox "Тариф"
+                                                -->
+                                                <div class="row" data-a5 style="display: none">
+                                                    <div class="col-md-12">
+                                                        <label for="polis_kolvo" class="col-form-label">Количество полисов</label>
+                                                        <input type="text" id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="polis_number_from" class="col-form-label">Номер полиса с:</label>
-                                                    <input id="polis_number_from" type="number" class="form-control" name="from_number" required>
+                                                    <input id="polis_number_from" type="number" class="form-control" name="from_number">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="polis_number_to" class="col-form-label">Номер полиса до:</label>
-                                                    <input id="polis_number_to" type="number" class="form-control" name="to_number" required>
-                                                    <input type="hidden" class="form-control" name="client_type" value="1">
+                                                    <input id="polis_number_to" type="number" class="form-control" name="to_number">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="polis_series" class="col-form-label">Серия полиса:</label>
-                                                    <select id="polis_series" class="form-control" disabled>
-                                                      <option selected></option>
-                                                      <option value="{{ serie.id }}">{{ serie.code }}</option>
+                                                    <label for="polis_series" class="col-form-label">Стоимость одного бланка </label>
+                                                    <input type="text" class="form-control" name="akt_stoimost">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="polis_series" class="col-form-label">Всего стоимость</label>
+                                                    <input type="text" class="form-control" name="akt_stoimost_vsego">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" for="akt_ot_kogo">От кого</label>
+                                                    <select class="form-control polises" id="akt_ot_kogo" name="akt_ot_kogo" style="width: 100%;">
+                                                        <option>Имя Фамилия</option>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" for="akt_komu">Кому</label>
+                                                    <select class="form-control polises" id="akt_komu" name="akt_komu" style="width: 100%;">
+                                                        <option>Имя Фамилия</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" for="akt_filial">Филиал</label>
+                                                    <select class="form-control polises" id="akt_filial" name="akt_filial" style="width: 100%;">
+                                                        <option>Имя Фамилия</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" for="akt_kto_vidal">Кто выдал полис</label>
+                                                    <select class="form-control polises" id="akt_kto_vidal" name="akt_kto_vidal" style="width: 100%;">
+                                                        <option>Имя Фамилия</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="act_date" class="col-form-label">Дата распределения</label>
+                                                    <div class="input-group">
+                                                        <input id="act_date" type="date" class="form-control" placeholder="yyyy-mm-dd" name="act_date" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="polis-series" class="col-form-label">Загрузка документов</label>
+                                                    <input type="file" id="geographic-zone" name="geo_zone" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="file-loading" class="col-form-label">Документ:</label>
-                                                    <div class="file-loading">
-                                                        <input id="file-input" class="file" type="file" name="file" required>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -397,12 +478,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../assets/dist/js/demo.js"></script>
 
-<script src="../assets/plugins/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
-<script src="../assets/plugins/bootstrap-fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
-<script src="../assets/plugins/bootstrap-fileinput/js/fileinput.min.js"></script>
-<script src="../assets/plugins/bootstrap-fileinput/themes/fa/theme.min.js"></script>
-<script src="../assets/plugins/bootstrap-fileinput/js/locales/LANG.js"></script>
 <script src="../assets/custom/js/csrftoken.js"></script>
+<script src="../assets/custom/js/form/form-actions.js"></script>
 
 <script>
     let fileInput = $("#file-input");
@@ -430,10 +507,7 @@
             overwriteInitial: true,
             deleteUrl: 'remove-logo',
             maxFileCount: 1,
-            {#
-                allowedFileExtensions: ['jpg', 'jpeg', 'png'],
-                #
-            }
+            allowedFileExtensions: ['jpg', 'jpeg', 'png'],
         });
     } else {
         fileInput.fileinput({
@@ -441,10 +515,7 @@
             previewFileType: 'text',
             browseOnZoneClick: true,
             maxFileCount: 1,
-            {#
-                allowedFileExtensions: ['jpg', 'jpeg', 'png'],
-                #
-            }
+            allowedFileExtensions: ['jpg', 'jpeg', 'png'],
         });
     }
 
@@ -464,9 +535,7 @@
             let formData = new FormData(form[0]);
             formData.append('from_username', 'admin'); // TODO: remove
 
-            {#
-                console.log(...formData);#
-            }
+            console.log(...formData);
 
             $.ajaxSetup({
                 beforeSend: function(xhr, settings) {
@@ -489,10 +558,7 @@
                 processData: false,
                 contentType: false,
                 type: "POST",
-                {#
-                    dataType: 'multipart/form-data',
-                    #
-                }
+                dataType: 'multipart/form-data',
                 success: function(data) {
                     if (data.success === true) {
                         console.log(data);
