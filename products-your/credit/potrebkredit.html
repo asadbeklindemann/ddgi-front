@@ -477,7 +477,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="dogovor_num" class="col-form-label">Номер договора страхования</label>
+                                                <label for="dogovor_num" class="col-form-label">Номер кредитного договора</label>
                                                 <input type="text" id="dogovor_num" name="dogovor_num" class="form-control">
                                             </div>
                                         </div>
@@ -489,38 +489,20 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="date_mycrozaim_from" class="col-form-label">Срок микрозайма от</label>
-                                                <input id="date_mycrozaim_from" name="date_mycrozaim_from" type="date" class="form-control">
+                                                <label for="kredit_summ" class="col-form-label">Сумма кредита</label>
+                                                <input id="kredit_summ" name="kredit_summ" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="date_mycrozaim_to" class="col-form-label">Срок микрозайма до</label>
-                                                <input id="date_mycrozaim_to" name="date_mycrozaim_to" type="date" class="form-control">
+                                                <label for="date_kredit_from" class="col-form-label">Срок кредита с</label>
+                                                <input id="date_kredit_from" name="date_kredit_from" type="date" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="period_expect_from" class="col-form-label">Период ожидания от</label>
-                                                <input id="period_expect_from" name="period_expect_from" type="date" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="period_expect_to" class="col-form-label">Период ожидания до</label>
-                                                <input id="period_expect_to" name="period_expect_to" type="date" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="mycrozaim_summ" class="col-form-label">Сумма микрозайма</label>
-                                                <input type="text" id="mycrozaim_summ" name="mycrozaim_summ" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="mycrozaim_summ" class="col-form-label">Цель получения микрозайма</label>
-                                                <input type="text" id="mycrozaim_summ" name="mycrozaim_summ" class="form-control">
+                                                <label for="date_kredit_to" class="col-form-label">Срок кредита до</label>
+                                                <input id="date_kredit_to" name="date_kredit_to" type="date" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -530,12 +512,66 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="col-form-label">Срок действия договора страхования</label>
+                                            <label for="date_dogovor_strah" class="col-form-label">Срок действия договора страхования</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">до</span>
                                                 </div>
-                                                <input id="insurance_from" name="insurance_from" type="date" class="form-control">
+                                                <input id="date_dogovor_strah" name="date_dogovor_strah" type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="zalog_vid" class="col-form-label">Вид залогового обеспечения</label>
+                                                <input type="text" id="zalog_vid" name="zalog_vid" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="kredit_zachem" class="col-form-label">Цель получения кредита</label>
+                                                <input type="text" id="kredit_zachem" name="kredit_zachem" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="tovar_about" class="col-form-label">Описание товара</label>
+                                                <input type="text" id="tovar_about" name="tovar_about" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="zalog_obesp_summ" class="col-form-label">Сумма залогового обеспечения</label>
+                                                <input type="text" id="zalog_obesp_summ" name="zalog_obesp_summ" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="zaemshik_passport" class="col-form-label">Загрузка паспорта заемщика</label>
+                                                <input type="file" id="zaemshik_passport" name="zaemshik_passport" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="dogovor_potreb_kredit" class="col-form-label">Загрузка договора потребительского кредита</label>
+                                                <input type="file" id="dogovor_potreb_kredit" name="dogovor_potreb_kredit" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="sprafka_s_home" class="col-form-label">Загрузка справки с места жительство</label>
+                                                <input type="file" id="sprafka_s_home" name="sprafka_s_home" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="sprafka_s_job" class="col-form-label">Загрузка справки с места работы</label>
+                                                <input type="file" id="sprafka_s_job" name="sprafka_s_job" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" class="col-form-label">
+                                                <label for="other_docs">Загрузка других документов</label>
+                                                <input type="file" id="other_docs" name="other_docs" multiple class="form-control">
                                             </div>
                                         </div>
                                     </div>
