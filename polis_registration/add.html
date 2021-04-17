@@ -297,7 +297,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="icheck-success ">
-                                                    <input onchange="toggleBlock('a4', 'data-a4')" class="form-check-input client-type-radio" type="checkbox" name="a4" id="a4">
+                                                    <input onchange="toggleBlock('a4', 'data-a4')" class="form-check-input client-type-radio" type="checkbox" name="a_reg" id="a4">
                                                     <label class="form-check-label" for="a4">A4</label>
                                                 </div>
                                                 <!-- TODO: Блок должен находится в скрытом состоянии
@@ -306,38 +306,61 @@
                                             </div>
                                             <div class="col-md-12" data-a4 style="display: none">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="polis_number_from" class="col-form-label">Номер полиса с:</label>
-                                                            <input id="polis_number_from" type="number" class="form-control" name="polis_number_from" required>
+                                                            <label for="polis_series_from" class="col-form-label">Серия полиса с:</label>
+                                                            <input id="polis_series_from" type="number" class="form-control" name="polis_series_from" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="polis_number_to" class="col-form-label">Номер полиса до:</label>
-                                                            <input id="polis_number_to" type="number" class="form-control" name="polis_number_from" required>
+                                                            <label for="polis_series_to" class="col-form-label">Серия полиса до:</label>
+                                                            <input id="polis_series_to" type="number" class="form-control" name="polis_series_to" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
                                                         <label for="polis_kolvo" class="col-form-label">Количество полисов</label>
                                                         <input type="text" disabled id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="polis_name" class="col-form-label">Наименование</label>
+                                                        <input type="text" id="polis_name" name="polis_name" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="icheck-success ">
-                                                    <input onchange="toggleBlock('a5', 'data-a5')" class="form-check-input client-type-radio" type="checkbox" name="a5" id="a5">
+                                                    <input onchange="toggleBlock('a5', 'data-a5')" class="form-check-input client-type-radio" type="checkbox" name="a_reg" id="a5">
                                                     <label class="form-check-label" for="a5">A5</label>
                                                 </div>
                                                 <!-- TODO: Блок должен находится в скрытом состоянии
                                                 отображаться только тогда, когда выбран checkbox "Тариф"
                                                 -->
-                                                <div class="row" data-a5 style="display: none">
-                                                    <div class="col-md-12">
+                                            </div>
+                                            <div class="col-md-12" data-a5 style="display: none">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="polis_series_from" class="col-form-label">Серия полиса с:</label>
+                                                            <input id="polis_series_from" type="number" class="form-control" name="polis_series_from" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="polis_series_to" class="col-form-label">Серия полиса до:</label>
+                                                            <input id="polis_series_to" type="number" class="form-control" name="polis_series_to" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
                                                         <label for="polis_kolvo" class="col-form-label">Количество полисов</label>
-                                                        <input type="text" id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                        <input type="text" disabled id="polis_kolvo" name="polis_kolvo" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="polis_name" class="col-form-label">Наименование</label>
+                                                        <input type="text" id="polis_name" name="polis_name" class="form-control">
                                                     </div>
                                                 </div>
+
                                             </div>
 
                                         </div>

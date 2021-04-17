@@ -27,9 +27,9 @@ const formRealtors = document.querySelector('#formRealtors')
 
 // Блок "Период деятельности оганизации"
 const periodActiveOrg = document.querySelector('#period-active-org')
-// Блок с элементами "radio" и "select" форм
+    // Блок с элементами "radio" и "select" форм
 const fieldsChanged = document.querySelector('#fields-changed')
-// Форма "Условия оплаты страховой премии"
+    // Форма "Условия оплаты страховой премии"
 const paymentsForm = document.querySelector('#payment-terms-form')
 
 const actedBoxDescription = document.querySelector('[data-acted]')
@@ -70,8 +70,8 @@ loadAgents();
 function loadAgents() {
     var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
             if (xmlhttp.status == 200) {
                 agentsList = JSON.parse(xmlhttp.response);
             } else if (xmlhttp.status == 400) {
@@ -1087,7 +1087,7 @@ function addProductFields(fieldNumber) {
 </div>`;
     generalProductFields.insertAdjacentHTML('beforeend', fields);
     const $ = (className) => document.querySelector(className)
-    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function () {
+    document.getElementById(`product-field-modal-${fieldNumber}`).addEventListener('keyup', function() {
         let overallSum =
             parseFloat($('#insurance_sum-' + fieldNumber).value || 0) +
             parseFloat($('.terror-tc-' + fieldNumber).value || 0) +
@@ -1110,32 +1110,32 @@ function addProductFields(fieldNumber) {
         $('.r-summ-' + fieldNumber).value = modalTableSum2;
         $('.r-summ-premia-' + fieldNumber).value = modalTableSum3;
 
-        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function () {
+        $('#totalLimit-' + fieldNumber).addEventListener('keyup', function() {
             if ($('.r-summ-' + fieldNumber).value >= $('#totalLimit-' + fieldNumber).value) {
                 $('#form-save-button').setAttribute('disabled', true)
-                // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
+                    // alert('Общий лимит ответственности не может превышать страховую сумму по видам опасностей');
             } else {
                 $('#form-save-button').removeAttribute('disabled');
             }
         });
 
-        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-${fieldNumber}`).value;
             $(`.r-3-sum-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-pass-1-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-one-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-1-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-1-${fieldNumber}`).value;
             $(`.r-3-sum-1-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-pass-2-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-one-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
-        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function () {
+        $('.r-3-one-2-' + fieldNumber).addEventListener('keyup', function() {
             let numOne = this.value * $(`.r-3-pass-2-${fieldNumber}`).value;
             $(`.r-3-sum-2-${fieldNumber}`).value = numOne;
         });
@@ -1322,7 +1322,7 @@ const addInsurer = () => {
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <label for="insurer-name" class="col-form-label">ФИО страхователя</label>
+                              <label for="insurer-name" class="col-form-label">Наименования страхователя</label>
                               <input type="text" id="insurer-name" name="fio_insurer[]" class="form-control">
                           </div>
                       </div>
@@ -1858,8 +1858,7 @@ if (addLitso) {
 
         document.getElementById('friends').insertAdjacentHTML('beforeend', fields);
     }
-}
-;
+};
 
 const addImushestvoBtn = document.getElementById('addImushestvoBtn');
 
