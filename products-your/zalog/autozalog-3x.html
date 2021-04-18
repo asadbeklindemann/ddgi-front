@@ -587,8 +587,61 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div>
-
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>При наружном осмотре ТС дефекты и повреждения? </label>
+                                            <div class="row">
+                                                <div class="col-sm-1">
+                                                    <div class="checkbox icheck-success">
+                                                        <input onchange="toggleBlockRadio('radioSuccess1', 'data-radioSuccess2')" type="radio" class="other_insurance-0" name="deffects" id="radioSuccess1" value="1">
+                                                        <label for="radioSuccess1">Да</label>
+                                                    </div>
+                                                    <div class="checkbox icheck-success">
+                                                        <input onchange="toggleBlockRadio('radioSuccess1', 'data-radioSuccess2', false)" type="radio" class="other_insurance-0" name="deffects" id="radioSuccess2" value="0">
+                                                        <label for="radioSuccess2">Нет</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-radiosuccess2="" class="col-md-12" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group other_insurance_info-0">
+                                                    <label>Комментарий</label>
+                                                    <input class="form-control" type="text" name="deffects_comment">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group other_insurance_info-0">
+                                                    <label>Прикрепите фотографии</label>
+                                                    <input class="form-control" type="file" name="deffects_photo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Застрахованы ли автотранспортные средства на момент заполнения настоящей анкеты? </label>
+                                            <div class="row">
+                                                <div class="col-sm-1">
+                                                    <div class="checkbox icheck-success">
+                                                        <input onchange="toggleBlockRadio('radioSuccess1-0', 'data-radioSuccess1')" type="radio" class="other_insurance-0" name="strtahovka" id="radioSuccess1-0" value="1">
+                                                        <label for="radioSuccess1-0">Да</label>
+                                                    </div>
+                                                    <div class="checkbox icheck-success">
+                                                        <input onchange="toggleBlockRadio('radioSuccess1-0', 'data-radioSuccess1', false)" type="radio" class="other_insurance-0" name="strtahovka" id="radioSuccess2-0" value="0">
+                                                        <label for="radioSuccess2-0">Нет</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-radiosuccess1="" class="form-group other_insurance_info" style="display: none;">
+                                            <label for="strtahovka_info">Комментарий</label>
+                                            <input id="strtahovka_info" class="form-control" type="text" name="strtahovka_info">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
