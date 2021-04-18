@@ -461,7 +461,7 @@ if (buttonAddRowInfo) {
             <input type="text" class="form-control" name="polis_id[]">
         </td>
         <td>
-            <input disabled type="date" class="form-control">
+            <input type="date" class="form-control">
         </td>
         <td>
             <input type="date" class="form-control" name="validity_period_from[]">
