@@ -2807,6 +2807,7 @@ fieldset:disabled a.btn {
     color: #fff;
     background-color: #28a745;
     width: 100%;
+    font-size: 14px;
     min-width: 100px;
     border-color: #28a745;
     box-shadow: none

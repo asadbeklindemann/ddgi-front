@@ -336,21 +336,21 @@ if (fieldsChanged) {
 
         // Скрытие и отображение блока acted
         if (target.hasAttribute('data-acted-radio')) {
-            if (target.value === 'true') {
+            if (target.value === '1') {
                 actedBoxDescription.style.display = 'flex'
                 dataSelectAndRadioFields.acted = {
-                    isActed: true
+                    isActed: 1
                 }
             } else {
                 actedBoxDescription.style.display = 'none'
                 dataSelectAndRadioFields.acted = {
-                    isActed: false
+                    isActed: 0
                 }
             }
         }
 
         if (target.hasAttribute('data-cases-radio')) {
-            if (target.value === 'true') {
+            if (target.value === '1') {
                 casesReasonBox.style.display = 'flex'
             } else {
                 casesReasonBox.style.display = 'none'
@@ -358,7 +358,7 @@ if (fieldsChanged) {
         }
 
         if (target.hasAttribute('data-administr-radio')) {
-            if (target.value === 'true') {
+            if (target.value === '1') {
                 administrCaseBox.style.display = 'flex'
             } else {
                 administrCaseBox.style.display = 'none'
@@ -1505,6 +1505,54 @@ const propertyAdd = () => {
           </td>
         </tr>
     `)
+}
+
+const propertyAddButton1 = document.getElementById('addProperty1');
+
+
+const propertyAdd1 = () => {
+    const id = Math.random();
+    const builders = document.getElementById('empTable1').querySelector('tbody');
+    builders.insertAdjacentHTML('beforeend', `
+         <tr id="${id}">
+            <td>
+                <input type="text" class="form-control" name="polis_mark[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_model[]">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="zalogodatel[]">
+            </td>
+            <td>
+                <input disabled type="date" class="form-control">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <select class="form-control polises" id="polises" name="polis_series[]" style="width: 100%;">
+                    <option selected="selected">Кв.м</option>
+                    <option>Кв.см</option>
+                </select>
+            </td>
+              <td>
+                <input type="text" data-field="value" class="form-control" name="polis_modification[]">
+            </td>
+            <td>
+                <input type="text" data-field="sum" class="form-control" name="polis_gos_num[]">
+            </td>
+            <td>
+                <input type="text" data-field="premiya" class="form-control" name="polis_teh_passport[]">
+            </td>
+            <td class="form-group">
+              <input onclick="removeAndCalc(${id})" id="insurer-modal-button" type="button" class="btn btn-warning" value="Удалить">
+          </td>
+        </tr>
+    `)
+}
+if (propertyAddButton1) {
+    propertyAddButton1.onclick = propertyAdd1
 }
 
 if (propertyAddButton) {
