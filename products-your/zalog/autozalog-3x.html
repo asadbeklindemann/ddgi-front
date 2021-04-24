@@ -543,7 +543,7 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="card card-info" id="clone-beneficiary">
+                        <div class="card card-info">
                             <div class="card-header">
                                 <h3 class="card-title">Сведение о тс</h3>
                                 <div class="card-tools">
@@ -554,43 +554,47 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <button type="button" data-btn-add-row-info class="btn btn-primary ">Добавить</button>
+                                    <button type="button" id="addAutozalogBtn" class="btn btn-primary ">Добавить</button>
                                 </div>
                                 <div class="table-responsive p-0 " style="max-height: 300px;">
                                     <div id="product-fields" data-info-table class="product-fields" data-field-number="0">
-                                        <table class="table table-hover table-head-fixed" id="empTable">
+                                        <table class="table table-hover table-head-fixed" id="empTable1">
                                             <thead>
                                                 <tr>
                                                     <th class="text-nowrap">Номер полиса</th>
                                                     <th class="text-nowrap">Серия полиса</th>
+                                                    <th class="text-nowrap">Дата выдачи</th>
                                                     <th class="text-nowrap">Год выпуска</th>
-                                                    <th class="text-nowrap">Период действия полиса от</th>
-                                                    <th class="text-nowrap">Период действия полиса до</th>
+                                                    <th class="text-nowrap">Периуд действия от</th>
+                                                    <th class="text-nowrap">Периуд действия до</th>
                                                     <th class="text-nowrap">Выбор агента</th>
-                                                    <th class="text-nowrap">Марка, модель, модификация</th>
-                                                    <th class="text-nowrap">№ двигателя</th>
-                                                    <th class="text-nowrap">№ кузова</th>
-                                                    <th class="text-nowrap">Гос номер</th>
-                                                    <th class="text-nowrap">№ тех паспорта</th>
+                                                    <th class="text-nowrap">Марка</th>
+                                                    <th class="text-nowrap">Модель</th>
+                                                    <th class="text-nowrap">Модификация</th>
+                                                    <th class="text-nowrap">Гос. номер</th>
+                                                    <th class="text-nowrap">Номер тех паспорта</th>
+                                                    <th class="text-nowrap">Номер двигателя</th>
+                                                    <th class="text-nowrap">Номер кузова</th>
+                                                    <th class="text-nowrap">Грузоподмность</th>
                                                     <th class="text-nowrap">Страховая стоимость</th>
                                                     <th class="text-nowrap">Страховая сумма</th>
                                                     <th class="text-nowrap">Страховая премия</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr></tr>
                                                 <tr>
-                                                    <td colspan="11" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                    <td><input readonly type="text" data-insurance-stoimost class="form-control overall-sum2" />
-                                                    </td>
-                                                    <td><input readonly type="text" data-insurance-sum class="form-control overall-sum4" />
-                                                    </td>
-                                                    <td><input readonly type="text" data-insurance-award class="form-control overall-sum3" />
-                                                    </td>
+                                                    <td colspan="15" style="text-align: right"><label class="text-bold">Итого</label></td>
+                                                    <td><input readonly data-insurance-stoimost type="text" class="form-control overall-sum" /></td>
+                                                    <td><input readonly data-insurance-sum type="text" class="form-control overall-sum4" /></td>
+                                                    <td><input readonly data-insurance-award type="text" class="form-control overall-sum3" /></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -771,49 +775,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card card-info" id="clone-beneficiary">
-                            <div class="card-header">
-                                <h3 class="card-title">Сведения о страховом полисе</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                </div>
-                            </div>
-                            <div class="card-body" id="beneficiary-card-body">
-                                <div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="polis-series" class="col-form-label">Серийный номер полиса
-                                                страхования</label>
-                                                <input type="text" id="polis-series" name="polis_series" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label class="col-form-label">Дата выдачи страхового полиса </label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"></span>
-                                                </div>
-                                                <input id="insurance_from" name="insurance_from" type="date" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="col-form-label" for="otvet-litso">Ответственное лицо</label>
-                                                <select class="form-control polises" id="otvet-litso" name="litso" style="width: 100%;">
-                                                <option selected="selected">Имя Фамилия</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                    </div>
                     <div class="card-body">
                         <div class="card card-info" id="clone-beneficiary">
                             <div class="card-header">
