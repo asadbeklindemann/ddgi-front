@@ -466,10 +466,12 @@ if (buttonAddRowInfo) {
         <td>
             <input type="date" class="form-control" name="to_date_polis[]" required>
         </td>
-
+        <td>
+            <input type="date" class="form-control" name="to_date_polis[]" required>
+        </td>
         <td>
             <select class="form-control polises" id="polises" name="agent_id[]" style="width: 100%;" required>
-                <option value="4">Surname1 Name1 middlasdc</option>
+                <option value="4">aa Name1 middlasdc</option>
                 <option value="3">FotTestOnly ahahah asdcsdac</option>
             </select>
         </td>
