@@ -470,7 +470,7 @@ if (buttonAddRowInfo) {
             <input type="date" class="form-control" name="to_date_polis[]" required>
         </td>
         <td>
-            <select class="form-control polises" id="polises" name="agent_id[]" style="width: 100%;" required>
+            <select class="form-control polises" id="polise_agents" name="agent_id[]" style="width: 100%;" required>
                 <option value="4">aa Name1 middlasdc</option>
                 <option value="3">FotTestOnly ahahah asdcsdac</option>
             </select>
@@ -1919,8 +1919,8 @@ if (addImushestvoBtn) {
                 <input type="text" class="form-control" name="period_polis[]">
             </td>
             <td>
-            <input disabled type="date" class="form-control">
-        </td>
+                <input disabled type="date" class="form-control">
+            </td>
             <td>
                 <input type="date" class="form-control" name="polis_id[]">
             </td>
