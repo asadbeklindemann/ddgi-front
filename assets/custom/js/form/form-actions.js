@@ -2203,3 +2203,8 @@ if (addAutozalogBtn) {
 
     }
 }
+
+$(document).on('click', function() {
+    $('#notmod input[value="Заполнить"]').hide();
+    $('#notmod + #general-product-fields').hide();
+})
