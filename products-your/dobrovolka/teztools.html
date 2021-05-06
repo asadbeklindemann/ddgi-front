@@ -512,59 +512,52 @@
                             <h3 class="card-title">Сведени о трансортных средствах</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
+                                <i class="fas fa-minus"></i>
+                            </button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <button type="button" onclick="addRow()" class="btn btn-primary ">Добавить</button>
+                                <button type="button" id="cascoAddButton" class="btn btn-primary ">Добавить</button>
                             </div>
                             <div class="table-responsive p-0 " style="max-height: 300px;">
-                                <div id="product-fields" class="product-fields" data-field-number="0">
+                                <div id="product-fields" data-info-table class="product-fields" data-field-number="0">
                                     <table class="table table-hover table-head-fixed" id="empTable">
                                         <thead>
                                             <tr>
+                                                <th class="text-nowrap">Номер полиса</th>
                                                 <th class="text-nowrap">Серия полиса</th>
-                                                <th class="text-nowrap">Выбор агента</th>
                                                 <th class="text-nowrap">Дата выдачи</th>
-                                                <th class="text-nowrap">Период действия полиса</th>
                                                 <th class="text-nowrap">Год выпуска</th>
-                                                <th class="text-nowrap">ИД строки</th>
-                                                <th class="text-nowrap">Марка</th>
-                                                <th class="text-nowrap">Модель</th>
+                                                <th class="text-nowrap">Периуд действия от</th>
+                                                <th class="text-nowrap">Периуд действия до</th>
+                                                <th class="text-nowrap">Выбор агента</th>
+                                                <th class="text-nowrap">Марка и модель</th>
                                                 <th class="text-nowrap">Модификация</th>
                                                 <th class="text-nowrap">Гос. номер</th>
                                                 <th class="text-nowrap">Номер тех паспорта</th>
                                                 <th class="text-nowrap">Номер двигателя</th>
                                                 <th class="text-nowrap">Номер кузова</th>
-                                                <th class="text-nowrap">Грузоподъёмность</th>
-                                                <th class="text-nowrap">Количество посадочных мест</th>
-                                                <th class="text-nowrap">Страховая стоимость*</th>
-                                                <th class="text-nowrap">Страховая сумма*</th>
-                                                <th class="text-nowrap">Страховая премия*</th>
+                                                <th class="text-nowrap">Грузоподмность</th>
+                                                <th class="text-nowrap">Страховая стоимость</th>
+                                                <th class="text-nowrap">Страховая сумма</th>
+                                                <th class="text-nowrap">Страховая премия</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            <tr></tr>
                                             <tr>
-                                                <td colspan="15" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                <td>
-                                                    <input readonly type="text" class="form-control forsum4 overall_insurance_sum-0" name="overall_polis_sum[]">
-                                                </td>
-
-                                                <td>
-                                                    <input readonly type="text" class="form-control forsum4 overall_insurance_sum-0" name="overall_polis_sum[]">
-                                                </td>
-
-                                                <td>
-                                                    <input readonly type="text" class="form-control forsum4 overall_insurance_sum-0" name="overall_polis_sum[]">
-                                                </td>
+                                                <td colspan="14" style="text-align: right"><label class="text-bold">Итого</label></td>
+                                                <td><input readonly data-insurance-stoimost type="text" class="form-control overall-sum" /></td>
+                                                <td><input readonly data-insurance-sum type="text" class="form-control overall-sum4" /></td>
+                                                <td><input readonly data-insurance-award type="text" class="form-control overall-sum3" /></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                        <div id="general-product-fields">
                         </div>
                     </div>
 
@@ -837,22 +830,14 @@
 
 
 <script src="../../assets/custom/js/csrftoken.js"></script>
-
-<script src="../../assets/custom/js/form/variables.js"></script>
-<script src="../../assets/custom/js/form/add-clients.js"></script>
-<script src="../../assets/custom/js/form/product-fields.js"></script>
-<script src="../../assets/custom/js/form/product-fields.add.js"></script>
+<script src="../../assets/custom/js/form/form-actions.js"></script>
 <script>
     $(document).ready(function() {
         $.ajax({
             url: '../../assets/json/cbu.json',
             method: "GET",
             type: 'json',
-            // beforeSend: function(xhr) {
-            //     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-            // },
             success: function(data) {
-                // $('#walletNames').append('<option selected="selected"></option>');
                 const products = data;
                 const length = products.length;
                 console.log(products)
@@ -866,332 +851,6 @@
             }
         })
     });
-    // fetch('https://cbu.uz/ru/arkhiv-kursov-valyut/json/')
-    //     .then(function(data) {
-    //         console.log(data)
-    //     });
 </script>
-<!-- 
-<script>
-    insurerId.select2();
-    beneficiaryId.select2();
-    pledgerId.select2();
-
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-
-    $(document).ready(function() {
-        $('.client-type-radio').click(function() {
-            formContainer.hide();
-            clientType = $(this).val() == 'individual' ? 1 : 2;
-            $.ajax({
-                url: '/api/get_product_types_by/?client_type=' + clientType,
-                method: "GET",
-                success: function(data) {
-                    if (data.success === true) {
-                        productId.empty().append('<option selected="selected"></option>');
-                        const products = data.data;
-                        const length = products.length;
-                        for (let i = 0; i < length; i++) {
-                            productId.append(`<option value="${products[i].id}">${products[i].name}</option>`);
-                        }
-                    }
-                },
-                error: function() {
-                    console.log('error');
-                }
-            })
-        });
-
-        productId.change(function(e) {
-            let value = $(this).children("option:selected").val();
-            if (value) {
-                $.ajax({
-                    url: '/api/get_product_types_by/?item_id=' + value,
-                    method: "GET",
-                    success: function(data) {
-                        if (data.success === true) {
-                            product = data.data;
-
-                            if (product.has_beneficiary) {
-                                beneficiaryCardBody.show();
-                            } else {
-                                beneficiaryCardBody.hide();
-                            }
-
-                            if (product.has_pledger) {
-                                pledgerCardBody.show();
-
-                                $.ajax({
-                                    url: '/api/client-legal/',
-                                    method: "GET",
-                                    success: function(data) {
-                                        if (data.success === true) {
-                                            pledgerId.empty().append('<option selected="selected"></option>');
-                                            const clients = data.data;
-                                            const length = clients.length;
-                                            for (let i = 0; i < length; i++) {
-                                                pledgerId.append(`<option value="${clients[i].id}">${clients[i].name}</option>`);
-                                            }
-                                        }
-                                    },
-                                    error: function() {
-                                        console.log('error');
-                                    }
-                                });
-                            } else {
-                                pledgerCardBody.hide();
-                            }
-                        }
-                    },
-                    error: function() {
-                        console.log('error');
-                    }
-                })
-
-                let clientType = $("input:radio[name='client_type_radio']:checked").val();
-                getPolicyList(clientType === 'individual' ? 1 : 2);
-
-                if (clientType === 'individual') {
-                    insurerLegalClientRow.hide();
-                    insurerName.prop('disabled', true);
-                    insurerOkonh.prop('disabled', true);
-                    insurerIndividualClientRow.show();
-                    insurerFirstName.prop('disabled', false);
-                    insurerLastName.prop('disabled', false);
-                    insurerMiddleName.prop('disabled', false);
-                    insurerIndividualClient = true;
-                } else {
-                    insurerLegalClientRow.show();
-                    insurerName.prop('disabled', false);
-                    insurerOkonh.prop('disabled', false);
-                    insurerIndividualClientRow.hide();
-                    insurerFirstName.prop('disabled', true);
-                    insurerLastName.prop('disabled', true);
-                    insurerMiddleName.prop('disabled', true);
-                    insurerIndividualClient = false;
-                }
-                formContainer.show();
-            } else {
-                formContainer.hide();
-            }
-        });
-
-        $('.beneficiary-type-radio').click(function() {
-            clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            console.log(clientType);
-
-            let clientType = $("input:radio[name='beneficiary_type_radio']:checked").val();
-            // 
-
-            if (clientType === 'individual') {
-                console.log('beneficiary individual');
-                beneficiaryLegalClientRow.hide();
-                beneficiaryName.prop('disabled', true);
-                beneficiaryOkonh.prop('disabled', true);
-                beneficiaryIndividualClientRow.show();
-                beneficiaryFirstName.prop('disabled', false);
-                beneficiaryLastName.prop('disabled', false);
-                beneficiaryMiddleName.prop('disabled', false);
-                beneficiaryIndividualClient = true;
-            } else {
-                console.log('beneficiary legal');
-                beneficiaryLegalClientRow.show();
-                beneficiaryName.prop('disabled', false);
-                beneficiaryOkonh.prop('disabled', false);
-                beneficiaryIndividualClientRow.hide();
-                beneficiaryFirstName.prop('disabled', true);
-                beneficiaryLastName.prop('disabled', true);
-                beneficiaryMiddleName.prop('disabled', true);
-                beneficiaryIndividualClient = false;
-            }
-
-            $.ajax({
-                url: '/api/client-' + clientType + '/',
-                method: "GET",
-                success: function(data) {
-                    if (data.success === true) {
-                        beneficiaryId.empty().append('<option selected="selected"></option>');
-                        const clients = data.result;
-                        const length = clients.length;
-                        for (let i = 0; i < length; i++) {
-                            beneficiaryId.append(`<option value="${clients[i].id}">${clients[i].name}</option>`);
-                        }
-                    }
-                },
-                error: function() {
-                    console.log('error');
-                }
-            });
-        });
-
-        insurerModalButton.click(function(e) {
-            insurerModal.show();
-        });
-
-        beneficiaryModalButton.click(function(e) {
-            beneficiaryModal.show();
-        });
-
-        pledgerModalButton.click(function(e) {
-            pledgerModal.show();
-        });
-
-        insurerClose.click(function(e) {
-            insurerModal.hide();
-        });
-
-        beneficiaryClose.click(function(e) {
-            beneficiaryModal.hide();
-        });
-
-        pledgerClose.click(function(e) {
-            pledgerModal.hide();
-        });
-
-        // $(window).click(function(event) {
-        //     let fieldNumber;
-        //     if (event.target == insurerModal[0]) {
-        //         insurerModal.hide();
-        //     } else if (event.target == beneficiaryModal[0]) {
-        //         beneficiaryModal.hide();
-        //     } else if (event.target == pledgerModal[0]) {
-        //         pledgerModal.hide();
-        //     } else {
-        //         let modal = $('#product-fields-' + (fieldNumber = event.target.data('field-number')));
-        //         if (modal.length && target.event == modal[0]) {
-        //             modal.hide();
-        //         }
-        //     }
-        // });
-
-        formSaveButton.click(function(e) {
-            e.preventDefault();
-
-            let productFieldsForm = $('#product-fields');
-
-            let forms = {};
-            let params = {};
-            forms.csrfmiddlewaretoken = csrftoken;
-            forms.action = 'create';
-            forms.client_type = clientType;
-            forms.insurer_id = insurerId.children("option:selected").val();
-            forms.beneficiary_id = beneficiaryId.children("option:selected").val();
-            forms.pledger_id = pledgerId.children("option:selected").val();
-            let serializedForm = clientProductForm.serializeArray();
-            for (let i = 0; i < serializedForm.length; i++) {
-                forms[serializedForm[i]['name']] = serializedForm[i]['value'];
-            }
-
-            params = {};
-            serializedForm = paymentTermsForm.serializeArray();
-            for (let i = 0; i < serializedForm.length; i++) {
-                params[serializedForm[i]['name']] = serializedForm[i]['value'];
-            }
-            forms.payment_terms = params;
-
-            params = {};
-            serializedForm = anketaFieldsForm.serializeArray();
-            for (let i = 0; i < serializedForm.length; i++) {
-                forms[serializedForm[i]['name']] = serializedForm[i]['value'];
-            }
-            forms.payment_terms = params;
-
-            params = {};
-            let count = 0;
-            let field;
-            let productFields1 = [];
-            let productFields2 = [];
-            let polisFields = {};
-            let productExists = false;
-            for (let i = 0; i < productFieldNumber + 1; i++) {
-                field = null;
-
-                for (let j = 1; j < 8; j++) {
-                    if ((field = $(`#product-fields-${i}-${j}`)).length) {
-                        serializedForm = field.serializeArray();
-                        for (let k = 0; k < serializedForm.length; k++) {
-                            params[serializedForm[k]['name']] = serializedForm[k]['value'];
-                        }
-
-                    }
-                    productFields2[j] = params;
-                    params = {};
-                }
-                params = {};
-
-                if ((polisFields = $(`#polis-fields-${i}`)).length) {
-                    field = $(`#product-fields`);
-                    serializedForm = field.serializeArray();
-                    params.mark_model = field.find(`input[name=mark_model-${i}]`).val();
-                    params.release_year = field.find(`input[name=release_year-${i}]`).val();
-                    params.country_number = field.find(`input[name=country_number-${i}]`).val();
-                    params.tech_passport_number = field.find(`input[name=tech_passport_number-${i}]`).val();
-                    params.engine_number = field.find(`input[name=engine_number-${i}]`).val();
-                    params.carcase_number = field.find(`input[name=carcase_number-${i}]`).val();
-                    params.lifting_capacity = field.find(`input[name=lifting_capacity-${i}]`).val();
-                    params.number_of_seats = field.find(`input[name=number_of_seats-${i}]`).val();
-                    params.insurance_cost = field.find(`input[name=insurance_cost-${i}]`).val();
-                    params.insurance_sum = field.find(`input[name=insurance_sum-${i}]`).val();
-                    params.insurance_premium = field.find(`input[name=insurance_premium-${i}]`).val();
-                    console.log(params);
-                    productFields2[0] = params;
-                    params = {};
-
-                    serializedForm = polisFields.serializeArray();
-                    for (let j = 0; j < serializedForm.length; j++) {
-                        params[serializedForm[j]['name']] = serializedForm[j]['value'];
-                    }
-                    productFields2[8] = params;
-                    params = {};
-                    productExists = true;
-                } else {
-                    productExists = false;
-                }
-
-                productFields1[count++] = productFields2;
-                productFields2 = [];
-            }
-            forms.product_fields = productFields1;
-
-            $.ajax({
-                url: '/api/klassss/',
-                data: JSON.stringify(forms),
-                processData: false,
-                contentType: 'application/json',
-                dataType: 'json',
-                type: "GET",
-                success: function(data) {
-                    if (data.success === true) {
-                        console.log(data);
-                        window.location.replace('/references/klass/');
-                    }
-                }
-            });
-        });
-    });
-
-    function getPolicyList(clientType) {
-        polises.empty().append('<option selected="selected">Полисы</option>');
-        $.ajax({
-            url: '/api/get_product_type_list/?client-type=' + clientType,
-            processData: false,
-            contentType: 'application/json',
-            dataType: 'json',
-            type: "GET",
-            success: function(data) {
-                if (data.success === true) {
-                    console.log(data);
-                    polises.append(`<option value="${data.id}">${data.code} - ${data.name}</option`);
-                }
-            }
-        });
-    }
-</script> -->
 
 </html>

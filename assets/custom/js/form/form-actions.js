@@ -2051,6 +2051,86 @@ if (cascoAddButton) {
     cascoAddButton.onclick = addCascoField
 }
 
+const addCascoFieldRow1 = (fieldNumber) => {
+    const fields = `
+    <tr id="a${fieldNumber}">
+        <td>
+            <input type="text" class="form-control" name="polis_mark[]">
+        </td>
+        <td>
+            <input type="text" class="form-control" name="polis_model[]">
+        </td>
+        <td>
+            <input disabled type="date" class="form-control">
+        </td>
+        <td>
+            <input type="text" class="form-control" name="polis_gos_num[]">
+        </td>
+        <td>
+            <input type="date" class="form-control" name="polis_teh_passport[]">
+        </td>
+        <td>
+            <input type="date" class="form-control" name="polis_num_engine[]">
+        </td>
+        <td>
+           <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
+                <option selected="selected"></option>
+            </select>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="polis_payload[]">
+        </td>
+        <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+          <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+          <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+          <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+          <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+         <td>
+            <input type="text"  class="form-control" name="polis_places[]">
+        </td>
+        <td>
+            <input type="text" data-field="value" class="form-control" name="polis_places[]">
+        </td>
+        <td>
+            <input type="text" data-field="sum" class="form-control calc1 overall_insurance_sum-0" name="overall_polis_sum[]">
+        </td>
+        <td>
+            <input type="text" data-field="premiya"  class="form-control insurance_premium-0" name="polis_premium[]">
+        </td>
+         <td>
+            <input type="button" onclick="openModal(${fieldNumber})" value="Заполнить" class="btn btn-success product-fields-button" id="product-fields-button" data-field-number="${fieldNumber}">
+        </td>
+         <td>
+            <input type="button" onclick="removeProductsFieldRow(${fieldNumber})" value="Удалить" class="btn btn-warning">
+        </td>
+    </tr>
+`
+    productFieldsTable.querySelector('tbody').querySelector('tr').insertAdjacentHTML('afterend', fields);
+    renderSelect();
+};
+
+const cascoAddButton1 = document.getElementById('cascoAddButton1');
+
+const addCascoField1 = () => {
+    addCascoFieldRow1(fieldNumber);
+};
+
+if (cascoAddButton1) {
+    cascoAddButton1.onclick = addCascoField
+}
+
+
+
 
 const addAutozalogBtn = document.getElementById('addAutozalogBtn');
 
