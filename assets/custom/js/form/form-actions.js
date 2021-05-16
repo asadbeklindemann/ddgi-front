@@ -48,7 +48,7 @@ $(document).ready(function() {
             totalThreeField.value = value;
         })
     }, 500)
-    document.addEventListener('keyup', function() {
+    document.addEventListener('input', function() {
         const dateS = document.getElementById('pastorj_period_dogovor_s').value;
         const dateDo = document.getElementById('pastorj_period_dogovor_do').value;
         const totalField = document.getElementById('pastorj_period_days');
@@ -61,9 +61,6 @@ $(document).ready(function() {
         var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
         var days1 = Math.ceil(Math.abs(dateFrom.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
         var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateTo.getTime()) / (1000 * 3600 * 24));
-        totalField.value = `${days} дней`;
-        totalField1.value = `${days1} дней`;
-        totalField2.value = `${days2} дней`;
         const preimRastorjTotal = document.getElementById('pastorj_preim');
         const preimRastorjOneDayTotal = document.getElementById('pastorj_preim_one_days');
         const preimNezarabot = document.getElementById('preim_nezarabot');
@@ -73,6 +70,9 @@ $(document).ready(function() {
         preimRastorjOneDayTotal.value = (preimRastorjTotal.value / days).toFixed(1);
         preimNezarabot.value = (preimRastorjOneDayTotal.value * days2).toFixed(1);
         vozvrat.value = (preimNezarabot.value - vozmesheniya.value - rashod.value).toFixed(1);
+        totalField.value = `${days} дней`;
+        totalField1.value = `${days1} дней`;
+        totalField2.value = `${days2} дней`;
     });
 });
 
