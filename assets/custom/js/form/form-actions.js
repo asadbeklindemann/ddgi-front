@@ -61,7 +61,6 @@ $(document).ready(function() {
         var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
         var days1 = Math.ceil(Math.abs(dateTo.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
         var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
-        console.log(days, days1, days2);
         totalField.value = `${days} дней`;
         totalField1.value = `${days1} дней`;
         totalField2.value = `${days2} дней`;
@@ -73,7 +72,6 @@ $(document).ready(function() {
         const vozvrat = document.getElementById('summ_vozvrat');
         preimRastorjOneDayTotal.value = (preimRastorjTotal.value / days).toFixed(1);
         preimNezarabot.value = (preimRastorjOneDayTotal.value * days2).toFixed(1);
-        console.log(vozvrat);
         vozvrat.value = (preimNezarabot.value - vozmesheniya.value - rashod.value).toFixed(1);
     });
 });
