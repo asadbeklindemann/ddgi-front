@@ -39,61 +39,61 @@ $(document).ready(function() {
             totalTwoField.value = value;
         })
     }, 500)
-    setInterval(() => {
-        sumThreeFields.forEach(field => {
-            let value = 0;
-            sumThreeFields.forEach(item => {
-                value += +item.value
-            })
-            totalThreeField.value = value;
-        })
-    }, 500)
 
     const newTarifInput = document.getElementById('descrTarif');
     const newTarifCalc = document.getElementById('newDdescrTarif');
     const newPreimInput = document.getElementById('descrPreim');
     const newPreimCalc = document.getElementById('newDescrPreim');
-    const dateFromDogovorStrah = document.getElementById('strah_dogovor_ot').value;
-    const dateToDogovorStrah = document.getElementById('strah_dogovor_do').value;
-    const dateFromDogovorStrah1 = new Date(dateFromDogovorStrah);
-    const dateToDogovorStrah1 = new Date(dateToDogovorStrah);
-    const daysAll = Math.ceil(Math.abs(dateToDogovorStrah1.getTime() - dateFromDogovorStrah1.getTime()) / (1000 * 3600 * 24));
 
     newTarifInput.addEventListener('input', function() {
-        newTarifCalc.value = totalOneField.value * newTarifInput.value * daysAll / 365;
+        const dateFromDogovorStrah = document.getElementById('strah_dogovor_ot').value;
+        const dateToDogovorStrah = document.getElementById('strah_dogovor_do').value;
+        const dateFromDogovorStrah1 = new Date(dateFromDogovorStrah);
+        const dateToDogovorStrah1 = new Date(dateToDogovorStrah);
+        const daysAll = Math.ceil(Math.abs(dateToDogovorStrah1.getTime() - dateFromDogovorStrah1.getTime()) / (1000 * 3600 * 24));
+        newPreimCalc.value = (newTarifInput.value * totalOneField.value * daysAll / 365).toFixed(1);
     })
     newPreimInput.addEventListener('input', function() {
-        newPreimCalc.value = newPreimInput.value / totalOneField.value / daysAll * 365;
+        const dateFromDogovorStrah = document.getElementById('strah_dogovor_ot').value;
+        const dateToDogovorStrah = document.getElementById('strah_dogovor_do').value;
+        const dateFromDogovorStrah1 = new Date(dateFromDogovorStrah);
+        const dateToDogovorStrah1 = new Date(dateToDogovorStrah);
+        const daysAll = Math.ceil(Math.abs(dateToDogovorStrah1.getTime() - dateFromDogovorStrah1.getTime()) / (1000 * 3600 * 24));
+        newTarifCalc.value = (totalOneField.value / newPreimInput.value / daysAll * 365).toFixed(1);
     })
-
 
 
 
     document.addEventListener('input', function() {
-        const dateS = document.getElementById('pastorj_period_dogovor_s').value;
-        const dateDo = document.getElementById('pastorj_period_dogovor_do').value;
-        const totalField = document.getElementById('pastorj_period_days');
-        const totalField1 = document.getElementById('pastorj_istek_period');
-        const totalField2 = document.getElementById('pastorj_neistek_period');
-        const rastorj = document.getElementById('pastorj_data_dogovor').value;
-        const dateFrom = new Date(dateS);
-        const dateTo = new Date(dateDo);
-        const dateRastorj = new Date(rastorj);
-        var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
-        var days1 = Math.ceil(Math.abs(dateFrom.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
-        var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateTo.getTime()) / (1000 * 3600 * 24));
-        const preimRastorjTotal = document.getElementById('pastorj_preim');
-        const preimRastorjOneDayTotal = document.getElementById('pastorj_preim_one_days');
-        const preimNezarabot = document.getElementById('preim_nezarabot');
-        const vozmesheniya = document.getElementById('strah_vozozmesh');
-        const rashod = document.getElementById('prochie_rashodi');
-        const vozvrat = document.getElementById('summ_vozvrat');
-        preimRastorjOneDayTotal.value = (preimRastorjTotal.value / days).toFixed(1);
-        preimNezarabot.value = (preimRastorjOneDayTotal.value * days2).toFixed(1);
-        vozvrat.value = (preimNezarabot.value - vozmesheniya.value - rashod.value).toFixed(1);
-        totalField.value = `${days} дней`;
-        totalField1.value = `${days1} дней`;
-        totalField2.value = `${days2} дней`;
+        try {
+            const dateS = document.getElementById('pastorj_period_dogovor_s').value;
+            const dateDo = document.getElementById('pastorj_period_dogovor_do').value;
+            const totalField = document.getElementById('pastorj_period_days');
+            const totalField1 = document.getElementById('pastorj_istek_period');
+            const totalField2 = document.getElementById('pastorj_neistek_period');
+            const rastorj = document.getElementById('pastorj_data_dogovor').value;
+            const dateFrom = new Date(dateS);
+            const dateTo = new Date(dateDo);
+            const dateRastorj = new Date(rastorj);
+            var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+            var days1 = Math.ceil(Math.abs(dateFrom.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
+            var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateTo.getTime()) / (1000 * 3600 * 24));
+            const preimRastorjTotal = document.getElementById('pastorj_preim');
+            const preimRastorjOneDayTotal = document.getElementById('pastorj_preim_one_days');
+            const preimNezarabot = document.getElementById('preim_nezarabot');
+            const vozmesheniya = document.getElementById('strah_vozozmesh');
+            const rashod = document.getElementById('prochie_rashodi');
+            const vozvrat = document.getElementById('summ_vozvrat');
+            preimRastorjOneDayTotal.value = (preimRastorjTotal.value / days).toFixed(1);
+            preimNezarabot.value = (preimRastorjOneDayTotal.value * days2).toFixed(1);
+            vozvrat.value = (preimNezarabot.value - vozmesheniya.value - rashod.value).toFixed(1);
+            totalField.value = `${days} дней`;
+            totalField1.value = `${days1} дней`;
+            totalField2.value = `${days2} дней`;
+
+        } catch {
+            console.log('hh');
+        }
     });
 });
 
