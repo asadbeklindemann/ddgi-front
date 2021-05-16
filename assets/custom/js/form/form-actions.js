@@ -59,8 +59,8 @@ $(document).ready(function() {
         const dateTo = new Date(dateDo);
         const dateRastorj = new Date(rastorj);
         var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
-        var days1 = Math.ceil(Math.abs(dateTo.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
-        var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+        var days1 = Math.ceil(Math.abs(dateFrom.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
+        var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateTo.getTime()) / (1000 * 3600 * 24));
         totalField.value = `${days} дней`;
         totalField1.value = `${days1} дней`;
         totalField2.value = `${days2} дней`;
