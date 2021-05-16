@@ -48,6 +48,27 @@ $(document).ready(function() {
             totalThreeField.value = value;
         })
     }, 500)
+
+    const newTarifInput = document.getElementById('descrTarif');
+    const newTarifCalc = document.getElementById('newDdescrTarif');
+    const newPreimInput = document.getElementById('descrPreim');
+    const newPreimCalc = document.getElementById('newDescrPreim');
+    const dateFromDogovorStrah = document.getElementById('strah_dogovor_ot').value;
+    const dateToDogovorStrah = document.getElementById('strah_dogovor_do').value;
+    const dateFromDogovorStrah1 = new Date(dateFromDogovorStrah);
+    const dateToDogovorStrah1 = new Date(dateToDogovorStrah);
+    const daysAll = Math.ceil(Math.abs(dateToDogovorStrah1.getTime() - dateFromDogovorStrah1.getTime()) / (1000 * 3600 * 24));
+
+    newTarifInput.addEventListener('input', function() {
+        newTarifCalc.value = totalOneField.value * newTarifInput.value * daysAll / 365;
+    })
+    newPreimInput.addEventListener('input', function() {
+        newPreimCalc.value = newPreimInput.value / totalOneField.value / daysAll * 365;
+    })
+
+
+
+
     document.addEventListener('input', function() {
         const dateS = document.getElementById('pastorj_period_dogovor_s').value;
         const dateDo = document.getElementById('pastorj_period_dogovor_do').value;
