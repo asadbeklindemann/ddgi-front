@@ -11,6 +11,71 @@ $(document).ready(function() {
             this.value = this.value.replace(/[^a-z]/g, '');
         }
     })
+
+    const sumOneFields = document.querySelectorAll('[data-sum-one]');
+    const sumTwoFields = document.querySelectorAll('[data-sum-two]');
+    const sumThreeFields = document.querySelectorAll('[data-sum-three]');
+
+    const totalOneField = document.querySelector('[data-sum-all-one]');
+    const totalTwoField = document.querySelector('[data-sum-two-all]');
+    const totalThreeField = document.querySelector('[data-sum-three-all]');
+
+
+    setInterval(() => {
+        sumOneFields.forEach(field => {
+            let value = 0;
+            sumOneFields.forEach(item => {
+                value += +item.value
+            })
+            totalOneField.value = value;
+        })
+    }, 500)
+    setInterval(() => {
+        sumTwoFields.forEach(field => {
+            let value = 0;
+            sumTwoFields.forEach(item => {
+                value += +item.value
+            })
+            totalTwoField.value = value;
+        })
+    }, 500)
+    setInterval(() => {
+        sumThreeFields.forEach(field => {
+            let value = 0;
+            sumThreeFields.forEach(item => {
+                value += +item.value
+            })
+            totalThreeField.value = value;
+        })
+    }, 500)
+    document.addEventListener('keyup', function() {
+        const dateS = document.getElementById('pastorj_period_dogovor_s').value;
+        const dateDo = document.getElementById('pastorj_period_dogovor_do').value;
+        const totalField = document.getElementById('pastorj_period_days');
+        const totalField1 = document.getElementById('pastorj_istek_period');
+        const totalField2 = document.getElementById('pastorj_neistek_period');
+        const rastorj = document.getElementById('pastorj_data_dogovor').value;
+        const dateFrom = new Date(dateS);
+        const dateTo = new Date(dateDo);
+        const dateRastorj = new Date(rastorj);
+        var days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+        var days1 = Math.ceil(Math.abs(dateTo.getTime() - dateRastorj.getTime()) / (1000 * 3600 * 24));
+        var days2 = Math.ceil(Math.abs(dateRastorj.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+        console.log(days, days1, days2);
+        totalField.value = `${days} дней`;
+        totalField1.value = `${days1} дней`;
+        totalField2.value = `${days2} дней`;
+        const preimRastorjTotal = document.getElementById('pastorj_preim');
+        const preimRastorjOneDayTotal = document.getElementById('pastorj_preim_one_days');
+        const preimNezarabot = document.getElementById('preim_nezarabot');
+        const vozmesheniya = document.getElementById('strah_vozozmesh');
+        const rashod = document.getElementById('prochie_rashodi');
+        const vozvrat = document.getElementById('summ_vozvrat');
+        preimRastorjOneDayTotal.value = (preimRastorjTotal.value / days).toFixed(1);
+        preimNezarabot.value = (preimRastorjOneDayTotal.value * days2).toFixed(1);
+        console.log(vozvrat);
+        vozvrat.value = (preimNezarabot.value - vozmesheniya.value - rashod.value).toFixed(1);
+    });
 });
 
 
@@ -86,7 +151,6 @@ loadAgents();
 
 function loadAgents() {
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
             if (xmlhttp.status == 200) {
@@ -98,18 +162,15 @@ function loadAgents() {
             }
         }
     };
-
     xmlhttp.open("GET", "http://wecloud.rocks/api/agent_list", true);
     xmlhttp.send();
 }
-
 /**
  * @param selector - селектор элемента
  */
 function getField(selector) {
     return document.querySelector(selector)
 }
-
 /**
  * @param from - начальная дата
  * @param to - конечная дата
@@ -119,8 +180,7 @@ function calcDifferenceBetweenDates(from, to) {
     const dateFrom = new Date(from);
     const dateTo = new Date(to);
     const days = Math.ceil(Math.abs(dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
-    const totalField = document.querySelector('[data-total="total-active-org"]')
-
+    const totalField = document.querySelector('[data-total="total-active-org"]');
     totalField.value = `${days} дней`
 }
 
@@ -129,19 +189,15 @@ function calcDifferenceBetweenDates(from, to) {
  */
 
 function getActivityDates(element) {
-
     if (element.dataset.activityPeriod === 'from') {
         activityPeriodDates.from = element.value
     }
-
     if (element.dataset.activityPeriod === 'to') {
         activityPeriodDates.to = element.value
     }
-
     if (activityPeriodDates.from && activityPeriodDates.to) {
         return true
     }
-
     return false
 }
 

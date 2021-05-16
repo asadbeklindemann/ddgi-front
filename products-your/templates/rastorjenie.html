@@ -293,114 +293,114 @@
                                 </button>
                                 </div>
                             </div>
-                            <div class="card-body" id="beneficiary-card-body">
+                            <div class="card-body" id="rastorjeniye">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_number" class="col-form-label">Номер договора</label>
-                                            <input disabled type="text" id="pastorj_number" name="pastorj_number" class="form-control">
+                                            <input readonly type="text" id="pastorj_number" name="pastorj_number" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_data" class="col-form-label">Дата договора</label>
-                                            <input disabled type="data" id="pastorj_data" name="pastorj_data" class="form-control">
+                                            <input readonly type="date" id="pastorj_data" name="pastorj_data" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_period_dogovor_s" class="col-form-label">Период страхования по договору с</label>
-                                            <input disabled type="data" id="pastorj_period_dogovor_s" name="pastorj_period_dogovor_s" class="form-control">
+                                            <label id="date_dogovor_from" for="pastorj_period_dogovor_s" class="col-form-label">Период страхования по договору с</label>
+                                            <input type="date" readonly value="2021-01-01" id="pastorj_period_dogovor_s" name="pastorj_period_dogovor_s" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_period_dogovor_do" class="col-form-label">Период страхования по договору до</label>
-                                            <input disabled type="data" id="pastorj_period_dogovor_do" name="pastorj_period_dogovor_do" class="form-control">
+                                            <label id="date_dogovor_to" for="pastorj_period_dogovor_do" class="col-form-label">Период страхования по договору до</label>
+                                            <input type="date" readonly value="2022-01-01" id="pastorj_period_dogovor_do" name="pastorj_period_dogovor_do" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_period_polis_s" class="col-form-label">Период страхования по полису с</label>
-                                            <input disabled type="data" id="pastorj_period_polis_s" name="pastorj_period_polis_s" class="form-control">
+                                            <input readonly type="date" id="pastorj_period_polis_s" name="pastorj_period_polis_s" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_period_polis_do" class="col-form-label">Период страхования по полису до</label>
-                                            <input disabled type="data" id="pastorj_period_polis_do" name="pastorj_period_polis_s" class="form-control">
+                                            <input readonly type="date" id="pastorj_period_polis_do" name="pastorj_period_polis_s" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_period_days" class="col-form-label">Период страхования на днях</label>
-                                            <input disabled type="data" id="pastorj_period_days" name="pastorj_period_days" class="form-control">
+                                            <label id="date_dogovor_days" for="pastorj_period_days" class="col-form-label">Период страхования на днях</label>
+                                            <input readonly type="text" id="pastorj_period_days" name="pastorj_period_days" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_data_dogovor" class="col-form-label">Дата расторжения договора</label>
-                                            <input disabled type="data" id="pastorj_data_dogovor" name="pastorj_data_dogovor" class="form-control">
+                                            <label id="date_rastorj" for="pastorj_data_dogovor" class="col-form-label">Дата расторжения договора</label>
+                                            <input type="date" id="pastorj_data_dogovor" name="pastorj_data_dogovor" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_istek_period" class="col-form-label">Истекший период по полису </label>
-                                            <input disabled type="data" id="pastorj_istek_period" name="pastorj_istek_period" class="form-control">
+                                            <label id="date_dogovor_istek" for="pastorj_istek_period" class="col-form-label">Истекший период по полису </label>
+                                            <input readonly type="text" id="pastorj_istek_period" name="pastorj_istek_period" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_neistek_period" class="col-form-label">Не истекший период по полису </label>
-                                            <input disabled type="data" id="pastorj_neistek_period" name="pastorj_neistek_period" class="form-control">
+                                            <label id="date_dogovor_neistek" for="pastorj_neistek_period" class="col-form-label">Не истекший период по полису </label>
+                                            <input readonly type="text" id="pastorj_neistek_period" name="pastorj_neistek_period" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_summ" class="col-form-label">Страховая сумма</label>
-                                            <input disabled type="text" id="pastorj_summ" name="pastorj_summ" class="form-control">
+                                            <input readonly type="text" id="pastorj_summ" name="pastorj_summ" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_tarif" class="col-form-label">Тариф</label>
-                                            <input disabled type="text" id="pastorj_tarif" name="pastorj_tarif" class="form-control">
+                                            <input readonly type="text" id="pastorj_tarif" name="pastorj_tarif" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_preim" class="col-form-label">Страховая премия по договору</label>
-                                            <input disabled type="text" id="pastorj_preim" name="pastorj_preim" class="form-control">
+                                            <input readonly type="text" value="200000" id="pastorj_preim" name="pastorj_preim" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_preim_days" class="col-form-label">Страховая премия на один день</label>
-                                            <input disabled type="text" id="pastorj_preim_days" name="pastorj_preim_days" class="form-control">
+                                            <label for="pastorj_preim_one_days" class="col-form-label">Страховая премия на один день</label>
+                                            <input readonly type="text" value="0" id="pastorj_preim_one_days" name="pastorj_preim_days" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="pastorj_nezarabot_preim" class="col-form-label">Незаработанная премия</label>
-                                            <input disabled type="text" id="pastorj_nezarabot_preim" name="pastorj_nezarabot_preim" class="form-control">
+                                            <input id="preim_nezarabot" readonly type="text" value="0" name="pastorj_nezarabot_preim" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_vozmesh" class="col-form-label">Страховая возмещения</label>
-                                            <input type="text" id="pastorj_vozmesh" name="pastorj_vozmesh" class="form-control">
+                                            <label for="strah_vozozmesh" class="col-form-label">Страховая возмещения</label>
+                                            <input id="strah_vozozmesh" value="0" type="text" name="pastorj_vozmesh" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_rashod" class="col-form-label">Прочие расходы </label>
-                                            <input type="text" id="pastorj_rashod" name="pastorj_rashod" class="form-control">
+                                            <label for="prochie_rashodi" class="col-form-label">Прочие расходы </label>
+                                            <input id="prochie_rashodi" value="0" type="text" name="pastorj_rashod" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="pastorj_vozvrat" class="col-form-label">Сумма подлежащая к возврату </label>
-                                            <input type="text" id="pastorj_vozvrat" name="pastorj_vozvrat" class="form-control">
+                                            <label for="summ_vozvrat" class="col-form-label">Сумма подлежащая к возврату </label>
+                                            <input id="summ_vozvrat" readonly type="text" name="pastorj_vozvrat" class="form-control">
                                         </div>
                                     </div>
                                 </div>

@@ -482,7 +482,7 @@
                                                 <div class="form-group">
                                                     <label for="dogovor-lizing-num" class="col-form-label">Кредитный договор
                                                     №</label>
-                                                    <input type="text" id="dogovor-lizing-num" name="dogovor_lizing_num" class="form-control">
+                                                    <input data-sum-two type="text" id="dogovor-lizing-num" name="dogovor_lizing_num" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -512,7 +512,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="geographic-zone">Сумма кредита</label>
-                                                <input type="text" id="geographic-zone" name="geo_zone" class="form-control">
+                                                <input data-sum-one type="text" id="geographic-zone" name="geo_zone" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -541,7 +541,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="geographic-zone">Франшиза</label>
-                                                <input type="text" id="geographic-zone" name="geo_zone" class="form-control">
+                                                <input data-sum-three type="text" id="geographic-zone" name="geo_zone" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -592,9 +592,9 @@
                                             <tr></tr>
                                             <tr>
                                                 <td colspan="9" style="text-align: right"><label class="text-bold">Итого</label></td>
-                                                <td><input readonly data-insurance-stoimost type="text" class="form-control overall-sum" /></td>
-                                                <td><input readonly data-insurance-sum type="text" class="form-control overall-sum4" /></td>
-                                                <td><input readonly data-insurance-award type="text" class="form-control overall-sum3" /></td>
+                                                <td><input data-sum-one readonly data-insurance-stoimost type="text" class="form-control overall-sum" /></td>
+                                                <td><input data-sum-two readonly data-insurance-sum type="text" class="form-control overall-sum4" /></td>
+                                                <td><input data-sum-three readonly data-insurance-award type="text" class="form-control overall-sum3" /></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -620,19 +620,19 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="all-summ">Cтраховая сумма</label>
-                                            <input type="text" id="all-summ" name="geo_zone" class="form-control">
+                                            <input data-sum-all-one type="text" id="all-summ" name="geo_zone" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="all-summ">Cтраховая премия</label>
-                                            <input type="text" id="all-summ" name="geo_zone" class="form-control">
+                                            <input data-sum-all-two type="text" id="all-summ" name="geo_zone" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="all-summ">Франшиза</label>
-                                            <input type="text" id="all-summ" name="geo_zone" class="form-control">
+                                            <input data-sum-all-three type="text" id="all-summ" name="geo_zone" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -717,7 +717,7 @@
                                     отображаться только тогда, когда выбран checkbox "Тариф"
                                     -->
                                     <div class="form-group" data-preim-descr style="display: none">
-                                        <label for="descrPreim" class="col-form-label">Укажите процент премии</label>
+                                        <label for="descrPreim" class="col-form-label">Укажите премию</label>
                                         <input class="form-control" id="descrPreim" type="number">
                                     </div>
                                 </div>
