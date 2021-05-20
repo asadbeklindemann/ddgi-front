@@ -51,7 +51,7 @@ $(document).ready(function() {
         const dateFromDogovorStrah1 = new Date(dateFromDogovorStrah);
         const dateToDogovorStrah1 = new Date(dateToDogovorStrah);
         const daysAll = Math.ceil(Math.abs(dateToDogovorStrah1.getTime() - dateFromDogovorStrah1.getTime()) / (1000 * 3600 * 24));
-        newPreimCalc.value = (newTarifInput.value * totalOneField.value * daysAll / 365).toFixed(1);
+        newPreimCalc.value = ((newTarifInput.value) / 100 * totalOneField.value * daysAll / 365).toFixed(1);
     })
     newPreimInput.addEventListener('input', function() {
         const dateFromDogovorStrah = document.getElementById('strah_dogovor_ot').value;
