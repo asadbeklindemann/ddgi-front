@@ -7,13 +7,15 @@ $(document).ready(function() {
         })
         // только буквы
     $('[name=fio_insurer]').bind("change keyup input click", function() {
-        if (this.value.match(/[^a-z]/g)) {
-            this.value = this.value.replace(/[^a-z]/g, '');
-        }
-    })
-
+            if (this.value.match(/[^a-z]/g)) {
+                this.value = this.value.replace(/[^a-z]/g, '');
+            }
+        })
+        // страховая сумма
     const sumOneFields = document.querySelectorAll('[data-sum-one]');
+    // страховая премия
     const sumTwoFields = document.querySelectorAll('[data-sum-two]');
+    // франшиза
     const sumThreeFields = document.querySelectorAll('[data-sum-three]');
 
     const totalOneField = document.querySelector('[data-sum-all-one]');
