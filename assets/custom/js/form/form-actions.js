@@ -1806,7 +1806,7 @@ const addSportmanModal = (fieldNumber) => {
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Страховая премия</span>
                                 </div>
-                                <input type="text" class="form-control r-${fieldNumber}" name="one_sum[]" id="vehicle_damage_sum-${fieldNumber}">
+                                <input type="text" class="form-control p-${fieldNumber}" name="one_sum[]" id="vehicle_damage_sum-${fieldNumber}">
                             </div>
                         </div>
                     </div>
@@ -1828,7 +1828,7 @@ const addSportmanModal = (fieldNumber) => {
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Страховая премия</span>
                                 </div>
-                                <input type="text" class="form-control r-${fieldNumber}" name="one_sum[]" id="vehicle_damage_sum-${fieldNumber}">
+                                <input type="text" class="form-control p-${fieldNumber}" name="one_sum[]" id="vehicle_damage_sum-${fieldNumber}">
                             </div>
                         </div>
                     </div>
@@ -1839,6 +1839,12 @@ const addSportmanModal = (fieldNumber) => {
                             <span class="input-group-text">Общая страховая сумма</span>
                         </div>
                         <input type="text" class="form-control" name="one_sum[]" data-overall id="total_inp${fieldNumber}">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Общая страховая премия</span>
+                        </div>
+                        <input type="text" class="form-control" name="one_sum[]" data-sum-two id="total_i${fieldNumber}">
                     </div>
                 </div>
                 </div>
@@ -1854,6 +1860,17 @@ const addSportmanModal = (fieldNumber) => {
                 total += +item.value;
             });
             document.getElementById(`total_inp${fieldNumber}`).value = total;
+            calcPrice();
+        })
+    })
+    const inputs1 = document.querySelectorAll(`.p-${fieldNumber}`)
+    inputs.forEach(i => {
+        i.addEventListener('keyup', () => {
+            total1 = 0;
+            inputs.forEach(item1 => {
+                total1 += +item1.value;
+            });
+            document.getElementById(`total_i${fieldNumber}`).value = total;
             calcPrice();
         })
     })
