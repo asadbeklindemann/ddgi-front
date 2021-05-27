@@ -441,7 +441,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="insurance_from">Период страхования</label>
                                                         <div class="input-group mb-3">
@@ -452,7 +452,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <div class="input-group mb-3" style="margin-top: 33px">
                                                             <div class="input-group-prepend">
@@ -462,11 +462,47 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="vid-sporta">Вид спорта</label>
+                                                        <input type="text" id="vid-sporta" name="vid_sporta" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="geographic-zone">Географическая зона</label>
+                                                        <input type="text" id="geographic-zone" name="geographic_zone" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="sportsman-counter">Общая численность спортсменов</label>
+                                                        <input type="text" id="sportsman-counter" name="sportsman_counter" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="mesto-sport">Место проведение соревнований </label>
+                                                        <input type="text" id="mesto-sport" name="mesto_sport" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="hochesh">Хотите ли вы расширить сферу страхового покрытия на период тренировок и учебно-тренировочных занятий на спортивных базах?</label>
+                                                        <select class="form-control" id="hochesh" name="hochesh" style="width: 100%;">
+                                                            <option selected="selected">Да</option>
+                                                            <option>Нет</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="sluchiy">Страховой случай </label>
+                                                        <input type="text" id="sluchiy" name="sluchiy" class="form-control">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="geographic-zone">Географическая зона:</label>
-                                                <input type="text" id="geographic-zone" name="geo_zone" class="form-control">
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -500,7 +536,8 @@
                                                     <th class="text-nowrap">Дата выдачи</th>
                                                     <th class="text-nowrap">Выбор агента</th>
                                                     <th class="text-nowrap">ФИО застрахованного лица</th>
-                                                    <th class="text-nowrap">Период действия полиса</th>
+                                                    <th class="text-nowrap">Период действия полиса c</th>
+                                                    <th class="text-nowrap">Период действия полиса до</th>
                                                     <th class="text-nowrap">Выгодоприобритатель</th>
                                                     <th class="text-nowrap">Страховая сумма</th>
                                                     <th class="text-nowrap">Страховая премия</th>
@@ -508,7 +545,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td colspan="7" style="text-align: right"><label class="text-bold">Итого</label></td>
+                                                    <td colspan="8" style="text-align: right"><label class="text-bold">Итого</label></td>
                                                     <td><input data-insurance-stoimost readonly type="text" class="form-control overall-sum4" />
                                                     </td>
                                                     <td><input data-insurance-sum readonly type="text" class="form-control overall-sum3" />
@@ -518,6 +555,8 @@
                                         </table>
                                     </div>
                                 </div>
+                            </div>
+                            <div data-modal id="general-product-fields">
                             </div>
                         </div>
                     </div>

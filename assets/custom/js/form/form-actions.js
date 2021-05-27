@@ -1872,19 +1872,24 @@ const addSportmanRow = (fieldNumber) => {
             <input disabled type="date" class="form-control">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis_mark[]">
+            <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
+                <option selected="selected"></option>
+            </select>
         </td>
         <td>
             <input type="text" class="form-control" name="polis_model[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis_teh_passport[]">
+            <input type="date" class="form-control" name="polis_teh_passport[]">
         </td>
         <td>
-            <input type="text" class="form-control" name="polis_num_engine[]">
+            <input type="date" class="form-control" name="polis_num_engine[]">
         </td>
         <td>
             <input data-field="value" type="text" class="form-control" name="polis_num_body[]">
+        </td>
+        <td>
+            <input data-field="sum" type="text" class="form-control" name="polis_payload[]">
         </td>
         <td>
             <input data-field="sum" type="text" class="form-control" name="polis_payload[]">
