@@ -1886,10 +1886,10 @@ const addSportmanRow = (fieldNumber) => {
             <input type="date" class="form-control" name="polis_num_engine[]">
         </td>
         <td>
-            <input data-field="value" type="text" class="form-control" name="polis_num_body[]">
+            <input type="text" class="form-control" name="polis_num_body[]">
         </td>
         <td>
-            <input data-field="sum" type="text" class="form-control" name="polis_payload[]">
+            <input data-field="value" type="text" class="form-control" name="polis_payload[]">
         </td>
         <td>
             <input data-field="sum" type="text" class="form-control" name="polis_payload[]">
