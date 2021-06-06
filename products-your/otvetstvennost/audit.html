@@ -564,39 +564,81 @@
 
                     <div class="card-body" id="fields-changed">
                         <div id="product-fields-0-3">
-                            <div id="product-fields-0-5">
-                                <div class="form-group">
-                                    <label>Действовали ли Вы в такой или подобной деятельности под другим названием?</label>
-                                    <div class="row">
-                                        <div class="col-sm-1">
-                                            <div class="checkbox icheck-success">
-                                                <input type="radio" class="other_insurance-0" name="acted" data-acted-radio id="success-action-1" value="true">
-                                                <label for="success-action-1">Да</label>
-                                            </div>
-                                            <div class="checkbox icheck-success">
-                                                <input type="radio" class="other_insurance-0" name="acted" data-acted-radio id="success-action-2" value="false">
-                                                <label for="success-action-2">Нет</label>
-                                            </div>
-                                        </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="icheck-success ">
+                                        <input onchange="toggleBlock('onn', 'data-onn-descr')" class="form-check-input client-type-radio" type="checkbox" name="onn" id="onn">
+                                        <label class="form-check-label" for="onn">Действовали ли Вы в такой или подобной деятельности под другим названием?</label>
                                     </div>
-                                    <div class="row r-2-show-0" data-acted="true" style="display: none;">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">В гос. секторе</span>
+                                    <!-- TODO: Блок должен находится в скрытом состоянии
+                                    отображаться только тогда, когда выбран checkbox "Тариф"
+                                    -->
+                                    <div class="form-group" data-onn-descr style="display: none">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">В гос. секторе</span>
+                                                        </div>
+                                                        <textarea class="form-control" id="public-sector" name="public_sector_comment" required></textarea>
                                                     </div>
-                                                    <textarea class="form-control" id="public-sector" name="public_sector_comment" required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">В частном секторе</span>
+                                                        </div>
+                                                        <textarea id="private-sector" class="form-control" name="private_sector_comment" required></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="icheck-success ">
+                                        <input onchange="toggleBlock('tww', 'data-tww-descr')" class="form-check-input client-type-radio" type="checkbox" name="tww" id="tww">
+                                        <label class="form-check-label" for="tww">Были ли в Вашей практике случаи, когда Вам была предъявлена претензия или иск?</label>
+                                    </div>
+                                    <!-- TODO: Блок должен находится в скрытом состоянии
+                                    отображаться только тогда, когда выбран checkbox "Тариф"
+                                    -->
+                                    <div class="form-group" data-tww-descr style="display: none">
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text">В частном секторе</span>
+                                                        <span class="input-group-text">Причина</span>
                                                     </div>
-                                                    <textarea id="private-sector" class="form-control" name="private_sector_comment" required></textarea>
+                                                    <textarea class="form-control" name="reason_case" required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="icheck-success ">
+                                        <input onchange="toggleBlock('trr', 'data-trr-descr')" class="form-check-input client-type-radio" type="checkbox" name="trr" id="trr">
+                                        <label class="form-check-label" for="trr">Были ли в Вашей практике случаи, когда к Вам были применены административные взыскания?</label>
+                                    </div>
+                                    <!-- TODO: Блок должен находится в скрытом состоянии
+                                    отображаться только тогда, когда выбран checkbox "Тариф"
+                                    -->
+                                    <div class="form-group" data-trr-descr style="display: none">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Причина</span>
+                                                    </div>
+                                                    <textarea class="form-control" name="reason_case" required></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -607,61 +649,6 @@
                                 <label for="geographic-zone">Риски, связанные с вашей профессиональной деятельностью,
                                     которые Вы опасаетесь больше всего</label>
                                 <input type="text" id="geographic-zone" name="geo_zone" class="form-control">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Были ли в Вашей практике случаи, когда Вам была предъявлена претензия или иск?</label>
-                                <div class="row">
-                                    <div class="col-sm-1">
-                                        <div class="checkbox icheck-success">
-                                            <input type="radio" class="other_insurance-0" data-cases-radio name="cases" id="case-true" value="true">
-                                            <label for="case-true">Да</label>
-                                        </div>
-                                        <div class="checkbox icheck-success">
-                                            <input type="radio" class="other_insurance-0" data-cases-radio name="cases" id="case-false" value="false">
-                                            <label for="case-false">Нет</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row r-2-show-0" data-cases-reason="true" style="display: none;">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Причина</span>
-                                                </div>
-                                                <textarea class="form-control" name="reason_case" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Были ли в Вашей практике случаи, когда к Вам были применены административные взыскания?</label>
-                                <div class="row">
-                                    <div class="col-sm-1">
-                                        <div class="checkbox icheck-success">
-                                            <input type="radio" class="other_insurance-0" data-administr-radio name="administrative_case" id="case-administrative-1" value="true">
-                                            <label for="case-administrative-1">Да</label>
-                                        </div>
-                                        <div class="checkbox icheck-success">
-                                            <input type="radio" class="other_insurance-0" data-administr-radio name="administrative_case" id="case-administrative-2" value="false">
-                                            <label for="case-administrative-2">Нет</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row r-2-show-0" data-administr-case="true" style="display: none;">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Причина</span>
-                                                </div>
-                                                <textarea class="form-control" name="reason_administrative_case" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="form-group form-inline justify-content-between">
