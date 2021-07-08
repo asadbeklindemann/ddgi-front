@@ -536,11 +536,12 @@ const removeAndCalc = (id) => {
 }
 
 const renderSelect = () => {
-    agentsList.data.forEach(agentItem => {
-        console.log(agentItem)
-        const option = `<option value="${agentItem.id}">${agentItem.name}</option>`
-        document.getElementById('polise_agents').insertAdjacentHTML('afterbegin', option)
-    })
+    console.log('asd');
+    // agentsList.data.forEach(agentItem => {
+    //     console.log(agentItem)
+    //     const option = `<option value="${agentItem.id}">${agentItem.name}</option>`
+    //     document.getElementById('polise_agents').insertAdjacentHTML('afterbegin', option)
+    // })
 }
 
 if (buttonAddRowInfo) {
@@ -1300,7 +1301,7 @@ const removeProductsFieldRow = (fieldNumber) => {
 
 const openModal = (fieldNumber) => {
     document.querySelectorAll('.modal').forEach(div => {
-        div.style.display = 'none'
+        div.style.display = 'none';
     });
     document.getElementById("product-field-modal-" + fieldNumber).style.display = 'block';
 }
@@ -1729,7 +1730,10 @@ const addTcRow = () => {
             <input type="text" class="form-control" name="polis_id[]">
         </td>
         <td>
-            <input disabled type="date" class="form-control">
+            <input type="date" class="form-control" name="srok_do[]">
+        </td>
+        <td>
+            <input type="date" class="form-control" name="srok_ot[]">
         </td>
         <td>
             <select class="form-control polises" id="polises" name="polis_agent[]" style="width: 100%;">
@@ -1757,9 +1761,6 @@ const addTcRow = () => {
         </td>
         <td>
             <input type="text" class="form-control" name="polis_num_engine[]">
-        </td>
-        <td>
-            <input data-field="value" type="text" class="form-control" name="polis_num_body[]">
         </td>
         <td>
             <input data-field="sum" type="text" class="form-control" name="polis_payload[]">
@@ -1888,7 +1889,7 @@ const addSportmanRow = (fieldNumber) => {
             <input type="text" class="form-control" name="polis_id[]">
         </td>
         <td>
-            <input disabled type="date" class="form-control">
+            <input type="date" class="form-control">
         </td>
         <td>
             <select class="form-control" id="polise_agents" name="agents[]" style="width: 100%;">
@@ -1903,6 +1904,9 @@ const addSportmanRow = (fieldNumber) => {
         </td>
         <td>
             <input type="date" class="form-control" name="polis_num_engine[]">
+        </td>
+        <td>
+            <input type="text" class="form-control" name="polis_num_body[]">
         </td>
         <td>
             <input type="text" class="form-control" name="polis_num_body[]">
