@@ -903,7 +903,7 @@ function addProductFields(fieldNumber) {
                                     <label for="radioSuccess4-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
-                            <div data-radioSuccess3-${fieldNumber} class="col-md-6 r-1-show-${fieldNumber}" style="display: none;">
+                            <div data-radioSuccess3-${fieldNumber} class="col-md-11 r-1-show-${fieldNumber}" style="display: none;">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
@@ -954,7 +954,7 @@ function addProductFields(fieldNumber) {
                                     <label for="radioSuccess6-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
-                            <div data-radioSuccess5-${fieldNumber} class="col-md-6 r-2-show-${fieldNumber}" style="display: none;">
+                            <div data-radioSuccess5-${fieldNumber} class="col-md-11 r-2-show-${fieldNumber}" style="display: none;">
                                 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -989,12 +989,12 @@ function addProductFields(fieldNumber) {
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents[]" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
-                                    <label for="radioSuccess7-${fieldNumber}">Да</label>
+                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents[]" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
+                                    <label for="radioSuccess8-${fieldNumber}">Да</label>
                                 </div>
                                 <div class="checkbox icheck-success">
-                                    <input onchange="toggleBlockRadio('radioSuccess8-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}', false)" type="radio" name="accidents[]" class="r-3-${fieldNumber}" id="radioSuccess8-${fieldNumber}" value="0">
-                                    <label for="radioSuccess8-${fieldNumber}">Нет</label>
+                                    <input onchange="toggleBlockRadio('radioSuccess7-${fieldNumber}', 'data-radioSuccess7-${fieldNumber}')" type="radio" name="accidents[]" class="r-3-${fieldNumber}" id="radioSuccess7-${fieldNumber}" value="1">
+                                    <label for="radioSuccess7-${fieldNumber}">Нет</label>
                                 </div>
                             </div>
                         </div>
@@ -2303,7 +2303,6 @@ if (addAutozalogBtn) {
     </tr>`
         infoTable.querySelector('tbody').insertAdjacentHTML('beforebegin', field);
         renderSelect();
-
     }
 }
 

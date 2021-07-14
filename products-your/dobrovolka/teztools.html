@@ -460,45 +460,43 @@
                             <div class="card-body">
                                 <div id="anketa-fields">
                                     <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="insurance_from">Период страхования</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">с</span>
+                                                    </div>
+                                                    <input id="insurance_from" name="insurance_from" type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group mb-3" style="margin-top: 33px">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">до</span>
+                                                    </div>
+                                                    <input id="insurance_to" name="insurance_to" type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-sm-12">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="insurance_from">Период страхования</label>
-                                                        <div class="input-group mb-3">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">с</span>
-                                                            </div>
-                                                            <input id="insurance_from" name="insurance_from" type="date" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <div class="input-group mb-3" style="margin-top: 33px">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">до</span>
-                                                            </div>
-                                                            <input id="insurance_to" name="insurance_to" type="date" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group form-inline justify-content-between">
-                                                    <label>Использования ТС на основании</label>
-                                                    <select class="form-control payment-schedule" name="payment_term" onchange="showDiv('other-payment-schedule', this)" style="width: 100%; text-align: center">
-                                                        <option value="selected"></option>
-                                                        <option value="1">Тех пасспорт</option>
-                                                        <option value="2">Доверенность</option>
-                                                        <option value="3">Договор аренды</option>
-                                                        <option value="4">Путевой лист</option>
-                                                    </select>
-                                                </div>
-                                            </div>
                                             <div class="form-group">
                                                 <label for="geographic-zone">Географическая зона:</label>
                                                 <input type="text" id="geographic-zone" name="geo_zone" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>Использования ТС на основании</label>
+                                                <select class="form-control" name="payment_term" onchange="showDiv('other-payment-schedule', this)" style="width: 100%; text-align: center">
+                                                            <option value="selected"></option>
+                                                            <option value="1">Тех пасспорт</option>
+                                                            <option value="2">Доверенность</option>
+                                                            <option value="3">Договор аренды</option>
+                                                            <option value="4">Путевой лист</option>
+                                                        </select>
                                             </div>
                                         </div>
                                     </div>
