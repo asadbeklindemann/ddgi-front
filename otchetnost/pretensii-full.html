@@ -470,7 +470,7 @@
                         <div class="card-body">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="filter_stat" class="col-form-label">Тип клиента</label>
                                             <select id="filter_stat" class="form-control select2" name="filter_stat">
@@ -479,49 +479,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="filter_data_akt" class="col-form-label">Введите номер раздела</label>
-                                            <input type="text" id="filter_data_akt" name="filter_data_akt" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="filter_akt" class="col-form-label">Номер акта</label>
-                                            <input type="text" id="filter_akt" name="filter_akt" class="form-control">
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-md-3">
-                                        <label for="filter_number_ot" class="col-form-label">Серия полиса</label>
-                                        <div class="input-group">
-                                            <input type="text" id="filter_number_ot" class="form-control" name="filter_number_ot">
-                                            <div class="input-group-append">
-                                                <select class="form-control success" name="filter_sings" style="width: 100%;">
-                                                <option selected="selected">=</option>
-                                                <option><</option>
-                                                <option><=</option>
-                                                <option>></option>
-                                                <option>>=</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-md-3">
-                                        <label for="filter_number_do" class="col-form-label">Серия полиса</label>
-                                        <div class="input-group">
-                                            <input type="text" id="filter_number_do" name="filter_number_do" class="form-control">
-                                            <div class="input-group-append">
-                                                <select class="form-control success" name="filter_sings" style="width: 100%;">
-                                                <option selected="selected">=</option>
-                                                <option><</option>
-                                                <option><=</option>
-                                                <option>></option>
-                                                <option>>=</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="filter_name_send" class="col-form-label">Выберите раздел</label>
                                             <select id="filter_name_send" class="form-control select2" name="filter_name_send">
@@ -531,17 +489,36 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="filter_komu" class="col-form-label">Кому</label>
+                                            <label for="filter_komu" class="col-form-label">Отчетность за</label>
                                             <select id="filter_komu" class="form-control select2" name="filter_komu">
-                                            <option selected="selected">говно</option>
-                                            <option selected="selected">говно 2</option>
-                                            <option value="1">asdc</option>
-                                        </select>
+                                                <option selected="selected">Последний месяц</option>
+                                                <option value="1">Последний квартал</option>
+                                                <option value="1">Последнее полугодие</option>
+                                                <option value="1">Последний год</option>
+                                            </select>
                                         </div>
-                                    </div> -->
-                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="from">Дата</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">с</span>
+                                            </div>
+                                            <input id="from" class="form-control" name="name" type="date">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="to">Дата</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">до</span>
+                                            </div>
+                                            <input id="to" class="form-control" name="name" type="date">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <a style="margin: 38px 0 0 auto; display: block;" class="btn btn-success" href="http://wecloud.rocks/all_products/create">Найти</a>
                                     </div>
                                 </div>
